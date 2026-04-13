@@ -23,8 +23,9 @@ const steps = [
 ];
 
 const UvodnyHovorSection = () => (
-  <section className="section-cream section-padding">
-    <div className="section-container">
+  <section className="section-cream section-padding relative overflow-hidden">
+    <div className="absolute inset-0 bg-dot-grid opacity-20" />
+    <div className="section-container relative z-10">
       <AnimatedSection>
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
           <p className="eyebrow">Prvý krok</p>
@@ -42,8 +43,8 @@ const UvodnyHovorSection = () => (
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-12 md:mb-16">
         {steps.map((s, i) => (
           <AnimatedSection key={s.num} delay={i * 0.1}>
-            <div className="text-center md:text-left">
-              <p className="font-serif text-5xl md:text-6xl lg:text-7xl font-semibold text-primary/30 mb-4">
+            <div className="text-center md:text-left card-glass-cream !bg-transparent !border-0 !shadow-none !p-0">
+              <p className="font-serif text-5xl md:text-6xl lg:text-7xl font-semibold futuristic-num mb-4">
                 {s.num}
               </p>
               <p className="font-sans font-semibold text-lg text-foreground mb-3">

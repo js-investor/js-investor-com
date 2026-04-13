@@ -35,8 +35,9 @@ const phases: { num: string; icon: ReactNode; title: string; subtitle: string; b
 ];
 
 const FazySection = () => (
-  <section className="section-white section-padding">
-    <div className="section-container">
+  <section className="section-white section-padding relative overflow-hidden">
+    <div className="absolute top-[30%] left-0 w-[400px] h-[400px] rounded-full bg-forest-glow/3 blur-[100px] pointer-events-none" />
+    <div className="section-container relative z-10">
       <AnimatedSection>
         <SectionHeader
           eyebrow="Komplexná cesta"
@@ -47,16 +48,17 @@ const FazySection = () => (
 
       {/* Desktop: horizontal timeline */}
       <div className="hidden md:block relative">
-        {/* Connection line */}
-        <div className="absolute top-[60px] left-[10%] right-[10%] h-px bg-primary/20" />
+        {/* Connection line with glow */}
+        <div className="absolute top-[60px] left-[10%] right-[10%] h-px bg-gradient-to-r from-primary/10 via-primary/30 to-primary/10" />
+        <div className="absolute top-[59px] left-[10%] right-[10%] h-[3px] bg-gradient-to-r from-transparent via-forest-glow/20 to-transparent blur-sm" />
         <div className="grid grid-cols-4 gap-6">
           {phases.map((p, i) => (
             <AnimatedSection key={p.num} delay={i * 0.12}>
               <div className="text-center relative pt-0">
-                <p className="font-serif text-5xl font-semibold text-primary/25 mb-3">
+                <p className="font-serif text-5xl font-semibold futuristic-num mb-3">
                   {p.num}
                 </p>
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                <div className="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/15 flex items-center justify-center mx-auto mb-4 timeline-node">
                   {p.icon}
                 </div>
                 <p className="font-sans font-semibold text-lg text-foreground mb-1">
@@ -80,13 +82,13 @@ const FazySection = () => (
           <AnimatedSection key={p.num} delay={i * 0.1}>
             <div className="flex gap-5">
               <div className="flex flex-col items-center">
-                <p className="font-serif text-3xl font-semibold text-primary/25">
+                <p className="font-serif text-3xl font-semibold futuristic-num">
                   {p.num}
                 </p>
-                <div className="w-px flex-1 bg-primary/20 mt-2" />
+                <div className="w-px flex-1 bg-gradient-to-b from-primary/30 to-primary/5 mt-2" />
               </div>
               <div className="pb-4">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-3">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/15 flex items-center justify-center mb-3 timeline-node">
                   {p.icon}
                 </div>
                 <p className="font-sans font-semibold text-lg text-foreground mb-1">

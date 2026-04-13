@@ -25,8 +25,9 @@ const cards: { icon: ReactNode; stat: string; title: string; body: string }[] = 
 ];
 
 const DobryPoradcaSection = () => (
-  <section className="section-white section-padding">
-    <div className="section-container">
+  <section className="section-white section-padding relative overflow-hidden">
+    <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-primary/3 blur-[120px] pointer-events-none" />
+    <div className="section-container relative z-10">
       <AnimatedSection>
         <SectionHeader
           eyebrow="Aký je rozdiel"
@@ -38,9 +39,11 @@ const DobryPoradcaSection = () => (
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
         {cards.map((c, i) => (
           <AnimatedSection key={c.title} delay={i * 0.1}>
-            <div className="card-premium bg-cream h-full">
-              <div className="mb-5">{c.icon}</div>
-              <p className="font-serif text-3xl md:text-4xl font-semibold text-foreground mb-2">
+            <div className="card-glass-cream h-full">
+              <div className="mb-5 w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center timeline-node">
+                {c.icon}
+              </div>
+              <p className="font-serif text-3xl md:text-4xl font-semibold stat-gradient mb-2">
                 {c.stat}
               </p>
               <p className="font-sans font-semibold text-lg text-foreground mb-3">
