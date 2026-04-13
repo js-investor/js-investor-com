@@ -56,6 +56,7 @@ export default {
         forest: {
           DEFAULT: "hsl(var(--forest))",
           hover: "hsl(var(--forest-hover))",
+          glow: "hsl(var(--forest-glow))",
         },
         "footer-bg": "hsl(var(--footer-bg))",
         sidebar: {
@@ -83,10 +84,20 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "glow-pulse": {
+          "0%, 100%": { opacity: "0.4" },
+          "50%": { opacity: "0.8" },
+        },
+        "float": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-8px)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "glow-pulse": "glow-pulse 3s ease-in-out infinite",
+        "float": "float 5s ease-in-out infinite",
       },
     },
   },
