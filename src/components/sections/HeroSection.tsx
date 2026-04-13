@@ -1,4 +1,5 @@
-import ivanPortrait from "@/assets/ivan-portrait.jpg";
+import ivanPortrait from "@/assets/images/ivan-jasik.jpg";
+import brandLogo from "@/assets/images/js-investor-logo.png";
 import { Check } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -16,12 +17,13 @@ const HeroSection = () => (
     <div className="absolute bottom-0 left-[10%] w-[300px] h-[300px] rounded-full bg-forest-glow/5 blur-[80px] pointer-events-none" />
 
     {/* Header */}
-    <header className="relative z-10 flex items-center justify-between px-5 md:px-10 lg:px-16 py-5 md:py-6">
-      <div className="flex items-center gap-2">
-        <span className="w-2.5 h-2.5 rounded-full bg-primary inline-block animate-glow-pulse" />
-        <span className="font-sans text-sm font-semibold tracking-[0.2em] uppercase text-foreground">
-          JS Investor
-        </span>
+    <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 md:px-10 lg:px-16 py-4 md:py-5 backdrop-blur-md bg-cream/90 border-b border-primary/10">
+      <div className="flex items-center">
+        <img
+          src={brandLogo}
+          alt="JS Investor logo"
+          className="h-10 md:h-12 w-auto"
+        />
       </div>
       <button onClick={scrollToBooking} className="btn-pill">
         Rezervovať hovor
@@ -29,18 +31,18 @@ const HeroSection = () => (
     </header>
 
     {/* Hero Content */}
-    <div className="relative z-10 px-5 md:px-10 lg:px-16 pb-16 md:pb-24 pt-8 md:pt-16 max-w-[1400px] mx-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-[55%_45%] gap-10 lg:gap-16 items-center">
+    <div className="relative z-10 px-5 md:px-10 lg:px-16 pb-16 md:pb-24 pt-24 md:pt-28 max-w-[1400px] mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,65%)_minmax(0,35%)] gap-10 lg:gap-6 items-center">
         {/* Left Column */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="lg:pr-4"
         >
           <p className="eyebrow">Úvodný hovor · Bezplatne · Online</p>
-          <h1 className="headline-hero mb-6 md:mb-8">
-            Investuješ chaoticky?{" "}
-            <span className="block">Alebo neinvestuješ vôbec?</span>
+          <h1 className="headline-hero !text-4xl sm:!text-5xl md:!text-6xl lg:!text-7xl xl:!text-[5.5rem] mb-6 md:mb-8">
+            Investuješ chaoticky alebo neinvestuješ vôbec?
           </h1>
           <p className="text-lg md:text-xl font-sans text-muted-foreground leading-relaxed mb-6">
             Za pár dní ti viem postaviť plán, ktorý dáva zmysel. Začneme jedným
@@ -56,10 +58,6 @@ const HeroSection = () => (
               Rezervovať úvodný hovor
             </button>
           </div>
-          <button onClick={scrollToBooking} className="text-link text-sm mb-8 block">
-            Vyplniť krátky dotazník (5 min) →
-          </button>
-
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-sans text-muted-foreground">
             {["Bezplatné", "Bez záväzku", "30 minút"].map((t) => (
               <span key={t} className="flex items-center gap-1.5">
@@ -77,13 +75,13 @@ const HeroSection = () => (
           transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           className="relative flex justify-center lg:justify-end"
         >
-          <div className="relative">
+          <div className="relative w-full max-w-[420px]">
             {/* Glow behind image */}
             <div className="absolute -inset-4 rounded-3xl bg-primary/10 blur-2xl" />
             <img
               src={ivanPortrait}
               alt="Ivan Jasik — JS Investor"
-              className="relative rounded-3xl w-full max-w-[420px] object-cover aspect-[3/4] ring-1 ring-primary/20"
+              className="relative rounded-3xl w-full object-cover aspect-[3/4] ring-1 ring-primary/20"
               width={768}
               height={960}
             />
@@ -93,7 +91,7 @@ const HeroSection = () => (
               className="absolute bottom-4 right-4 card-glass rounded-2xl px-4 py-3 shadow-lg"
             >
               <span className="font-sans text-sm font-semibold text-foreground">
-                8+ rokov · 531 klientov
+                8+ rokov · 531 klientov · Licencia NBS
               </span>
             </motion.div>
           </div>

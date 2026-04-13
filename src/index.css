@@ -1,4 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,300;1,9..144,400;1,9..144,500;1,9..144,600;1,9..144,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+@font-face {
+  font-family: 'Calvino';
+  src: url('./assets/fonts/calvino/Calvino-Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Calvino';
+  src: url('./assets/fonts/calvino/Calvino-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Calvino';
+  src: url('./assets/fonts/calvino/Calvino-Extrabold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('./assets/fonts/gilroy/Gilroy-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('./assets/fonts/gilroy/Gilroy-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('./assets/fonts/gilroy/Gilroy-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('./assets/fonts/gilroy/Gilroy-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 @tailwind base;
 @tailwind components;
@@ -43,8 +97,8 @@
     --forest-glow: 158 44% 40%;
     --footer-bg: 158 44% 20%;
 
-    --font-serif: 'Fraunces', Georgia, serif;
-    --font-sans: 'DM Sans', system-ui, sans-serif;
+    --font-serif: 'Calvino', Georgia, serif;
+    --font-sans: 'Gilroy', sans-serif;
 
     --sidebar-background: 25 100% 98%;
     --sidebar-foreground: 0 0% 10%;
@@ -62,6 +116,13 @@
     @apply border-border;
   }
 
+  /* Enforce Gilroy Regular for non-heading text */
+  .font-serif {
+    font-family: var(--font-sans) !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+  }
+
   html {
     scroll-behavior: smooth;
   }
@@ -72,6 +133,7 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-serif);
+    font-weight: 700;
   }
 }
 
@@ -98,12 +160,12 @@
 
   .headline-serif {
     font-family: var(--font-serif);
-    @apply text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground leading-tight;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight;
   }
 
   .headline-hero {
     font-family: var(--font-serif);
-    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-semibold text-foreground leading-[1.08];
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-bold text-foreground leading-[1.08];
   }
 
   .sub-headline {
@@ -111,8 +173,8 @@
   }
 
   .quote-serif {
-    font-family: var(--font-serif);
-    @apply italic text-lg md:text-xl lg:text-2xl text-foreground/80 leading-relaxed;
+    font-family: var(--font-sans);
+    @apply text-lg md:text-xl lg:text-2xl text-foreground/80 leading-relaxed;
   }
 
   .card-premium {

@@ -1,3 +1,5 @@
+import brandLogoWhite from "@/assets/images/js-investor-logo-biele.png";
+
 const FooterSection = () => (
   <footer className="bg-footer-bg py-16 px-5 md:px-10 relative overflow-hidden">
     {/* Subtle grid overlay */}
@@ -13,11 +15,12 @@ const FooterSection = () => (
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 mb-12">
         {/* Left */}
         <div>
-          <div className="flex items-center gap-2 mb-3">
-            <span className="w-2 h-2 rounded-full bg-primary inline-block animate-glow-pulse" />
-            <span className="font-sans text-sm font-semibold tracking-[0.2em] uppercase text-cream">
-              JS Investor
-            </span>
+          <div className="flex items-center mb-3">
+            <img
+              src={brandLogoWhite}
+              alt="JS Investor logo"
+              className="h-10 md:h-12 w-auto"
+            />
           </div>
           <p className="font-serif italic text-sm text-cream/60">
             Sprievodca budovaním majetku pre ambicióznych ľudí.
