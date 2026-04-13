@@ -5,6 +5,10 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  build: {
+    // Keep SVG/logo assets as files (not data URIs) for production compatibility.
+    assetsInlineLimit: 0,
+  },
   server: {
     host: "::",
     port: 8080,
