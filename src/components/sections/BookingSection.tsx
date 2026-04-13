@@ -20,10 +20,12 @@ const BookingSection = () => {
   return (
     <section id="booking" className="section-white section-padding">
       <div className="section-container">
-        <div className="text-center max-w-3xl mx-auto mb-[-72px]">
-          <h2 className="headline-serif">Pripravený na úvodný hovor?</h2>
+        <div className="relative z-10 text-center max-w-5xl mx-auto mb-[-72px]">
+          <h2 className="headline-serif">
+            Pripravený na <span className="italic text-primary">úvodný hovor?</span>
+          </h2>
           <p className="sub-headline">
-            Vyber si termín ktorý ti sedí. Hovor je bezplatný, trvá 30–45 minút,
+            Vyber si termín ktorý ti sedí. <strong>Hovor je bezplatný, trvá 30–45 minút,</strong>
             a prebieha online cez Google Meet alebo Zoom.
           </p>
         </div>
@@ -37,13 +39,12 @@ const BookingSection = () => {
           />
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 mt-[-48px] md:mt-[-72px] text-sm font-sans text-muted-foreground">
-          {["Bezplatné", "Online", "30–45 minút", "Diskrétne", "Bez záväzku"].map(
-            (item, index) => (
+        <div className="relative z-10 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 mt-[-48px] md:mt-[-72px] text-sm font-sans text-muted-foreground">
+          {["Bezplatný úvodný hovor", "Online 30 minút", "Bez záväzku a predaja"].map(
+            (item) => (
               <span key={item} className="flex items-center gap-1.5">
                 <Check className="w-4 h-4 text-primary" />
                 {item}
-                {index < 4 && <span className="ml-2">·</span>}
               </span>
             )
           )}

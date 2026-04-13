@@ -1,4 +1,5 @@
 import brandLogoWhite from "@/assets/images/js-investor-logo-biele.png";
+import { Instagram, Youtube, Podcast, Linkedin } from "lucide-react";
 
 const FooterSection = () => (
   <footer className="bg-footer-bg py-16 px-5 md:px-10 relative overflow-hidden">
@@ -16,15 +17,55 @@ const FooterSection = () => (
         {/* Left */}
         <div>
           <div className="flex items-center mb-3">
-            <img
-              src={brandLogoWhite}
-              alt="JS Investor logo"
-              className="h-10 md:h-12 w-auto"
-            />
+            <a href="/" className="inline-flex">
+              <img
+                src={brandLogoWhite}
+                alt="JS Investor logo"
+                className="h-10 md:h-12 w-auto"
+              />
+            </a>
           </div>
           <p className="font-serif italic text-sm text-cream/60">
             Sprievodca budovaním majetku pre ambicióznych ľudí.
           </p>
+          <div className="mt-4 flex items-center gap-4">
+            <a
+              href="https://www.instagram.com/js.investor/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="text-cream hover:text-white transition-colors"
+            >
+              <Instagram className="w-5 h-5" />
+            </a>
+            <a
+              href="https://www.youtube.com/@Ivanjasik"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+              className="text-cream hover:text-white transition-colors"
+            >
+              <Youtube className="w-5 h-5" />
+            </a>
+            <a
+              href="https://open.spotify.com/show/3yLIJ0QOSFnJPkR4JT2ZJs"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Spotify"
+              className="text-cream hover:text-white transition-colors"
+            >
+              <Podcast className="w-5 h-5" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/ivan-ja%C5%A1%C3%ADk-7256801a2/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="text-cream hover:text-white transition-colors"
+            >
+              <Linkedin className="w-5 h-5" />
+            </a>
+          </div>
         </div>
 
         {/* Center */}
@@ -49,9 +90,13 @@ const FooterSection = () => (
       </div>
 
       <div className="border-t border-cream/10 pt-6">
-        <p className="font-sans text-xs text-cream/40 text-center">
-          © 2026 Jashik s.r.o. Všetky práva vyhradené.
-        </p>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 font-sans text-xs text-cream/40 text-center">
+          <p>© 2026 Jashik s.r.o. Všetky práva vyhradené.</p>
+          <span className="hidden sm:inline text-cream/30">|</span>
+          <a href="/gdpr" className="text-cream/60 hover:text-cream transition-colors">
+            Ochrana osobných údajov (GDPR)
+          </a>
+        </div>
       </div>
     </div>
   </footer>
