@@ -63,10 +63,6 @@ const UvodnyHovorSection = () => (
           <button onClick={scrollToBooking} className="btn-primary text-lg mb-4">
             Rezervovať úvodný hovor
           </button>
-          <br />
-          <button onClick={scrollToBooking} className="text-link text-sm">
-            Alebo vyplň krátky dotazník (5 min) →
-          </button>
         </div>
       </AnimatedSection>
     </div>

@@ -6,54 +6,54 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 13.3%;
+    --background: 25 100% 98%;
+    --foreground: 0 0% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 13.3%;
+    --card-foreground: 0 0% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 13.3%;
+    --popover-foreground: 0 0% 10%;
 
-    --primary: 152 43% 29.4%;
+    --primary: 158 44% 29%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 33 47% 92.2%;
-    --secondary-foreground: 0 0% 13.3%;
+    --secondary: 36 25% 92%;
+    --secondary-foreground: 0 0% 10%;
 
-    --muted: 33 47% 92.2%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 36 20% 93%;
+    --muted-foreground: 0 0% 25%;
 
-    --accent: 33 47% 92.2%;
-    --accent-foreground: 0 0% 13.3%;
+    --accent: 7 55% 51%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 152 43% 29.4% / 0.15;
-    --input: 152 43% 29.4% / 0.2;
-    --ring: 152 43% 29.4%;
+    --border: 36 20% 88%;
+    --input: 36 20% 88%;
+    --ring: 158 44% 29%;
 
     --radius: 1rem;
 
-    --cream: 33 47% 92.2%;
-    --charcoal: 0 0% 13.3%;
-    --forest: 152 43% 29.4%;
-    --forest-hover: 152 43% 24%;
-    --forest-glow: 152 60% 45%;
-    --footer-bg: 0 0% 10%;
+    --cream: 36 25% 92%;
+    --charcoal: 0 0% 10%;
+    --forest: 158 44% 29%;
+    --forest-hover: 158 44% 24%;
+    --forest-glow: 158 44% 40%;
+    --footer-bg: 158 44% 20%;
 
     --font-serif: 'Fraunces', Georgia, serif;
     --font-sans: 'DM Sans', system-ui, sans-serif;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-background: 25 100% 98%;
+    --sidebar-foreground: 0 0% 10%;
+    --sidebar-primary: 158 44% 29%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 36 25% 92%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 36 20% 88%;
+    --sidebar-ring: 158 44% 29%;
   }
 }
 
@@ -263,3 +263,4 @@
     z-index: -1;
   }
 }
+
