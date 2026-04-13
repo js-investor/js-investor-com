@@ -25,8 +25,9 @@ const cards: { icon: ReactNode; stat: string; title: string; body: string }[] = 
 ];
 
 const StrataSection = () => (
-  <section className="section-cream section-padding">
-    <div className="section-container">
+  <section className="section-cream section-padding relative overflow-hidden">
+    <div className="absolute inset-0 bg-dot-grid opacity-30" />
+    <div className="section-container relative z-10">
       <AnimatedSection>
         <SectionHeader
           eyebrow="Prečo to má zmysel riešiť"
@@ -38,9 +39,11 @@ const StrataSection = () => (
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
         {cards.map((c, i) => (
           <AnimatedSection key={c.title} delay={i * 0.1}>
-            <div className="card-premium bg-background h-full">
-              <div className="mb-5">{c.icon}</div>
-              <p className="font-serif text-3xl md:text-4xl font-semibold text-foreground mb-2">
+            <div className="card-glass h-full">
+              <div className="mb-5 w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center timeline-node">
+                {c.icon}
+              </div>
+              <p className="font-serif text-3xl md:text-4xl font-semibold stat-gradient mb-2">
                 {c.stat}
               </p>
               <p className="font-sans font-semibold text-lg text-foreground mb-3">

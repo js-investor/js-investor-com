@@ -13,8 +13,9 @@ const bullets = [
 ];
 
 const VideoSection = () => (
-  <section className="section-cream section-padding">
-    <div className="section-container">
+  <section className="section-cream section-padding relative overflow-hidden">
+    <div className="absolute inset-0 bg-dot-grid opacity-20" />
+    <div className="section-container relative z-10">
       <AnimatedSection>
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
           <p className="eyebrow">Čo presne dostaneš</p>
@@ -28,17 +29,20 @@ const VideoSection = () => (
       </AnimatedSection>
 
       <AnimatedSection>
-        {/* Video placeholder */}
-        <div className="relative rounded-[20px] overflow-hidden bg-foreground/90 aspect-video max-w-4xl mx-auto mb-12 md:mb-16 cursor-pointer group">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-20 h-20 rounded-full bg-primary flex items-center justify-center transition-transform group-hover:scale-110">
-              <Play className="w-8 h-8 text-primary-foreground ml-1" fill="currentColor" />
+        {/* Video placeholder with glow */}
+        <div className="relative max-w-4xl mx-auto mb-12 md:mb-16">
+          <div className="absolute -inset-2 rounded-[24px] bg-primary/8 blur-xl" />
+          <div className="relative rounded-[20px] overflow-hidden bg-foreground/90 aspect-video cursor-pointer group ring-1 ring-primary/20">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-20 h-20 rounded-full bg-primary flex items-center justify-center transition-all group-hover:scale-110 group-hover:shadow-[0_0_40px_hsl(152_60%_45%/0.4)]">
+                <Play className="w-8 h-8 text-primary-foreground ml-1" fill="currentColor" />
+              </div>
             </div>
-          </div>
-          <div className="absolute bottom-6 left-6">
-            <p className="font-sans text-sm text-primary-foreground/70">
-              JS Wealth Map — ukážka plánu
-            </p>
+            <div className="absolute bottom-6 left-6">
+              <p className="font-sans text-sm text-primary-foreground/70">
+                JS Wealth Map — ukážka plánu
+              </p>
+            </div>
           </div>
         </div>
       </AnimatedSection>
@@ -51,7 +55,9 @@ const VideoSection = () => (
           <div className="space-y-4">
             {bullets.map((b) => (
               <div key={b} className="flex gap-3">
-                <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <Check className="w-3 h-3 text-primary" />
+                </div>
                 <p className="font-sans text-sm md:text-base text-muted-foreground leading-relaxed">
                   {b}
                 </p>

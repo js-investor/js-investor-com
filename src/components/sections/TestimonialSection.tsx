@@ -20,8 +20,9 @@ const testimonials = [
 ];
 
 const TestimonialSection = () => (
-  <section className="section-cream section-padding">
-    <div className="section-container">
+  <section className="section-cream section-padding relative overflow-hidden">
+    <div className="absolute inset-0 bg-dot-grid opacity-20" />
+    <div className="section-container relative z-10">
       <AnimatedSection>
         <SectionHeader
           eyebrow="Reálne skúsenosti"
@@ -32,15 +33,15 @@ const TestimonialSection = () => (
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
         {testimonials.map((t, i) => (
           <AnimatedSection key={t.name} delay={i * 0.1}>
-            <div className="card-premium bg-background h-full flex flex-col">
-              <span className="font-serif text-5xl text-primary/20 leading-none mb-2">
+            <div className="card-glass h-full flex flex-col">
+              <span className="font-serif text-5xl stat-gradient leading-none mb-2">
                 "
               </span>
               <p className="font-serif italic text-lg md:text-xl text-foreground leading-relaxed mb-8 flex-1">
                 {t.quote}
               </p>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center border border-primary/20 timeline-node">
                   <span className="font-sans font-semibold text-primary text-sm">
                     {t.name.charAt(0)}
                   </span>

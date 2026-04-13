@@ -1,11 +1,20 @@
 const FooterSection = () => (
-  <footer className="bg-footer-bg py-16 px-5 md:px-10">
-    <div className="max-w-[1200px] mx-auto">
+  <footer className="bg-footer-bg py-16 px-5 md:px-10 relative overflow-hidden">
+    {/* Subtle grid overlay */}
+    <div className="absolute inset-0 opacity-[0.03]" style={{
+      backgroundImage: 'linear-gradient(hsl(152 60% 45% / 0.5) 1px, transparent 1px), linear-gradient(90deg, hsl(152 60% 45% / 0.5) 1px, transparent 1px)',
+      backgroundSize: '60px 60px'
+    }} />
+
+    {/* Top glow line */}
+    <div className="absolute top-0 left-[20%] right-[20%] h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+
+    <div className="max-w-[1200px] mx-auto relative z-10">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 mb-12">
         {/* Left */}
         <div>
           <div className="flex items-center gap-2 mb-3">
-            <span className="w-2 h-2 rounded-full bg-primary inline-block" />
+            <span className="w-2 h-2 rounded-full bg-primary inline-block animate-glow-pulse" />
             <span className="font-sans text-sm font-semibold tracking-[0.2em] uppercase text-cream">
               JS Investor
             </span>

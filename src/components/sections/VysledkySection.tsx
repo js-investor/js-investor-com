@@ -29,8 +29,9 @@ const stories = [
 ];
 
 const VysledkySection = () => (
-  <section className="section-white section-padding">
-    <div className="section-container">
+  <section className="section-white section-padding relative overflow-hidden">
+    <div className="absolute bottom-0 left-[20%] w-[400px] h-[400px] rounded-full bg-forest-glow/3 blur-[100px] pointer-events-none" />
+    <div className="section-container relative z-10">
       <AnimatedSection>
         <SectionHeader
           eyebrow="Reálne príbehy"
@@ -42,7 +43,7 @@ const VysledkySection = () => (
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
         {stories.map((s, i) => (
           <AnimatedSection key={s.name} delay={i * 0.1}>
-            <div className="card-premium bg-cream h-full flex flex-col">
+            <div className="card-glass-cream h-full flex flex-col">
               <p className="eyebrow !mb-3 !text-xs">{s.label}</p>
               <p className="font-sans font-bold text-xl text-foreground">{s.name}</p>
               <p className="font-sans text-xs text-muted-foreground mb-4">{s.meta}</p>
@@ -52,8 +53,8 @@ const VysledkySection = () => (
               <p className="font-sans text-sm text-muted-foreground leading-relaxed mb-6 flex-1">
                 {s.body}
               </p>
-              <div className="bg-primary/10 rounded-xl px-4 py-3">
-                <p className="font-sans font-semibold text-primary text-sm">
+              <div className="rounded-xl px-4 py-3 bg-primary/10 border border-primary/20 glow-border">
+                <p className="font-sans font-semibold stat-gradient text-sm">
                   {s.highlight}
                 </p>
               </div>

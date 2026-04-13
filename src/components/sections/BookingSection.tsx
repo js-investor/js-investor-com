@@ -8,13 +8,14 @@ const BookingSection = () => {
   const [message, setMessage] = useState("");
 
   const daysInMonth = 30;
-  const firstDayOffset = 2; // Wednesday start for April 2026
+  const firstDayOffset = 2;
   const timeSlots = ["09:00", "10:30", "13:00", "14:30", "16:00"];
   const dayNames = ["Po", "Ut", "St", "Št", "Pi", "So", "Ne"];
 
   return (
-    <section id="booking" className="section-white section-padding">
-      <div className="section-container">
+    <section id="booking" className="section-white section-padding relative overflow-hidden">
+      <div className="absolute top-0 right-[10%] w-[500px] h-[500px] rounded-full bg-forest-glow/3 blur-[120px] pointer-events-none" />
+      <div className="section-container relative z-10">
         {/* Part A — Bridge */}
         <AnimatedSection>
           <div className="max-w-3xl mx-auto mb-16">
@@ -42,9 +43,10 @@ const BookingSection = () => {
           </div>
         </AnimatedSection>
 
-        {/* Divider */}
-        <div className="max-w-3xl mx-auto mb-16">
-          <div className="h-px bg-primary/20" />
+        {/* Divider with glow */}
+        <div className="max-w-3xl mx-auto mb-16 relative">
+          <div className="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+          <div className="absolute inset-0 h-px bg-gradient-to-r from-transparent via-forest-glow/20 to-transparent blur-sm" />
         </div>
 
         {/* Part B — Booking */}
@@ -60,7 +62,7 @@ const BookingSection = () => {
         </AnimatedSection>
 
         <AnimatedSection>
-          <div className="max-w-2xl mx-auto card-premium bg-cream">
+          <div className="max-w-2xl mx-auto card-glass-cream">
             {/* Message */}
             <div className="mb-8">
               <label className="font-sans font-semibold text-sm text-foreground block mb-2">
@@ -77,7 +79,7 @@ const BookingSection = () => {
                 onChange={(e) => setMessage(e.target.value.slice(0, 200))}
                 rows={3}
                 maxLength={200}
-                className="w-full rounded-xl border border-primary/20 bg-background px-4 py-3 font-sans text-sm text-foreground resize-none focus:outline-none focus:ring-2 focus:ring-primary/40 transition"
+                className="w-full rounded-xl border border-primary/20 bg-background/80 backdrop-blur-sm px-4 py-3 font-sans text-sm text-foreground resize-none focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all"
                 placeholder="Napíš krátku správu..."
               />
               <p className="font-sans text-xs text-muted-foreground text-right mt-1">
@@ -88,13 +90,13 @@ const BookingSection = () => {
             {/* Calendar */}
             <div className="mb-8">
               <div className="flex items-center justify-between mb-4">
-                <button className="p-1 text-muted-foreground hover:text-foreground transition">
+                <button className="p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-all">
                   <ChevronLeft className="w-5 h-5" />
                 </button>
                 <p className="font-sans font-semibold text-foreground">
                   Apríl 2026
                 </p>
-                <button className="p-1 text-muted-foreground hover:text-foreground transition">
+                <button className="p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-all">
                   <ChevronRight className="w-5 h-5" />
                 </button>
               </div>
@@ -126,7 +128,7 @@ const BookingSection = () => {
                         disabled={disabled}
                         className={`aspect-square rounded-lg font-sans text-sm flex items-center justify-center transition-all ${
                           selectedDay === day
-                            ? "bg-primary text-primary-foreground font-semibold"
+                            ? "bg-primary text-primary-foreground font-semibold shadow-[0_0_15px_hsl(152_60%_45%/0.3)]"
                             : disabled
                             ? "text-muted-foreground/40 cursor-not-allowed"
                             : "text-foreground hover:bg-primary/10 cursor-pointer"
@@ -151,8 +153,8 @@ const BookingSection = () => {
                   onClick={() => setSelectedTime(t)}
                   className={`w-full py-3 rounded-xl font-sans text-sm font-medium border transition-all ${
                     selectedTime === t
-                      ? "bg-primary text-primary-foreground border-primary"
-                      : "bg-background text-foreground border-primary/20 hover:border-primary/40 cursor-pointer"
+                      ? "bg-primary text-primary-foreground border-primary shadow-[0_0_20px_hsl(152_60%_45%/0.25)]"
+                      : "bg-background/60 backdrop-blur-sm text-foreground border-primary/20 hover:border-primary/40 hover:bg-primary/5 cursor-pointer"
                   }`}
                 >
                   {t}
