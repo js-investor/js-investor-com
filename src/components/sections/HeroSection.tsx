@@ -8,7 +8,7 @@ const scrollToBooking = () => {
 };
 
 const HeroSection = () => (
-  <section className="bg-cream relative overflow-hidden">
+  <section className="relative overflow-hidden" style={{ backgroundColor: "#FFF9F5" }}>
     {/* Dot grid background */}
     <div className="absolute inset-0 bg-dot-grid opacity-50" />
 
@@ -17,7 +17,10 @@ const HeroSection = () => (
     <div className="absolute bottom-0 left-[10%] w-[300px] h-[300px] rounded-full bg-forest-glow/5 blur-[80px] pointer-events-none" />
 
     {/* Header */}
-    <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 md:px-10 lg:px-16 py-4 md:py-[0.8rem] backdrop-blur-md bg-cream/90 border-b border-primary/10">
+    <header
+      className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 md:px-10 lg:px-16 py-4 md:py-[0.8rem] backdrop-blur-md border-b border-primary/10"
+      style={{ backgroundColor: "rgba(255, 249, 245, 0.9)" }}
+    >
       <a href="/" className="flex items-center">
         <img
           src={brandLogo}
