@@ -226,6 +226,28 @@
     transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
+  /*
+   * Cal.com inline embed: Mobile Safari often mis-resolves iframe height when the
+   * wrapper only uses min-height and the embed uses height: 100%. A concrete
+   * min-height on the iframe keeps the slot list area from collapsing to blank.
+   */
+  .cal-inline-embed {
+    @apply w-full isolate;
+    min-height: min(820px, 88dvh);
+  }
+
+  .cal-inline-embed iframe {
+    width: 100%;
+    min-height: min(820px, 88dvh);
+  }
+
+  @supports not (min-height: 88dvh) {
+    .cal-inline-embed,
+    .cal-inline-embed iframe {
+      min-height: 820px;
+    }
+  }
+
   .card-glass-cream:hover {
     border-color: hsl(var(--primary) / 0.25);
     transform: translateY(-2px);
