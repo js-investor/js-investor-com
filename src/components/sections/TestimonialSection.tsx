@@ -13,7 +13,7 @@ const testimonials = [
     image: "https://www.jsinvestor.sk/wp-content/uploads/2024/12/download-3.webp",
   },
   {
-    quote: "Ivan je skutočný profesionál. Spolupracujeme už 4 roky. Nemusím riešiť financie — viem, že sú v dobrých rukách.",
+    quote: "Ivan je skutočný profesionál. Spolupracujeme už 4 roky. Nemusím riešiť financie. Viem, že sú v dobrých rukách.",
     name: "Šimon Latkoczy",
     role: "Slovenský hokejový reprezentant",
     image: "https://www.jsinvestor.sk/wp-content/uploads/2024/12/download-2.webp",

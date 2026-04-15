@@ -25,7 +25,7 @@ const cards: { icon: ReactNode; stat: string; title: string; body: string }[] = 
     icon: <Compass className="w-8 h-8 text-white -translate-x-0.5" strokeWidth={1.7} />,
     stat: "Bez smeru",
     title: "Chýbajúci plán",
-    body: "Aj keď investuješ, ale robíš to chaoticky — raz ETF, raz krypto, raz kamarát mi povedal — výnosy zaostávajú. A pri prvom poklese trhu predáš v strate, lebo nemáš plán ktorého sa môžeš držať.",
+    body: "Aj keď investuješ, ale robíš to chaoticky. Raz ETF, raz krypto, raz \"kamarát mi povedal\" a tvoje výnosy zaostávajú.",
   },
 ];
 
@@ -85,10 +85,8 @@ const StrataSection = () => (
                 )}
                 {c.title === "Chýbajúci plán" && (
                   <>
-                    Aj keď investuješ, ale <strong>robíš to chaoticky</strong> — raz ETF,
-                    raz krypto, raz kamarát mi povedal — výnosy zaostávajú. A pri prvom
-                    poklese trhu predáš v strate, lebo <strong>nemáš plán</strong>{" "}
-                    ktorého sa môžeš držať.
+                    Aj keď investuješ, ale <strong>robíš to chaoticky.</strong> Raz ETF,
+                    raz krypto, raz "kamarát mi povedal" a tvoje výnosy zaostávajú.
                   </>
                 )}
               </p>

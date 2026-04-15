@@ -32,7 +32,7 @@ const stories = [
     name: "Peter",
     meta: "Podnikateľ · Spolupráca 3 roky",
     quote: "Chcel som investovať postupne, ako mi firma uvoľní cashflow.",
-    body: "Za 3 roky postupne vložil 119 000 €. Dôležitejšie než číslo — má konečne pokoj v hlave.",
+    body: "Za 3 roky postupne vložil 119 000 €. Dôležitejšie než číslo je, že má konečne pokoj v hlave.",
     highlightAmount: "+59 898 €",
     highlightLabel: "Zisk k vkladom",
     trend: [5, 8, 7, 10, 14, 12, 16, 15, 19, 22, 24, 29],
@@ -69,7 +69,7 @@ const VysledkySection = () => (
           subHeadline={
             <>
               <strong>Nikto z nich nemal všetko vyriešené.</strong> Každý prišiel s
-              vlastnou situáciou — chaos, banka, žiadny plán. Spolu sme to rozmotali.
+              vlastnou situáciou. Chaos, banka, žiadny plán. Spolu sme to rozmotali.
             </>
           }
         />

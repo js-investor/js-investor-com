@@ -188,8 +188,8 @@ const FazySection = () => (
 
       <AnimatedSection>
         <p className="quote-serif text-center max-w-3xl mx-auto mt-12 md:mt-16">
-          „Nemusíš byť vo všetkých fázach naraz. Stretneme sa tam kde si — a
-          postavíme plán dopredu."
+          „Nemusíš byť vo všetkých fázach naraz. Stretneme sa tam kde si a postavíme
+          plán dopredu."
         </p>
       </AnimatedSection>
 
