@@ -227,9 +227,9 @@
   }
 
   /*
-   * Cal.com inline embed: Mobile Safari often mis-resolves iframe height when the
-   * wrapper only uses min-height and the embed uses height: 100%. A concrete
-   * min-height on the iframe keeps the slot list area from collapsing to blank.
+   * Cal.com inline embed: Mobile Safari needs a concrete min-height on the iframe
+   * so the slot list does not collapse. On md+ the booker is wider/shorter — use a
+   * lower min-height so we do not reserve a huge empty band under the widget.
    */
   .cal-inline-embed {
     @apply w-full isolate;
@@ -245,6 +245,13 @@
     .cal-inline-embed,
     .cal-inline-embed iframe {
       min-height: 820px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .cal-inline-embed,
+    .cal-inline-embed iframe {
+      min-height: min(560px, 78dvh);
     }
   }
 
