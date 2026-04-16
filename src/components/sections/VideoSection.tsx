@@ -35,7 +35,7 @@ const VideoSection = () => (
         <div className="relative max-w-4xl mx-auto mb-12 md:mb-16">
           <div className="relative rounded-[20px] overflow-hidden aspect-video ring-1 ring-primary/20 bg-black">
             <iframe
-              src="https://player.vimeo.com/video/1145809910?autoplay=0&title=0&portrait=0&byline=0"
+              src="https://player.vimeo.com/video/1183644074?autoplay=0&title=0&portrait=0&byline=0"
               title="Vimeo video"
               allow="autoplay; fullscreen; picture-in-picture"
               className="block w-full h-full align-top"
