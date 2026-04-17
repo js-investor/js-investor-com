@@ -27,7 +27,7 @@ const testimonials = [
 ];
 
 const TestimonialSection = () => (
-  <section className="bg-footer-bg section-padding relative overflow-hidden">
+  <section id="recenzie" className="bg-footer-bg section-padding relative overflow-hidden scroll-mt-24">
     <div className="absolute inset-0 bg-dot-grid opacity-20" />
     <div className="section-container relative z-10">
       <AnimatedSection>
@@ -46,10 +46,10 @@ const TestimonialSection = () => (
         {testimonials.map((t, i) => (
           <AnimatedSection key={t.name} delay={i * 0.1}>
             <div className="card-glass h-full flex flex-col">
-              <div className="mb-1">
+              <div className="mb-1 leading-none">
                 <span
                   aria-hidden="true"
-                  className="[font-family:var(--font-serif)] inline-block text-primary text-8xl leading-none"
+                  className="[font-family:var(--font-serif)] block text-primary text-[5.25rem] leading-[0.58]"
                 >
                   “
                 </span>

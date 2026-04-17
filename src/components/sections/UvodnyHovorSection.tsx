@@ -23,7 +23,7 @@ const steps = [
 ];
 
 const UvodnyHovorSection = () => (
-  <section className="section-cream section-padding relative overflow-hidden">
+  <section id="prvy-krok" className="section-cream section-padding relative overflow-hidden scroll-mt-24">
     <div className="absolute inset-0 bg-dot-grid opacity-20" />
     <div className="section-container relative z-10">
       <AnimatedSection>

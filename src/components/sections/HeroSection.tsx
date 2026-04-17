@@ -7,6 +7,10 @@ const scrollToBooking = () => {
   document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" });
 };
 
+const scrollToSection = (id: string) => {
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+};
+
 const HeroSection = () => (
   <section className="relative overflow-hidden" style={{ backgroundColor: "#FFF9F5" }}>
     {/* Dot grid background */}
@@ -18,7 +22,7 @@ const HeroSection = () => (
 
     {/* Header */}
     <header
-      className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 md:px-10 lg:px-16 py-4 md:py-[0.8rem] backdrop-blur-md border-b border-primary/10"
+      className="fixed top-0 left-0 right-0 z-50 grid grid-cols-[auto_1fr_auto] items-center gap-3 px-5 md:px-10 lg:px-16 py-4 md:py-[0.8rem] backdrop-blur-md border-b border-primary/10"
       style={{ backgroundColor: "rgba(255, 249, 245, 0.9)" }}
     >
       <a href="/" className="flex items-center">
@@ -28,6 +32,43 @@ const HeroSection = () => (
           className="h-10 md:h-12 w-auto"
         />
       </a>
+      <nav className="hidden md:flex items-center justify-center gap-6 lg:gap-8">
+        <button
+          type="button"
+          onClick={() => scrollToSection("prvy-krok")}
+          className="font-sans text-sm lg:text-base font-medium text-foreground/80 hover:text-primary transition-colors"
+        >
+          Prvý krok
+        </button>
+        <button
+          type="button"
+          onClick={() => scrollToSection("vysledky")}
+          className="font-sans text-sm lg:text-base font-medium text-foreground/80 hover:text-primary transition-colors"
+        >
+          Výsledky klientov
+        </button>
+        <button
+          type="button"
+          onClick={() => scrollToSection("co-dostanes")}
+          className="font-sans text-sm lg:text-base font-medium text-foreground/80 hover:text-primary transition-colors"
+        >
+          Čo dostaneš
+        </button>
+        <button
+          type="button"
+          onClick={() => scrollToSection("recenzie")}
+          className="font-sans text-sm lg:text-base font-medium text-foreground/80 hover:text-primary transition-colors"
+        >
+          Skúsenosti klientov
+        </button>
+        <button
+          type="button"
+          onClick={() => scrollToSection("faq")}
+          className="font-sans text-sm lg:text-base font-medium text-foreground/80 hover:text-primary transition-colors"
+        >
+          Časté otázky
+        </button>
+      </nav>
       <button onClick={scrollToBooking} className="btn-pill">
         Rezervovať hovor
       </button>
@@ -52,7 +93,7 @@ const HeroSection = () => (
             </span>
           </h1>
           <p className="text-lg md:text-xl font-sans text-muted-foreground leading-relaxed mb-6">
-            Do 14 dní ti postavím <strong>plán, ktorý dáva zmysel.</strong> Začneme jedným
+            Do 14 dní ti postavím <strong>plán, ktorý dáva zmysel.</strong> Začneme úvodným
             bezplatným hovorom.
           </p>
           <p className="font-serif italic text-base md:text-lg text-foreground/70 mb-8 leading-relaxed">

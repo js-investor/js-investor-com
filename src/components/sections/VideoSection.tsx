@@ -13,7 +13,7 @@ const bullets = [
 ];
 
 const VideoSection = () => (
-  <section className="section-cream section-padding relative overflow-hidden">
+  <section id="co-dostanes" className="section-cream section-padding relative overflow-hidden scroll-mt-24">
     <div className="absolute inset-0 bg-dot-grid opacity-20" />
     <div className="section-container relative z-10">
       <AnimatedSection>
