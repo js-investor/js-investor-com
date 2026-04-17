@@ -18,7 +18,7 @@ const PostStatsExtremySection = () => (
         transition={{ duration: 0.8, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
         className="mx-auto max-w-[760px] text-center"
       >
-        <h2 className="headline-hero !text-4xl sm:!text-5xl md:!text-6xl mb-6 md:mb-8">
+        <h2 className="headline-serif mb-6 md:mb-8">
           Stretávam sa s <span className="italic text-primary">dvoma extrémami.</span>
         </h2>
         <p className="text-lg md:text-xl font-sans text-muted-foreground leading-relaxed mb-8">

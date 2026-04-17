@@ -1,7 +1,8 @@
 import ivanPortrait from "@/assets/images/ivan-jasik.jpg";
 import brandLogo from "@/assets/images/js-investor-logo.png";
-import { Check } from "lucide-react";
+import { Check, Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const scrollToBooking = () => {
   document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" });
@@ -11,7 +12,15 @@ const scrollToSection = (id: string) => {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 };
 
-const HeroSection = () => (
+const HeroSection = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const handleMenuSectionClick = (id: string) => {
+    scrollToSection(id);
+    setMobileMenuOpen(false);
+  };
+
+  return (
   <section className="relative overflow-hidden" style={{ backgroundColor: "#FFF9F5" }}>
     {/* Dot grid background */}
     <div className="absolute inset-0 bg-dot-grid opacity-50" />
@@ -69,9 +78,63 @@ const HeroSection = () => (
           Časté otázky
         </button>
       </nav>
-      <button onClick={scrollToBooking} className="btn-pill">
+      <button onClick={scrollToBooking} className="btn-pill menu-cta-pill justify-self-center md:justify-self-auto">
         Rezervovať hovor
       </button>
+      <button
+        type="button"
+        onClick={() => setMobileMenuOpen((prev) => !prev)}
+        aria-label={mobileMenuOpen ? "Zavrieť menu" : "Otvoriť menu"}
+        aria-expanded={mobileMenuOpen}
+        className="md:hidden h-10 w-10 inline-flex items-center justify-center rounded-full border border-primary/20 text-primary justify-self-end"
+      >
+        {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+      </button>
+
+      {mobileMenuOpen ? (
+        <div
+          className="md:hidden absolute top-full left-0 right-0 border-t border-primary/10 border-b border-primary/10 px-5 py-3 shadow-[0_14px_26px_rgba(0,0,0,0.08)]"
+          style={{ backgroundColor: "rgba(255, 255, 255, 0.98)" }}
+        >
+          <div className="flex flex-col">
+            <button
+              type="button"
+              onClick={() => handleMenuSectionClick("prvy-krok")}
+              className="w-full text-center px-4 py-3.5 rounded-xl font-sans text-base font-medium text-foreground hover:bg-primary hover:text-white transition-colors border-b border-primary/10"
+            >
+              Prvý krok
+            </button>
+            <button
+              type="button"
+              onClick={() => handleMenuSectionClick("vysledky")}
+              className="w-full text-center px-4 py-3.5 rounded-xl font-sans text-base font-medium text-foreground hover:bg-primary hover:text-white transition-colors border-b border-primary/10"
+            >
+              Výsledky klientov
+            </button>
+            <button
+              type="button"
+              onClick={() => handleMenuSectionClick("co-dostanes")}
+              className="w-full text-center px-4 py-3.5 rounded-xl font-sans text-base font-medium text-foreground hover:bg-primary hover:text-white transition-colors border-b border-primary/10"
+            >
+              Čo dostaneš
+            </button>
+            <button
+              type="button"
+              onClick={() => handleMenuSectionClick("recenzie")}
+              className="w-full text-center px-4 py-3.5 rounded-xl font-sans text-base font-medium text-foreground hover:bg-primary hover:text-white transition-colors border-b border-primary/10"
+            >
+              Skúsenosti klientov
+            </button>
+            <button
+              type="button"
+              onClick={() => handleMenuSectionClick("faq")}
+              className="w-full text-center px-4 py-3.5 rounded-xl font-sans text-base font-medium text-foreground hover:bg-primary hover:text-white transition-colors"
+            >
+              Časté otázky
+            </button>
+          </div>
+        </div>
+      ) : null}
     </header>
 
     {/* Hero Content */}
@@ -84,7 +147,7 @@ const HeroSection = () => (
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="lg:pr-4"
         >
-          <h1 className="headline-hero !text-4xl sm:!text-5xl md:!text-6xl lg:!text-6xl xl:!text-6xl mb-6 md:mb-8">
+          <h1 className="headline-hero !text-[2.5rem] sm:!text-[3.25rem] md:!text-[3.8rem] lg:!text-6xl xl:!text-6xl mb-6 md:mb-8">
             Investuješ <span className="italic text-primary">chaoticky</span>
             <br className="hidden lg:block" />
             {" "}
@@ -147,6 +210,7 @@ const HeroSection = () => (
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default HeroSection;

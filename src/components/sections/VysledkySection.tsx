@@ -1,6 +1,7 @@
 import AnimatedSection from "@/components/AnimatedSection";
 import { LineChart } from "lucide-react";
 import brandPattern from "@/assets/logo/js-brand-pattern.svg";
+import { useState } from "react";
 
 const scrollToBooking = () => {
   document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" });
@@ -111,13 +112,54 @@ const renderMeta = (meta: string) => {
   );
 };
 
-const VysledkySection = () => (
-  <section
-    id="vysledky"
-    className="relative overflow-hidden py-20 md:py-24 lg:py-28 scroll-mt-24"
-    style={{ backgroundColor: "#fff9f5" }}
-  >
-    <div className="mx-auto w-full max-w-[1140px] px-5 md:px-8 lg:px-10">
+const VysledkySection = () => {
+  const [mobileSlide, setMobileSlide] = useState(0);
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
+  const [touchStartY, setTouchStartY] = useState<number | null>(null);
+  const [touchCurrentX, setTouchCurrentX] = useState<number | null>(null);
+  const [touchCurrentY, setTouchCurrentY] = useState<number | null>(null);
+
+  const goToSlide = (index: number) => {
+    setMobileSlide(Math.max(0, Math.min(index, stories.length - 1)));
+  };
+
+  const onTouchEnd = () => {
+    if (
+      touchStartX === null ||
+      touchStartY === null ||
+      touchCurrentX === null ||
+      touchCurrentY === null
+    ) {
+      setTouchStartX(null);
+      setTouchStartY(null);
+      setTouchCurrentX(null);
+      setTouchCurrentY(null);
+      return;
+    }
+
+    const deltaX = touchStartX - touchCurrentX;
+    const deltaY = Math.abs(touchStartY - touchCurrentY);
+    const swipeThreshold = 36;
+
+    // Swipe posun riešime iba vtedy, keď je horizontálny pohyb dominantný.
+    if (Math.abs(deltaX) > deltaY && Math.abs(deltaX) > swipeThreshold) {
+      if (deltaX > 0) goToSlide(mobileSlide + 1);
+      if (deltaX < 0) goToSlide(mobileSlide - 1);
+    }
+
+    setTouchStartX(null);
+    setTouchStartY(null);
+    setTouchCurrentX(null);
+    setTouchCurrentY(null);
+  };
+
+  return (
+    <section
+      id="vysledky"
+      className="relative overflow-hidden py-20 md:py-24 lg:py-28 scroll-mt-24"
+      style={{ backgroundColor: "#fff9f5" }}
+    >
+      <div className="mx-auto w-full max-w-[1140px] px-5 md:px-8 lg:px-10">
       <AnimatedSection>
         <div className="mx-auto max-w-3xl text-center mb-14 md:mb-16 lg:mb-[4.5rem]">
           <h2 className="[font-family:var(--font-serif)] text-[1.875rem] sm:text-[2.125rem] md:text-[2.5rem] font-bold leading-[1.15] tracking-tight text-[#1a1a1a]">
@@ -131,98 +173,130 @@ const VysledkySection = () => (
         </div>
       </AnimatedSection>
 
-      <div className="mb-4 text-center md:hidden">
-        <span className="inline-block rounded-full bg-primary/10 px-3 py-1 font-sans text-xs text-primary">
-          Potiahni do strán pre ďalšie výsledky
-        </span>
-      </div>
-
-      <div className="-mx-5 px-5 md:hidden overflow-x-auto snap-x snap-mandatory pb-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-        <div className="flex gap-4">
-          {stories.map((story, i) => (
-            <AnimatedSection key={story.name} delay={i * 0.06}>
-              <article className="w-[calc(100vw-2.5rem)] max-w-[calc(100vw-2.5rem)] shrink-0 snap-center flex flex-col h-full rounded-[14px] border border-[#e7e2da] bg-white px-4 py-4 shadow-[0_2px_14px_rgba(0,0,0,0.06)]">
-                <div className="flex items-start gap-3.5">
-                  <div
-                    className="h-10 w-10 shrink-0 rounded-[10px] flex items-center justify-center shadow-sm bg-center bg-cover"
-                    style={{ backgroundImage: `url(${brandPattern})` }}
-                  >
-                    <LineChart
-                      className="w-[18px] h-[18px] text-white -translate-x-0.5"
-                      strokeWidth={2.25}
-                      aria-hidden
-                    />
+      <div className="md:hidden">
+        <div
+          className="overflow-hidden"
+          onTouchStart={(e) => {
+            setTouchStartX(e.touches[0].clientX);
+            setTouchStartY(e.touches[0].clientY);
+            setTouchCurrentX(e.touches[0].clientX);
+            setTouchCurrentY(e.touches[0].clientY);
+          }}
+          onTouchMove={(e) => {
+            setTouchCurrentX(e.touches[0].clientX);
+            setTouchCurrentY(e.touches[0].clientY);
+          }}
+          onTouchEnd={onTouchEnd}
+          onTouchCancel={() => {
+            setTouchStartX(null);
+            setTouchStartY(null);
+            setTouchCurrentX(null);
+            setTouchCurrentY(null);
+          }}
+        >
+          <div
+            className="flex transition-transform duration-300 ease-out"
+            style={{ transform: `translateX(-${mobileSlide * 100}%)` }}
+          >
+            {stories.map((story, i) => (
+              <div key={story.name} className="w-full shrink-0">
+                <article className="flex flex-col h-full rounded-[14px] border border-[#e7e2da] bg-white px-4 py-4 shadow-[0_2px_14px_rgba(0,0,0,0.06)]">
+                  <div className="flex items-start gap-3.5">
+                    <div
+                      className="h-10 w-10 shrink-0 rounded-[10px] flex items-center justify-center shadow-sm bg-center bg-cover"
+                      style={{ backgroundImage: `url(${brandPattern})` }}
+                    >
+                      <LineChart
+                        className="w-[18px] h-[18px] text-white -translate-x-0.5"
+                        strokeWidth={2.25}
+                        aria-hidden
+                      />
+                    </div>
+                    <div className="min-w-0 pt-0.5">
+                      <p className="[font-family:var(--font-serif)] text-[1.625rem] font-bold leading-none text-[#296A52]">
+                        {story.name}
+                      </p>
+                      <p className="mt-2 font-sans text-[0.8125rem] leading-snug text-[#666]">
+                        {story.role}
+                      </p>
+                    </div>
                   </div>
-                  <div className="min-w-0 pt-0.5">
-                    <p className="[font-family:var(--font-serif)] text-[1.625rem] font-bold leading-none text-[#296A52]">
-                      {story.name}
+
+                  <p className="mt-6 text-center font-sans text-sm leading-relaxed text-[#1a1a1a]/75">
+                    {renderMeta(story.meta)}
+                  </p>
+
+                  <div className="mt-5 text-center">
+                    <p className="font-sans leading-tight">
+                      <span className="text-[0.9375rem] font-bold text-[#296A52]">Zisk:</span>{" "}
+                      <span className="text-2xl font-extrabold text-[#1a1a1a] tracking-tight tabular-nums">
+                        {story.amount}
+                      </span>
                     </p>
-                    <p className="mt-2 font-sans text-[0.8125rem] leading-snug text-[#666]">
-                      {story.role}
+                    <p className="mt-1 font-sans text-[0.8125rem] font-normal text-[#666] tabular-nums leading-snug">
+                      {story.percent}
                     </p>
                   </div>
-                </div>
 
-                <p className="mt-6 text-center font-sans text-sm leading-relaxed text-[#1a1a1a]/75">
-                  {renderMeta(story.meta)}
-                </p>
+                  <div className="mt-6 overflow-hidden rounded-[10px] border border-[#e8e3db] bg-[#f3efe8] pt-1.5">
+                    <svg
+                      viewBox="0 0 320 72"
+                      className="block w-full h-[4.25rem]"
+                      role="img"
+                      aria-label={`Trend výnosu klienta ${story.name}`}
+                      preserveAspectRatio="none"
+                    >
+                      <defs>
+                        <linearGradient id={`vysledky-fill-mobile-${i}`} x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stopColor="#296A52" stopOpacity="0.18" />
+                          <stop offset="100%" stopColor="#296A52" stopOpacity="0" />
+                        </linearGradient>
+                      </defs>
+                      <path
+                        d={`${getSparklinePath(
+                          getScaledReturns(story.trend, story.returnPct),
+                          320,
+                          56,
+                          12,
+                          maxReturnPct,
+                          minReturnPct,
+                        )} L 320 72 L 0 72 Z`}
+                        fill={`url(#vysledky-fill-mobile-${i})`}
+                      />
+                      <path
+                        d={getSparklinePath(
+                          getScaledReturns(story.trend, story.returnPct),
+                          320,
+                          56,
+                          12,
+                          maxReturnPct,
+                          minReturnPct,
+                        )}
+                        fill="none"
+                        stroke="#296A52"
+                        strokeWidth="2.25"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </article>
+              </div>
+            ))}
+          </div>
+        </div>
 
-                <div className="mt-5 text-center">
-                  <p className="font-sans leading-tight">
-                    <span className="text-[0.9375rem] font-bold text-[#296A52]">Zisk:</span>{" "}
-                    <span className="text-2xl font-extrabold text-[#1a1a1a] tracking-tight tabular-nums">
-                      {story.amount}
-                    </span>
-                  </p>
-                  <p className="mt-1 font-sans text-[0.8125rem] font-normal text-[#666] tabular-nums leading-snug">
-                    {story.percent}
-                  </p>
-                </div>
-
-                <div className="mt-6 overflow-hidden rounded-[10px] border border-[#e8e3db] bg-[#f3efe8] pt-1.5">
-                  <svg
-                    viewBox="0 0 320 72"
-                    className="block w-full h-[4.25rem]"
-                    role="img"
-                    aria-label={`Trend výnosu klienta ${story.name}`}
-                    preserveAspectRatio="none"
-                  >
-                    <defs>
-                      <linearGradient id={`vysledky-fill-mobile-${i}`} x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stopColor="#296A52" stopOpacity="0.18" />
-                        <stop offset="100%" stopColor="#296A52" stopOpacity="0" />
-                      </linearGradient>
-                    </defs>
-                    <path
-                      d={`${getSparklinePath(
-                        getScaledReturns(story.trend, story.returnPct),
-                        320,
-                        56,
-                        12,
-                        maxReturnPct,
-                        minReturnPct,
-                      )} L 320 72 L 0 72 Z`}
-                      fill={`url(#vysledky-fill-mobile-${i})`}
-                    />
-                    <path
-                      d={getSparklinePath(
-                        getScaledReturns(story.trend, story.returnPct),
-                        320,
-                        56,
-                        12,
-                        maxReturnPct,
-                        minReturnPct,
-                      )}
-                      fill="none"
-                      stroke="#296A52"
-                      strokeWidth="2.25"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-              </article>
-            </AnimatedSection>
+        <div className="mt-4 flex items-center justify-center gap-2">
+          {stories.map((story, index) => (
+            <button
+              key={`dot-${story.name}`}
+              type="button"
+              onClick={() => goToSlide(index)}
+              aria-label={`Prejsť na kartu ${index + 1}`}
+              className={`h-2.5 rounded-full transition-all duration-200 ${
+                index === mobileSlide ? "w-6 bg-primary" : "w-2.5 bg-primary/25"
+              }`}
+            />
           ))}
         </div>
       </div>
@@ -332,7 +406,8 @@ const VysledkySection = () => (
         </div>
       </AnimatedSection>
     </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default VysledkySection;

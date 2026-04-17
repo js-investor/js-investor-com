@@ -179,9 +179,21 @@
 
   .headline-serif {
     font-family: var(--font-serif);
-    font-size: 3rem;
+    font-size: 1.875rem;
     line-height: 1.2;
     @apply font-bold text-foreground;
+  }
+
+  @media (min-width: 640px) {
+    .headline-serif {
+      font-size: 2.125rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .headline-serif {
+      font-size: 2.5rem;
+    }
   }
 
   .headline-hero {
@@ -284,6 +296,12 @@
     .btn-primary,
     .btn-pill {
       width: 100%;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .menu-cta-pill {
+      width: auto;
       justify-content: center;
       text-align: center;
     }
