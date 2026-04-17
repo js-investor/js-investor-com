@@ -35,7 +35,7 @@ const TestimonialSection = () => (
           eyebrow={<span className="text-cream/80">Reálne skúsenosti</span>}
           headline={
             <>
-              <span className="italic text-[#d4dfdb]">Čo hovoria ľudia,</span>{" "}
+              <span className="text-[#d4dfdb] font-bold">Čo hovoria ľudia,</span>{" "}
               <span className="text-cream">s ktorými spolupracujem</span>
             </>
           }
@@ -54,7 +54,7 @@ const TestimonialSection = () => (
                   “
                 </span>
               </div>
-              <p className="font-serif italic text-lg md:text-xl text-foreground leading-relaxed mb-8 flex-1">
+              <p className="font-sans text-lg md:text-xl text-foreground leading-relaxed mb-8 flex-1">
                 {t.quote}
               </p>
               <div className="flex items-center gap-3">

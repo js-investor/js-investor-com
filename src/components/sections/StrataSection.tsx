@@ -61,7 +61,7 @@ const StrataSection = () => (
               >
                 {c.icon}
               </div>
-              <p className="[font-family:var(--font-serif)] text-3xl md:text-4xl font-bold stat-gradient mb-2">
+              <p className="[font-family:var(--font-serif)] text-3xl md:text-4xl font-extrabold stat-gradient mb-2">
                 {c.stat}
               </p>
               <p className="font-sans font-semibold text-lg text-foreground mb-3">

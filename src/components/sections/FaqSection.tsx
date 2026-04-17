@@ -111,7 +111,7 @@ const FaqSection = () => {
           <div className="mx-auto mb-10 max-w-5xl text-center md:mb-12">
             <p className="eyebrow">FAQ</p>
             <h2 className="headline-serif">
-              Otázky, ktoré ľudia riešia <span className="italic text-primary">pred prvým hovorom</span>
+              Otázky, ktoré ľudia riešia <span className="text-primary font-bold">pred prvým hovorom</span>
             </h2>
           </div>
         </AnimatedSection>

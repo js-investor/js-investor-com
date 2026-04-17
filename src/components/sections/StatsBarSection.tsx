@@ -16,7 +16,7 @@ const StatsBarSection = () => (
               index > 0 ? "md:border-l md:border-cream/30" : ""
             }`}
           >
-            <p className="[font-family:var(--font-serif)] text-4xl md:text-5xl lg:text-6xl font-bold text-cream leading-none">
+            <p className="[font-family:var(--font-serif)] text-4xl md:text-5xl lg:text-6xl font-extrabold text-cream leading-none">
               {item.value}
             </p>
             <p className="font-sans text-sm md:text-lg text-cream/70 mt-2 leading-snug">

@@ -13,7 +13,7 @@ const PostStatsExtremySection = () => (
       >
         <h2 className="headline-serif mb-6 md:mb-8 text-foreground">
           Stretávam sa s{" "}
-          <span className="font-semibold text-primary not-italic">dvoma extrémami.</span>
+          <span className="text-primary font-bold">dvoma extrémami.</span>
         </h2>
         <p className="text-lg md:text-xl font-sans text-muted-foreground leading-relaxed mb-8 md:mb-10">
           Ľudia buď{" "}

@@ -148,18 +148,18 @@ const HeroSection = () => {
           className="lg:pr-4"
         >
           <h1 className="headline-hero !text-[2.5rem] sm:!text-[3.25rem] md:!text-[3.8rem] lg:!text-6xl xl:!text-6xl mb-6 md:mb-8">
-            Investuješ <span className="italic text-primary">chaoticky</span>
+            Investuješ <span className="text-primary font-bold">chaoticky</span>
             <br className="hidden lg:block" />
             {" "}
             <span className="lg:mt-1 lg:inline-block">
-              alebo <span className="italic text-primary">neinvestuješ vôbec?</span>
+              alebo <span className="text-primary font-bold">neinvestuješ vôbec?</span>
             </span>
           </h1>
           <p className="text-lg md:text-xl font-sans text-muted-foreground leading-relaxed mb-6">
             Do 14 dní ti postavím <strong>plán, ktorý dáva zmysel.</strong> Začneme úvodným
             bezplatným hovorom.
           </p>
-          <p className="font-serif italic text-base md:text-lg text-foreground/70 mb-8 leading-relaxed">
+          <p className="font-sans text-base md:text-lg text-foreground/70 mb-8 leading-relaxed">
             Už 8 rokov staviam Slovákom <strong>finančné stratégie, ktoré fungujú aj v
             kríze.</strong> Celá spolupráca je pod dohľadom Národnej banky Slovenska.
           </p>

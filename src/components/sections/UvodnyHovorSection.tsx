@@ -30,7 +30,7 @@ const UvodnyHovorSection = () => (
         <div className="text-center max-w-5xl mx-auto mb-12 md:mb-16">
           <p className="eyebrow">Prvý krok</p>
           <h2 className="headline-serif">
-            Ale <span className="italic text-primary">najprv potrebujeme zistiť,</span>{" "}
+            Ale <span className="text-primary font-bold">najprv potrebujeme zistiť,</span>{" "}
             či ti vôbec viem pomôcť.
           </h2>
           <p className="sub-headline">

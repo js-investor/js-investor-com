@@ -29,7 +29,7 @@ const MoreReviewsSection = () => (
     <div className="section-container relative z-10">
       <div className="mx-auto max-w-5xl text-center">
         <h2 className="headline-serif">
-          <span className="italic text-primary">Ďalšie skúsenosti ľudí</span>, ktorí so mnou spolupracujú
+          <span className="text-primary font-bold">Ďalšie skúsenosti ľudí</span>, ktorí so mnou spolupracujú
         </h2>
       </div>
 

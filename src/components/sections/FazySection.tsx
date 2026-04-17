@@ -52,7 +52,7 @@ const FazySection = () => (
       <AnimatedSection>
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
           <h2 className="headline-serif">
-            Čo všetko <span className="italic text-primary">spolu vyriešime</span>
+            Čo všetko <span className="text-primary font-bold">spolu vyriešime</span>
           </h2>
         </div>
       </AnimatedSection>

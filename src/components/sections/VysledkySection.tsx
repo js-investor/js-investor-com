@@ -173,8 +173,8 @@ const VysledkySection = () => {
       <div className="mx-auto w-full max-w-[1140px] px-5 md:px-8 lg:px-10">
       <AnimatedSection>
         <div className="mx-auto max-w-3xl text-center mb-14 md:mb-16 lg:mb-[4.5rem]">
-          <h2 className="[font-family:var(--font-serif)] text-[1.875rem] sm:text-[2.125rem] md:text-[2.5rem] font-bold leading-[1.15] tracking-tight text-[#1a1a1a]">
-            Toto sú <span className="italic text-[#296A52]">výsledky ľudí,</span> ktorým som
+          <h2 className="[font-family:var(--font-serif)] text-[1.875rem] sm:text-[2.125rem] md:text-[2.5rem] font-extrabold leading-[1.15] tracking-tight text-[#1a1a1a]">
+            Toto sú <span className="text-[#296A52] font-bold">výsledky ľudí,</span> ktorým som
             postavil plán.
           </h2>
           <p className="mt-5 md:mt-6 font-sans text-base md:text-[1.125rem] leading-relaxed text-[#666]">
@@ -224,7 +224,7 @@ const VysledkySection = () => {
                       />
                     </div>
                     <div className="min-w-0 pt-0.5">
-                      <p className="[font-family:var(--font-serif)] text-[1.625rem] font-bold leading-none text-[#296A52]">
+                      <p className="[font-family:var(--font-serif)] text-[1.625rem] font-extrabold leading-none text-[#296A52]">
                         {story.name}
                       </p>
                       <p className="mt-2 font-sans text-[0.8125rem] leading-snug text-[#666]">
@@ -240,8 +240,8 @@ const VysledkySection = () => {
                   <div className="mt-5 text-center">
                     <p className="leading-tight inline-flex flex-wrap items-baseline justify-center [font-family:var(--font-serif)]">
                       <span className="inline-flex items-baseline gap-x-0.5">
-                        <span className="text-2xl font-bold text-[#296A52]">Zisk:</span>
-                        <span className="text-2xl font-bold text-[#1a1a1a] tracking-tight tabular-nums">
+                        <span className="text-2xl font-extrabold text-[#296A52]">Zisk:</span>
+                        <span className="text-2xl font-extrabold text-[#1a1a1a] tracking-tight tabular-nums">
                           {story.amount}
                         </span>
                       </span>
@@ -330,7 +330,7 @@ const VysledkySection = () => {
                   />
                 </div>
                 <div className="min-w-0 pt-0.5">
-                  <p className="[font-family:var(--font-serif)] text-[1.625rem] sm:text-[1.75rem] md:text-[1.875rem] font-bold leading-none text-[#296A52]">
+                  <p className="[font-family:var(--font-serif)] text-[1.625rem] sm:text-[1.75rem] md:text-[1.875rem] font-extrabold leading-none text-[#296A52]">
                     {story.name}
                   </p>
                   <p className="mt-2 font-sans text-[0.8125rem] md:text-sm leading-snug text-[#666]">
@@ -346,10 +346,10 @@ const VysledkySection = () => {
               <div className="mt-5 text-center">
                 <p className="leading-tight inline-flex flex-wrap items-baseline justify-center md:flex-nowrap">
                   <span className="inline-flex items-baseline gap-x-0.5 md:gap-x-1">
-                    <span className="[font-family:var(--font-serif)] text-2xl font-bold text-[#296A52] shrink-0">
+                    <span className="[font-family:var(--font-serif)] text-2xl font-extrabold text-[#296A52] shrink-0">
                       Zisk:
                     </span>
-                    <span className="[font-family:var(--font-serif)] text-2xl font-bold text-[#1a1a1a] tracking-tight tabular-nums">
+                    <span className="[font-family:var(--font-serif)] text-2xl font-extrabold text-[#1a1a1a] tracking-tight tabular-nums">
                       {story.amount}
                     </span>
                   </span>

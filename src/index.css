@@ -1,5 +1,37 @@
 @font-face {
   font-family: 'Calvino';
+  src: url('./assets/fonts/calvino/Calvino-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Calvino';
+  src: url('./assets/fonts/calvino/Calvino-Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Calvino';
+  src: url('./assets/fonts/calvino/Calvino-Book.otf') format('opentype');
+  font-weight: 450;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Calvino';
+  src: url('./assets/fonts/calvino/Calvino-Book-Italic.otf') format('opentype');
+  font-weight: 450;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Calvino';
   src: url('./assets/fonts/calvino/Calvino-Semibold.otf') format('opentype');
   font-weight: 600;
   font-style: normal;
@@ -8,7 +40,7 @@
 
 @font-face {
   font-family: 'Calvino';
-  src: url('./assets/fonts/calvino/Calvino-Bold.otf') format('opentype');
+  src: url('./assets/fonts/calvino/Calvino-Grande-Bold.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -16,9 +48,25 @@
 
 @font-face {
   font-family: 'Calvino';
-  src: url('./assets/fonts/calvino/Calvino-Extrabold.otf') format('opentype');
+  src: url('./assets/fonts/calvino/Calvino-Grande-Bold-Italic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Calvino';
+  src: url('./assets/fonts/calvino/Calvino-Grande-Extrabold.otf') format('opentype');
   font-weight: 800;
   font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Calvino';
+  src: url('./assets/fonts/calvino/Calvino-Grande-Extrabold-Italic.otf') format('opentype');
+  font-weight: 800;
+  font-style: italic;
   font-display: swap;
 }
 
@@ -97,7 +145,7 @@
     --forest-glow: 155 41% 27%;
     --footer-bg: 155 41% 27%;
 
-    --font-serif: 'Calvino', Georgia, serif;
+    --font-serif: 'Calvino', serif;
     --font-sans: 'Gilroy', sans-serif;
 
     --sidebar-background: 25 100% 98%;
@@ -134,11 +182,9 @@
     text-shadow: none !important;
   }
 
-  /* Enforce Gilroy Regular for non-heading text */
   .font-serif {
-    font-family: var(--font-sans) !important;
+    font-family: var(--font-serif) !important;
     font-weight: 400 !important;
-    font-style: normal !important;
   }
 
   html {
@@ -151,7 +197,7 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-serif);
-    font-weight: 700;
+    font-weight: 800;
     line-height: 1.2;
   }
 }
@@ -181,7 +227,7 @@
     font-family: var(--font-serif);
     font-size: 1.875rem;
     line-height: 1.2;
-    @apply font-bold text-foreground;
+    @apply font-extrabold text-foreground;
   }
 
   @media (min-width: 640px) {
@@ -198,7 +244,8 @@
 
   .headline-hero {
     font-family: var(--font-serif);
-    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-bold text-foreground leading-[1.2];
+    font-weight: 800;
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] text-foreground leading-[1.2];
   }
 
   .sub-headline {

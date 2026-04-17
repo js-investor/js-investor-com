@@ -25,7 +25,7 @@ const FooterSection = () => (
               />
             </a>
           </div>
-          <p className="font-serif italic text-sm text-cream/60">
+          <p className="font-sans text-sm text-cream/60">
             Sprievodca budovaním majetku pre ambicióznych ľudí.
           </p>
           <div className="mt-4 flex items-center gap-4">

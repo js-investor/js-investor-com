@@ -33,7 +33,7 @@ const NotFound = () => (
         className="mx-auto max-w-lg"
       >
         <p
-          className="mb-5 font-serif text-7xl font-bold leading-none tracking-tight text-primary sm:text-8xl md:mb-6 md:text-9xl"
+          className="mb-5 font-serif text-7xl font-extrabold leading-none tracking-tight text-primary sm:text-8xl md:mb-6 md:text-9xl"
           aria-hidden
         >
           404

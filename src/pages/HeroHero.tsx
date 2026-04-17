@@ -131,7 +131,7 @@ const HeroHero = () => {
                   <PlayCircle className="h-5 w-5" />
                 </div>
                 <div className="min-w-0">
-                  <h3 className="[font-family:var(--font-serif)] text-xl md:text-2xl font-bold text-foreground leading-snug">
+                  <h3 className="[font-family:var(--font-serif)] text-xl md:text-2xl font-extrabold text-foreground leading-snug">
                     {video.title}
                   </h3>
                   <p className="mt-3 font-sans text-sm md:text-base text-muted-foreground leading-relaxed">

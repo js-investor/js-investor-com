@@ -15,7 +15,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        serif: ['Calvino', 'Georgia', 'serif'],
+        serif: ['Calvino', 'serif'],
         sans: ['Gilroy', 'sans-serif'],
       },
       colors: {

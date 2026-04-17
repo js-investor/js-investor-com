@@ -44,7 +44,7 @@ const BookingSection = () => {
       <div className="section-container">
         <div className="relative z-10 mx-auto mb-12 max-w-5xl text-center md:mb-16">
           <h2 className="headline-serif">
-            Pripravený na <span className="italic text-primary">úvodný hovor?</span>
+            Pripravený na <span className="text-primary font-bold">úvodný hovor?</span>
           </h2>
           <p className="sub-headline">
             Vyber si termín ktorý ti sedí.{" "}
