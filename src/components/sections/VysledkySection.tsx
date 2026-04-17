@@ -199,7 +199,7 @@ const VysledkySection = () => {
             style={{ transform: `translateX(-${mobileSlide * 100}%)` }}
           >
             {stories.map((story, i) => (
-              <div key={story.name} className="w-full shrink-0">
+              <div key={story.name} className="w-full shrink-0 px-1.5">
                 <article className="flex flex-col h-full rounded-[14px] border border-[#e7e2da] bg-white px-4 py-4 shadow-[0_2px_14px_rgba(0,0,0,0.06)]">
                   <div className="flex items-start gap-3.5">
                     <div
