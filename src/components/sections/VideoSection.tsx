@@ -85,7 +85,7 @@ const VideoSection = () => (
         </AnimatedSection>
 
         <AnimatedSection delay={0.1}>
-          <div className="lg:pt-2">
+          <div className="mt-10 md:mt-0 lg:pt-2 text-center lg:text-left">
             <p className="[font-family:var(--font-serif)] text-xl md:text-2xl font-bold text-foreground mb-3">
               Chceš vidieť ako by vyzerala tvoja vlastná mapa?
             </p>

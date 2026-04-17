@@ -13,7 +13,7 @@ const FooterSection = () => (
     <div className="absolute top-0 left-[20%] right-[20%] h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
 
     <div className="max-w-[1200px] mx-auto relative z-10">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 mb-12">
+      <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-8 mb-12">
         {/* Left */}
         <div>
           <div className="flex items-center mb-3">
@@ -68,23 +68,25 @@ const FooterSection = () => (
           </div>
         </div>
 
-        {/* Center */}
-        <div>
-          <p className="font-sans font-semibold text-cream mb-3">Kontakt</p>
-          <div className="space-y-1 font-sans text-sm text-cream/70">
-            <p>+421 902 519 328</p>
-            <p>info@ivanjasik.sk</p>
-            <p>Veľká okružná 17, 010 01 Žilina</p>
+        <div className="grid grid-cols-2 gap-6 md:contents">
+          {/* Center */}
+          <div>
+            <p className="font-sans font-semibold text-cream mb-3">Kontakt</p>
+            <div className="space-y-1 font-sans text-sm text-cream/70">
+              <p>+421 902 519 328</p>
+              <p>info@ivanjasik.sk</p>
+              <p>Veľká okružná 17, 010 01 Žilina</p>
+            </div>
           </div>
-        </div>
 
-        {/* Right */}
-        <div>
-          <p className="font-sans font-semibold text-cream mb-3">Firemné údaje</p>
-          <div className="space-y-1 font-sans text-sm text-cream/70">
-            <p>Jashik s.r.o.</p>
-            <p>Registrácia NBS: 282999</p>
-            <p>IČO: 54253969</p>
+          {/* Right */}
+          <div>
+            <p className="font-sans font-semibold text-cream mb-3">Firemné údaje</p>
+            <div className="space-y-1 font-sans text-sm text-cream/70">
+              <p>Jashik s.r.o.</p>
+              <p>Registrácia NBS: 282999</p>
+              <p>IČO: 54253969</p>
+            </div>
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 const MoreReviewsSection = () => (
   <section
-    className="relative overflow-hidden py-12 md:py-16 lg:py-20"
+    className="relative overflow-hidden py-24 md:py-16 lg:py-20"
     style={{ backgroundColor: "#F7F3EE" }}
   >
     <div className="absolute inset-0 bg-dot-grid opacity-20" />

@@ -131,10 +131,106 @@ const VysledkySection = () => (
         </div>
       </AnimatedSection>
 
-      <div className="flex gap-5 md:gap-6 lg:gap-7 overflow-x-auto snap-x snap-mandatory pb-2 md:grid md:grid-cols-2 lg:grid-cols-3 md:overflow-visible [-webkit-overflow-scrolling:touch]">
+      <div className="mb-4 text-center md:hidden">
+        <span className="inline-block rounded-full bg-primary/10 px-3 py-1 font-sans text-xs text-primary">
+          Potiahni do strán pre ďalšie výsledky
+        </span>
+      </div>
+
+      <div className="-mx-5 px-5 md:hidden overflow-x-auto snap-x snap-mandatory pb-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+        <div className="flex gap-4">
+          {stories.map((story, i) => (
+            <AnimatedSection key={story.name} delay={i * 0.06}>
+              <article className="w-[calc(100vw-2.5rem)] max-w-[calc(100vw-2.5rem)] shrink-0 snap-center flex flex-col h-full rounded-[14px] border border-[#e7e2da] bg-white px-4 py-4 shadow-[0_2px_14px_rgba(0,0,0,0.06)]">
+                <div className="flex items-start gap-3.5">
+                  <div
+                    className="h-10 w-10 shrink-0 rounded-[10px] flex items-center justify-center shadow-sm bg-center bg-cover"
+                    style={{ backgroundImage: `url(${brandPattern})` }}
+                  >
+                    <LineChart
+                      className="w-[18px] h-[18px] text-white -translate-x-0.5"
+                      strokeWidth={2.25}
+                      aria-hidden
+                    />
+                  </div>
+                  <div className="min-w-0 pt-0.5">
+                    <p className="[font-family:var(--font-serif)] text-[1.625rem] font-bold leading-none text-[#296A52]">
+                      {story.name}
+                    </p>
+                    <p className="mt-2 font-sans text-[0.8125rem] leading-snug text-[#666]">
+                      {story.role}
+                    </p>
+                  </div>
+                </div>
+
+                <p className="mt-6 text-center font-sans text-sm leading-relaxed text-[#1a1a1a]/75">
+                  {renderMeta(story.meta)}
+                </p>
+
+                <div className="mt-5 text-center">
+                  <p className="font-sans leading-tight">
+                    <span className="text-[0.9375rem] font-bold text-[#296A52]">Zisk:</span>{" "}
+                    <span className="text-2xl font-extrabold text-[#1a1a1a] tracking-tight tabular-nums">
+                      {story.amount}
+                    </span>
+                  </p>
+                  <p className="mt-1 font-sans text-[0.8125rem] font-normal text-[#666] tabular-nums leading-snug">
+                    {story.percent}
+                  </p>
+                </div>
+
+                <div className="mt-6 overflow-hidden rounded-[10px] border border-[#e8e3db] bg-[#f3efe8] pt-1.5">
+                  <svg
+                    viewBox="0 0 320 72"
+                    className="block w-full h-[4.25rem]"
+                    role="img"
+                    aria-label={`Trend výnosu klienta ${story.name}`}
+                    preserveAspectRatio="none"
+                  >
+                    <defs>
+                      <linearGradient id={`vysledky-fill-mobile-${i}`} x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stopColor="#296A52" stopOpacity="0.18" />
+                        <stop offset="100%" stopColor="#296A52" stopOpacity="0" />
+                      </linearGradient>
+                    </defs>
+                    <path
+                      d={`${getSparklinePath(
+                        getScaledReturns(story.trend, story.returnPct),
+                        320,
+                        56,
+                        12,
+                        maxReturnPct,
+                        minReturnPct,
+                      )} L 320 72 L 0 72 Z`}
+                      fill={`url(#vysledky-fill-mobile-${i})`}
+                    />
+                    <path
+                      d={getSparklinePath(
+                        getScaledReturns(story.trend, story.returnPct),
+                        320,
+                        56,
+                        12,
+                        maxReturnPct,
+                        minReturnPct,
+                      )}
+                      fill="none"
+                      stroke="#296A52"
+                      strokeWidth="2.25"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
+              </article>
+            </AnimatedSection>
+          ))}
+        </div>
+      </div>
+
+      <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
         {stories.map((story, i) => (
           <AnimatedSection key={story.name} delay={i * 0.06}>
-            <article className="min-w-[288px] sm:min-w-[320px] snap-start md:min-w-0 flex flex-col h-full rounded-[14px] border border-[#e7e2da] bg-white px-4 py-4 shadow-[0_2px_14px_rgba(0,0,0,0.06)]">
+            <article className="flex flex-col h-full rounded-[14px] border border-[#e7e2da] bg-white px-4 py-4 shadow-[0_2px_14px_rgba(0,0,0,0.06)]">
               <div className="flex items-start gap-3.5">
                 <div
                   className="h-10 w-10 shrink-0 rounded-[10px] flex items-center justify-center shadow-sm bg-center bg-cover"

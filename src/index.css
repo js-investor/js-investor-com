@@ -152,6 +152,7 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-serif);
     font-weight: 700;
+    line-height: 1.2;
   }
 }
 
@@ -178,12 +179,14 @@
 
   .headline-serif {
     font-family: var(--font-serif);
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight;
+    font-size: 3rem;
+    line-height: 1.2;
+    @apply font-bold text-foreground;
   }
 
   .headline-hero {
     font-family: var(--font-serif);
-    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-bold text-foreground leading-[1.08];
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-bold text-foreground leading-[1.2];
   }
 
   .sub-headline {
@@ -275,6 +278,15 @@
 
   .btn-pill:hover {
     @apply bg-forest-hover;
+  }
+
+  @media (max-width: 767px) {
+    .btn-primary,
+    .btn-pill {
+      width: 100%;
+      justify-content: center;
+      text-align: center;
+    }
   }
 
   .text-link {
