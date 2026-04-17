@@ -80,6 +80,23 @@ const BookingSection = () => {
             }}
           />
         </div>
+
+        <div className="mx-auto mt-8 max-w-3xl">
+          <div className="h-px w-full bg-primary/15" aria-hidden />
+          <p className="mt-4 text-center text-sm text-muted-foreground">
+            Alebo mi napíš priamo cez WhatsApp
+          </p>
+          <div className="mt-4 flex justify-center">
+            <a
+              href="https://wa.me/421902519328"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
+              Napísať na WhatsApp
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );
