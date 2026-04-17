@@ -24,7 +24,7 @@ const VideoSection = () => (
           </h2>
           <p className="sub-headline">
             Pripravil som krátke video, kde ti ukazujem reálny vzor JS Wealth Map.
-            {" "}Uvidíš presne čo dostaneš po spolupráci. Diagnostiku, plán, konkrétne kroky.
+            {" "}<strong>Uvidíš presne čo dostaneš po spolupráci.</strong> Diagnostiku, plán, konkrétne kroky.
             Bez floskúl, bez teórie.
           </p>
         </div>

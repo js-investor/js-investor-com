@@ -124,8 +124,8 @@ const VysledkySection = () => (
             Toto sú <span className="italic text-[#296A52]">výsledky ľudí,</span> ktorým som
             postavil plán.
           </h2>
-          <p className="mt-5 md:mt-6 font-sans text-[0.9375rem] md:text-base leading-relaxed text-[#666]">
-            Nikto z nich nemal všetko vyriešené. Každý prišiel s vlastnou situáciou — chaos, banka,
+          <p className="mt-5 md:mt-6 font-sans text-base md:text-[1.125rem] leading-relaxed text-[#666]">
+            <strong className="text-[#1a1a1a]">Nikto z nich nemal všetko vyriešené.</strong> Každý prišiel s vlastnou situáciou. Chaos, banka,
             žiadny plán. Spolu sme to rozmotali.
           </p>
         </div>
