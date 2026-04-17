@@ -125,7 +125,7 @@ const FaqSection = () => {
                   <button
                     type="button"
                     onClick={() => setOpenIndex(index)}
-                    className={`w-full text-left rounded-xl border border-primary/15 px-5 py-3.5 md:px-6 md:py-4 pr-12 font-sans text-base md:text-lg font-semibold leading-snug relative transition-colors duration-200 ${
+                    className={`group w-full text-left rounded-xl border border-primary/15 px-5 py-3.5 md:px-6 md:py-4 pr-12 font-sans text-base md:text-lg font-semibold leading-snug relative transition-colors duration-200 ${
                       isOpen
                         ? "bg-primary text-white"
                         : "bg-white text-foreground hover:bg-primary hover:text-white"
@@ -135,7 +135,7 @@ const FaqSection = () => {
                     {faq.question}
                     <span
                       className={`absolute right-5 top-1/2 -translate-y-1/2 text-xl leading-none ${
-                        isOpen ? "text-white" : "text-primary"
+                        isOpen ? "text-white" : "text-primary group-hover:text-white"
                       }`}
                     >
                       {isOpen ? "-" : "+"}

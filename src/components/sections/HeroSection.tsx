@@ -1,4 +1,4 @@
-import ivanPortrait from "@/assets/images/ivan-jasik.jpg";
+import ivanKniha from "@/assets/images/js-investor-ivan-kniha.jpg";
 import brandLogo from "@/assets/images/js-investor-logo.png";
 import { Check, Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
@@ -187,24 +187,27 @@ const HeroSection = () => {
           className="relative flex justify-center"
         >
           <div className="relative w-full max-w-[420px]">
-            {/* Glow behind image */}
-            <div className="absolute -inset-3 rounded-3xl bg-black/8 blur-xl" />
-            <img
-              src={ivanPortrait}
-              alt="Ivan Jasik — JS Investor"
-              className="relative rounded-3xl w-full object-cover aspect-[4/5] ring-1 ring-black/20"
-              width={768}
-              height={960}
-            />
-            <motion.div
-              animate={{ y: [0, -6, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute bottom-4 right-4 card-glass rounded-2xl px-4 py-3"
-            >
-              <span className="font-sans text-sm font-semibold text-foreground">
-                8+ rokov · 531 klientov · Licencia NBS
-              </span>
-            </motion.div>
+            <div className="relative">
+              <div className="absolute -inset-3 rounded-3xl bg-black/8 blur-xl" />
+              <img
+                src={ivanKniha}
+                alt="Ivan Jašík s knihou"
+                className="relative rounded-3xl w-full object-cover aspect-[4/5] ring-1 ring-black/20"
+                width={768}
+                height={960}
+                loading="eager"
+                decoding="async"
+              />
+              <motion.div
+                animate={{ y: [0, -6, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute bottom-4 right-4 card-glass rounded-2xl px-4 py-3"
+              >
+                <span className="font-sans text-sm font-semibold text-foreground">
+                  8+ rokov · 531 klientov · Licencia NBS
+                </span>
+              </motion.div>
+            </div>
           </div>
         </motion.div>
       </div>

@@ -56,7 +56,7 @@ const stories = [
   {
     name: "Peter",
     role: "podnikateľ",
-    meta: "Za 3 roky postupne vložil 119 000 €",
+    meta: "Za 3 roky::postupne vložil 119 000 €",
     amount: "59 898 €",
     percent: "(+51,15 %)",
     returnPct: 51.15,
@@ -101,6 +101,17 @@ const getSparklinePath = (
 };
 
 const renderMeta = (meta: string) => {
+  const boldSplit = "::";
+  const boldIdx = meta.indexOf(boldSplit);
+  if (boldIdx !== -1) {
+    const boldPart = meta.slice(0, boldIdx).trim();
+    const rest = meta.slice(boldIdx + boldSplit.length).trim();
+    return (
+      <>
+        <strong className="font-bold text-[#1a1a1a]">{boldPart}</strong> {rest}
+      </>
+    );
+  }
   const parts = meta.split("|").map((part) => part.trim());
   if (parts.length < 2) return meta;
   const left = parts.slice(0, -1).join(" | ");
@@ -222,18 +233,20 @@ const VysledkySection = () => {
                     </div>
                   </div>
 
-                  <p className="mt-6 text-center font-sans text-sm leading-relaxed text-[#1a1a1a]/75">
+                  <p className="mt-6 text-center font-sans text-base leading-relaxed text-[#1a1a1a]/75">
                     {renderMeta(story.meta)}
                   </p>
 
                   <div className="mt-5 text-center">
-                    <p className="font-sans leading-tight">
-                      <span className="text-[0.9375rem] font-bold text-[#296A52]">Zisk:</span>{" "}
-                      <span className="text-2xl font-extrabold text-[#1a1a1a] tracking-tight tabular-nums">
-                        {story.amount}
+                    <p className="leading-tight inline-flex flex-wrap items-baseline justify-center [font-family:var(--font-serif)]">
+                      <span className="inline-flex items-baseline gap-x-0.5">
+                        <span className="text-2xl font-bold text-[#296A52]">Zisk:</span>
+                        <span className="text-2xl font-bold text-[#1a1a1a] tracking-tight tabular-nums">
+                          {story.amount}
+                        </span>
                       </span>
                     </p>
-                    <p className="mt-1 font-sans text-[0.8125rem] font-normal text-[#666] tabular-nums leading-snug">
+                    <p className="mt-1.5 font-sans text-[0.9375rem] sm:text-base font-medium text-[#4a4a4a] tabular-nums leading-snug">
                       {story.percent}
                     </p>
                   </div>
@@ -326,19 +339,23 @@ const VysledkySection = () => {
                 </div>
               </div>
 
-              <p className="mt-6 text-center font-sans text-sm md:text-base leading-relaxed text-[#1a1a1a]/75">
+              <p className="mt-6 text-center font-sans text-base md:text-[1.0625rem] leading-relaxed text-[#1a1a1a]/75">
                 {renderMeta(story.meta)}
               </p>
 
               <div className="mt-5 text-center">
-                <p className="font-sans leading-tight">
-                  <span className="text-[0.9375rem] md:text-base font-bold text-[#296A52]">Zisk:</span>{" "}
-                  <span className="text-2xl font-extrabold text-[#1a1a1a] tracking-tight tabular-nums">
-                    {story.amount}
+                <p className="leading-tight inline-flex flex-wrap items-baseline justify-center md:flex-nowrap">
+                  <span className="inline-flex items-baseline gap-x-0.5 md:gap-x-1">
+                    <span className="[font-family:var(--font-serif)] text-2xl font-bold text-[#296A52] shrink-0">
+                      Zisk:
+                    </span>
+                    <span className="[font-family:var(--font-serif)] text-2xl font-bold text-[#1a1a1a] tracking-tight tabular-nums">
+                      {story.amount}
+                    </span>
                   </span>
-                </p>
-                <p className="mt-1 font-sans text-[0.8125rem] md:text-sm font-normal text-[#666] tabular-nums leading-snug">
-                  {story.percent}
+                  <span className="ml-2 md:ml-2.5 font-sans text-[0.9375rem] md:text-base font-medium text-[#4a4a4a] tabular-nums leading-snug shrink-0">
+                    {story.percent}
+                  </span>
                 </p>
               </div>
 

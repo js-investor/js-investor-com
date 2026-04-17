@@ -1,5 +1,4 @@
 import AnimatedSection from "@/components/AnimatedSection";
-import brandPattern from "@/assets/logo/js-brand-pattern.svg";
 import {
   Building2,
   ChartNoAxesCombined,
@@ -51,46 +50,34 @@ const FazySection = () => (
     <div className="absolute inset-0 bg-dot-grid opacity-30 pointer-events-none" />
     <div className="section-container relative z-10">
       <AnimatedSection>
-        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-14">
+        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
           <h2 className="headline-serif">
             Čo všetko <span className="italic text-primary">spolu vyriešime</span>
           </h2>
         </div>
       </AnimatedSection>
 
-      <div className="relative mx-auto max-w-6xl md:pl-0">
-        <div className="pointer-events-none absolute left-[10px] top-3 hidden h-[calc(100%-1.5rem)] w-[2px] bg-gradient-to-b from-primary/20 via-primary/50 to-primary/20 md:hidden" />
-        <div className="pointer-events-none absolute left-1/2 top-4 hidden h-[calc(100%-2rem)] w-px -translate-x-1/2 bg-gradient-to-b from-primary/10 via-primary/45 to-primary/10 md:block" />
-        <div className="grid grid-cols-1 gap-5 md:gap-7">
-          {items.map((item, i) => {
-            const Icon = item.icon;
-            const isRight = i % 2 === 1;
-            return (
-              <AnimatedSection key={item.title} delay={i * 0.05}>
-                <div className={`md:flex ${isRight ? "md:justify-end" : "md:justify-start"}`}>
-                  <div className="group relative w-full md:pl-0 md:w-[calc(50%-2rem)]">
-                    <div className="relative overflow-hidden rounded-[1rem] md:rounded-[1.1rem] border border-primary/20 bg-white/95 p-4 sm:p-5 md:p-6 shadow-[0_8px_22px_rgba(22,48,38,0.1)] backdrop-blur-[2px] transition-all duration-300 group-hover:-translate-y-0.5 group-hover:shadow-[0_12px_26px_rgba(22,48,38,0.14)]">
-                      <div className="mb-3.5 md:mb-4 flex items-center gap-3">
-                        <div
-                          className="inline-flex h-9 w-9 md:h-10 md:w-10 items-center justify-center rounded-lg md:rounded-xl text-white shadow-sm bg-center bg-cover"
-                          style={{ backgroundImage: `url(${brandPattern})` }}
-                        >
-                          <Icon className="h-4 w-4 md:h-[18px] md:w-[18px] -translate-x-0.5" strokeWidth={2.25} />
-                        </div>
-                      </div>
-                      <p className="[font-family:var(--font-serif)] font-bold text-[1.1rem] md:text-xl text-foreground mb-2 leading-snug">
-                        {item.title}
-                      </p>
-                      <p className="font-sans text-[0.95rem] md:text-base text-muted-foreground leading-relaxed">
-                        {item.body}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </AnimatedSection>
-            );
-          })}
-        </div>
+      <div className="mx-auto max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16 md:gap-x-10 md:gap-y-20 lg:gap-x-12 lg:gap-y-24">
+        {items.map((item, i) => {
+          const Icon = item.icon;
+          return (
+            <AnimatedSection key={item.title} delay={i * 0.05}>
+              <div className="text-left">
+                <Icon
+                  className="mb-5 h-9 w-9 md:h-10 md:w-10 text-primary"
+                  strokeWidth={1.5}
+                  aria-hidden
+                />
+                <p className="font-sans font-semibold text-base md:text-lg text-foreground mb-2 leading-snug">
+                  {item.title}
+                </p>
+                <p className="font-sans text-sm md:text-[0.95rem] text-muted-foreground leading-relaxed">
+                  {item.body}
+                </p>
+              </div>
+            </AnimatedSection>
+          );
+        })}
       </div>
     </div>
   </section>
