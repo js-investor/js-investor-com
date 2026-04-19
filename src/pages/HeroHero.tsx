@@ -39,7 +39,7 @@ const faqItems = [
 ];
 
 const HeroHero = () => {
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
   <main className="bg-[#FFF9F5]">
@@ -159,7 +159,7 @@ const HeroHero = () => {
                 <div key={faq.question} className="rounded-xl">
                   <button
                     type="button"
-                    onClick={() => setOpenIndex(index)}
+                    onClick={() => setOpenIndex((prev) => (prev === index ? null : index))}
                     className={`w-full text-left rounded-xl border border-primary/15 px-5 py-3.5 md:px-6 md:py-4 pr-12 font-sans text-base md:text-lg font-semibold leading-snug relative transition-colors duration-200 ${
                       isOpen
                         ? "bg-primary text-white"

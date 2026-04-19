@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const PostStatsExtremySection = () => (
   <section className="relative overflow-hidden" style={{ backgroundColor: "#FDF9F3" }}>
-    <div className="relative z-10 px-5 md:px-10 lg:px-16 py-20 md:py-24 max-w-[1180px] mx-auto">
+    <div className="relative z-10 px-5 md:px-10 lg:px-16 py-12 md:py-24 max-w-[1180px] mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}

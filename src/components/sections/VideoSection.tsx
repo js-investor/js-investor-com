@@ -15,9 +15,8 @@ const VideoSection = () => (
             Takto vyzerá <span className="text-primary font-bold">tvoj osobný finančný plán.</span>
           </h2>
           <p className="sub-headline">
-            Pripravil som krátke video, kde ti ukazujem reálny vzor JS Wealth Map.
-            {" "}<strong>Uvidíš presne čo dostaneš po spolupráci.</strong> Diagnostiku, plán, konkrétne kroky.
-            Bez floskúl, bez teórie.
+            Pripravil som krátke video, kde ti ukážem ako pracujem. Čo dostane každý človek, po úvodnom
+            hovore. <strong>Presné kroky od A po Z.</strong>
           </p>
         </div>
       </AnimatedSection>

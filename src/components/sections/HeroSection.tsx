@@ -38,7 +38,7 @@ const HeroSection = () => {
         <img
           src={brandLogo}
           alt="JS Investor logo"
-          className="h-10 md:h-12 w-auto"
+          className="h-8 md:h-12 w-auto"
         />
       </a>
       <nav className="hidden md:flex items-center justify-center gap-6 lg:gap-8">
@@ -169,7 +169,7 @@ const HeroSection = () => {
               Rezervovať úvodný hovor
             </button>
           </div>
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-sans text-muted-foreground">
+          <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-2 text-sm font-sans text-muted-foreground">
             {["Bezplatný úvodný hovor", "Online 30 minút", "Bez záväzku a predaja"].map((t) => (
               <span key={t} className="flex items-center gap-1.5">
                 <Check className="w-4 h-4 text-primary" />

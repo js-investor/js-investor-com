@@ -39,7 +39,7 @@ const DobryPoradcaSection = () => (
           headline={
             <>
               <span className="text-primary font-bold">Čo dokáže priniesť</span> dobrý
-              sprievodca
+              poradca
             </>
           }
           subHeadline={

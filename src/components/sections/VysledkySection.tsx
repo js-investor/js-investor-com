@@ -167,7 +167,7 @@ const VysledkySection = () => {
   return (
     <section
       id="vysledky"
-      className="relative overflow-hidden py-20 md:py-24 lg:py-28 scroll-mt-24"
+      className="relative overflow-hidden py-12 md:py-24 lg:py-28 scroll-mt-24"
       style={{ backgroundColor: "#fff9f5" }}
     >
       <div className="mx-auto w-full max-w-[1140px] px-5 md:px-8 lg:px-10">
