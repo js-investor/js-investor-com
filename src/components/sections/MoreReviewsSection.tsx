@@ -19,11 +19,6 @@ const LIGHTBOX_IMAGES = [
   { src: recenzia5, alt: "Recenzia klienta — screenshot 5" },
 ] as const;
 
-/** Tri náhľady pod hlavnou recenziou (indexy v LIGHTBOX_IMAGES) */
-const GALLERY_THUMB_INDICES = [1, 2, 3] as const;
-const REMAINING_AFTER_PREVIEW = LIGHTBOX_IMAGES.length - 1 - GALLERY_THUMB_INDICES.length;
-/* = 6 - 1 - 3 = 2 (recenzie 4 a 5) */
-
 const scrollToBooking = () => {
   document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" });
 };
@@ -165,58 +160,28 @@ const MoreReviewsSection = () => {
           </h2>
         </div>
 
-        <div className="mx-auto mt-10 max-w-3xl space-y-6 md:space-y-8">
-          {/* Hlavná recenzia 6 */}
-          <button
-            type="button"
-            onClick={() => openAt(0)}
-            className="group block w-full cursor-zoom-in text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-xl"
-          >
-            <img
-              src={LIGHTBOX_IMAGES[0].src}
-              alt={LIGHTBOX_IMAGES[0].alt}
-              className="mx-auto w-full max-h-[min(52vh,420px)] rounded-xl object-contain object-top shadow-md ring-1 ring-black/10 transition group-hover:ring-primary/40"
-              loading="lazy"
-              decoding="async"
-            />
-          </button>
-
-          {/* 3 štvorcové náhľady */}
-          <div className="grid grid-cols-3 gap-2 sm:gap-3">
-            {GALLERY_THUMB_INDICES.map((imgIndex, slot) => {
-              const item = LIGHTBOX_IMAGES[imgIndex];
-              const isLastThumb = slot === GALLERY_THUMB_INDICES.length - 1;
-
-              return (
-                <button
-                  key={item.alt}
-                  type="button"
-                  onClick={() => openAt(imgIndex)}
-                  className={cn(
-                    "relative aspect-square w-full cursor-zoom-in overflow-hidden rounded-lg ring-1 ring-black/10 transition hover:ring-primary/40",
-                    "focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-                  )}
-                >
-                  <img
-                    src={item.src}
-                    alt={item.alt}
-                    className="h-full w-full object-cover"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  {isLastThumb && REMAINING_AFTER_PREVIEW > 0 ? (
-                    <span
-                      className="absolute inset-0 flex items-center justify-center bg-black/55"
-                      aria-hidden
-                    >
-                      <span className="font-sans text-2xl font-bold tabular-nums text-white sm:text-3xl">
-                        +{REMAINING_AFTER_PREVIEW}
-                      </span>
-                    </span>
-                  ) : null}
-                </button>
-              );
-            })}
+        <div className="mt-10 w-full">
+          {/* Recenzie: masonry layout, na desktope 3 stĺpce */}
+          <div className="columns-1 gap-3 space-y-3 md:columns-4 md:space-y-4">
+            {LIGHTBOX_IMAGES.map((item, idx) => (
+              <button
+                key={item.alt}
+                type="button"
+                onClick={() => openAt(idx)}
+                className={cn(
+                  "mb-3 block w-full break-inside-avoid cursor-zoom-in overflow-hidden rounded-lg ring-1 ring-black/10 transition hover:ring-primary/40 md:mb-4",
+                  "focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                )}
+              >
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  className="w-full object-contain object-top"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+            ))}
           </div>
         </div>
 
