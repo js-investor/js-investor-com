@@ -425,11 +425,15 @@
 
 /* Cookiebot widget brand color override (blue -> project green) */
 #CookiebotWidget .CookiebotWidget-logo svg circle,
-#CookiebotWidget .CookiebotWidget-logo svg path,
 #CookiebotWidget .CookiebotWidget-show-consent-details svg path,
 #CookiebotWidget .Cookiebotwidget-consent-icon svg path,
 #CookiebotWidget .CookiebotWidget-main-logo svg path {
   fill: hsl(var(--primary)) !important;
+}
+
+/* Keep the cookie toggle glyph visible on green background */
+#CookiebotWidget .CookiebotWidget-logo svg path {
+  fill: #ffffff !important;
 }
 
 #CookiebotWidget #CookiebotWidget-btn-withdraw,
@@ -443,5 +447,11 @@
 #CookiebotWidget #CookiebotWidget-btn-change:hover {
   background-color: hsl(var(--forest-hover)) !important;
   border-color: hsl(var(--forest-hover)) !important;
+}
+
+/* Consent details toggle/link text should match project green */
+#CookiebotWidget .CookiebotWidget-show-consent-details,
+#CookiebotWidget .CookiebotWidget-consent-details button {
+  color: hsl(var(--primary)) !important;
 }
 
