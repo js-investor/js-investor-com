@@ -423,3 +423,25 @@
 
 }
 
+/* Cookiebot widget brand color override (blue -> project green) */
+#CookiebotWidget .CookiebotWidget-logo svg circle,
+#CookiebotWidget .CookiebotWidget-logo svg path,
+#CookiebotWidget .CookiebotWidget-show-consent-details svg path,
+#CookiebotWidget .Cookiebotwidget-consent-icon svg path,
+#CookiebotWidget .CookiebotWidget-main-logo svg path {
+  fill: hsl(var(--primary)) !important;
+}
+
+#CookiebotWidget #CookiebotWidget-btn-withdraw,
+#CookiebotWidget #CookiebotWidget-btn-change {
+  background-color: hsl(var(--primary)) !important;
+  border-color: hsl(var(--primary)) !important;
+  color: hsl(var(--primary-foreground)) !important;
+}
+
+#CookiebotWidget #CookiebotWidget-btn-withdraw:hover,
+#CookiebotWidget #CookiebotWidget-btn-change:hover {
+  background-color: hsl(var(--forest-hover)) !important;
+  border-color: hsl(var(--forest-hover)) !important;
+}
+
