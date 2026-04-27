@@ -235,7 +235,7 @@ const BookingSection = () => {
               </button>
               {submitStatus === "success" ? (
                 <p className="mt-4 font-sans text-sm md:text-base text-primary">
-                  Ďakujem, formulár bol úspešne odoslaný. Ozvem sa ti čo najskôr.
+                  Ďakujem, formulár bol úspešne odoslaný. Ozvem sa ti do 48 hodín.
                 </p>
               ) : null}
               {submitStatus === "webhook_gone" ? (
