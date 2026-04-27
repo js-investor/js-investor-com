@@ -165,7 +165,7 @@ const KonzultaciaHeroSection = () => {
 
           <div className="w-full md:w-[85%] max-w-[969px] mx-auto rounded-2xl overflow-hidden aspect-video bg-black shadow-[0_8px_32px_-4px_rgba(0,0,0,0.18),0_24px_64px_-12px_rgba(0,0,0,0.28),0_0_0_1px_rgba(0,0,0,0.1)]">
             <iframe
-              src="https://player.vimeo.com/video/1145809910?autoplay=0&title=0&portrait=0&byline=0"
+              src="https://player.vimeo.com/video/1175801732?autoplay=0&title=0&portrait=0&byline=0"
               title="Vimeo video"
               allow="autoplay; fullscreen; picture-in-picture"
               className="block w-full h-full align-top"
