@@ -137,7 +137,11 @@ function ReviewsLightbox({
   );
 }
 
-const MoreReviewsSection = () => {
+type MoreReviewsSectionProps = {
+  ctaLabel?: string;
+};
+
+const MoreReviewsSection = ({ ctaLabel = "Rezervovať úvodný hovor" }: MoreReviewsSectionProps) => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
@@ -187,7 +191,7 @@ const MoreReviewsSection = () => {
 
         <div className="mt-10 text-center md:mt-12">
           <button type="button" onClick={scrollToBooking} className="btn-primary text-lg">
-            Rezervovať úvodný hovor
+            {ctaLabel}
           </button>
         </div>
       </div>

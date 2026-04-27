@@ -7,15 +7,27 @@
     <title>JS Investor | Investičná stratégia na mieru</title>
     <meta name="description" content="Investuješ chaoticky alebo neinvestuješ vôbec? Ivan Jasik ti postaví finančný plán na mieru. Rezervuj si bezplatný úvodný hovor.">
     <meta name="author" content="Ivan Jasik — JS Investor" />
-    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="cc841a7d-368e-408c-a011-7548c3546b69" data-blockingmode="auto" type="text/javascript"></script>
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="7e759685-573b-4de6-add2-08363e920e53"></script>
-    <script type="text/javascript">
-      (function(c,l,a,r,i,t,y){
-          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-      })(window, document, "clarity", "script", "wgsjnpvg4z");
+    <script>
+      (function () {
+        var host = window.location.hostname;
+        var isLocal =
+          host === "localhost" ||
+          host === "127.0.0.1" ||
+          host === "::1" ||
+          host.endsWith(".local");
+
+        if (isLocal) return;
+
+        var script = document.createElement("script");
+        script.id = "Cookiebot";
+        script.src = "https://consent.cookiebot.com/uc.js";
+        script.setAttribute("data-cbid", "cc841a7d-368e-408c-a011-7548c3546b69");
+        script.setAttribute("data-blockingmode", "auto");
+        script.type = "text/javascript";
+        document.head.appendChild(script);
+      })();
     </script>
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="7e759685-573b-4de6-add2-08363e920e53"></script>
     <!-- Google Tag Manager -->
     <script>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

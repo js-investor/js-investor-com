@@ -1,6 +1,11 @@
 import AnimatedSection from "@/components/AnimatedSection";
-import { LineChart } from "lucide-react";
 import brandPattern from "@/assets/logo/js-brand-pattern.svg";
+import vysledokGrafAndrej from "@/assets/images/vysledok-graf-andrej.png";
+import vysledokGrafBrano from "@/assets/images/vysledok-graf-brano.png";
+import vysledokGrafKristian from "@/assets/images/vysledok-graf-kristian.png";
+import vysledokGrafLukas from "@/assets/images/vysledok-graf-lukas.png";
+import vysledokGrafPeter from "@/assets/images/vysledok-graf-peter.png";
+import vysledokGrafSamuel from "@/assets/images/vysledok-graf-samuel.png";
 import { useState } from "react";
 
 const scrollToBooking = () => {
@@ -14,8 +19,7 @@ const stories = [
     meta: "Investuje pravidelne | 3 roky",
     amount: "18 427 €",
     percent: "(+50,02 %)",
-    returnPct: 50.02,
-    trend: [8, 10, 11, 9, 13, 14, 15, 16, 15, 17, 18, 18.5],
+    chartImage: vysledokGrafSamuel,
   },
   {
     name: "Lukáš",
@@ -23,8 +27,7 @@ const stories = [
     meta: "Investuje pravidelne | 2 roky",
     amount: "1 905 €",
     percent: "(+35,96 %)",
-    returnPct: 35.96,
-    trend: [7, 8.5, 9.2, 7.9, 10, 8.6, 11.4, 12, 10.1, 12.8, 13.4, 14.1],
+    chartImage: vysledokGrafLukas,
   },
   {
     name: "Braňo",
@@ -32,8 +35,7 @@ const stories = [
     meta: "Investuje pravidelne | 7 mesiacov",
     amount: "1 248 €",
     percent: "(+13,57 %)",
-    returnPct: 13.57,
-    trend: [6, 6.1, 6.2, 6.4, 6.3, 6.5, 6.6, 6.7, 6.9, 7, 7.2, 7.25],
+    chartImage: vysledokGrafBrano,
   },
   {
     name: "Andrej",
@@ -41,8 +43,7 @@ const stories = [
     meta: "Investícia: 50 000 € | 2 roky",
     amount: "20 743 €",
     percent: "(+43,27 %)",
-    returnPct: 43.27,
-    trend: [10, 11, 12, 13, 11.5, 14, 15.5, 13.8, 16.2, 16.9, 18, 19.1],
+    chartImage: vysledokGrafAndrej,
   },
   {
     name: "Kristián",
@@ -50,8 +51,7 @@ const stories = [
     meta: "Investuje mesačne 300 € | 4 roky",
     amount: "8 870 €",
     percent: "(+41,26 %)",
-    returnPct: 41.26,
-    trend: [7.2, 7.8, 8.3, 8.7, 9.1, 8.1, 9.6, 10.8, 11.7, 12.6, 11.3, 13.1],
+    chartImage: vysledokGrafKristian,
   },
   {
     name: "Peter",
@@ -59,46 +59,9 @@ const stories = [
     meta: "Za 3 roky::postupne vložil 119 000 €",
     amount: "59 898 €",
     percent: "(+51,15 %)",
-    returnPct: 51.15,
-    trend: [8.1, 9.3, 10.4, 11.2, 12.4, 13.8, 12.2, 14.1, 15.4, 16.7, 15.5, 17.8],
+    chartImage: vysledokGrafPeter,
   },
 ];
-
-const maxReturnPct = Math.max(...stories.map((story) => story.returnPct));
-const minReturnPct = -8;
-
-const getScaledReturns = (values: number[], targetReturnPct: number) => {
-  if (values.length < 2 || values[0] === 0) return values.map(() => 0);
-  const base = values[0];
-  const rawReturns = values.map((value) => (value - base) / base);
-  const rawEndReturn = rawReturns[rawReturns.length - 1];
-  if (rawEndReturn === 0) return rawReturns.map(() => 0);
-  const scale = (targetReturnPct / 100) / rawEndReturn;
-  return rawReturns.map((rawReturn) => rawReturn * scale);
-};
-
-const getSparklinePath = (
-  scaledReturns: number[],
-  width = 320,
-  height = 52,
-  topPadding = 0,
-  maxPct = 55,
-  minPct = -8,
-) => {
-  if (scaledReturns.length < 2) return "";
-  const minReturn = minPct / 100;
-  const maxReturn = maxPct / 100;
-  const range = maxReturn - minReturn || 1;
-  const drawableHeight = Math.max(height - topPadding, 1);
-  return scaledReturns
-    .map((scaledReturn, index) => {
-      const x = (index / (scaledReturns.length - 1)) * width;
-      const clampedReturn = Math.min(Math.max(scaledReturn, minReturn), maxReturn);
-      const y = height - ((clampedReturn - minReturn) / range) * drawableHeight;
-      return `${index === 0 ? "M" : "L"} ${x} ${y}`;
-    })
-    .join(" ");
-};
 
 const renderMeta = (meta: string) => {
   const boldSplit = "::";
@@ -123,7 +86,11 @@ const renderMeta = (meta: string) => {
   );
 };
 
-const VysledkySection = () => {
+type VysledkySectionProps = {
+  ctaLabel?: string;
+};
+
+const VysledkySection = ({ ctaLabel = "Rezervovať úvodný hovor" }: VysledkySectionProps) => {
   const [mobileSlide, setMobileSlide] = useState(0);
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
   const [touchStartY, setTouchStartY] = useState<number | null>(null);
@@ -209,7 +176,7 @@ const VysledkySection = () => {
             className="flex transition-transform duration-300 ease-out"
             style={{ transform: `translateX(-${mobileSlide * 100}%)` }}
           >
-            {stories.map((story, i) => (
+            {stories.map((story) => (
               <div key={story.name} className="w-full shrink-0 px-1.5">
                 <article className="flex flex-col h-full rounded-[14px] border border-[#e7e2da] bg-white px-4 py-4 shadow-[0_2px_14px_rgba(0,0,0,0.06)]">
                   <div className="flex items-start gap-3.5">
@@ -217,11 +184,7 @@ const VysledkySection = () => {
                       className="h-10 w-10 shrink-0 rounded-[10px] flex items-center justify-center shadow-sm bg-center bg-cover"
                       style={{ backgroundImage: `url(${brandPattern})` }}
                     >
-                      <LineChart
-                        className="w-[18px] h-[18px] text-white -translate-x-0.5"
-                        strokeWidth={2.25}
-                        aria-hidden
-                      />
+                      <span className="font-sans text-sm font-bold text-white">%</span>
                     </div>
                     <div className="min-w-0 pt-0.5">
                       <p className="[font-family:var(--font-serif)] text-[1.625rem] font-extrabold leading-none text-[#296A52]">
@@ -251,47 +214,14 @@ const VysledkySection = () => {
                     </p>
                   </div>
 
-                  <div className="mt-6 overflow-hidden rounded-[10px] border border-[#e8e3db] bg-[#f3efe8] pt-1.5">
-                    <svg
-                      viewBox="0 0 320 72"
-                      className="block w-full h-[4.25rem]"
-                      role="img"
-                      aria-label={`Trend výnosu klienta ${story.name}`}
-                      preserveAspectRatio="none"
-                    >
-                      <defs>
-                        <linearGradient id={`vysledky-fill-mobile-${i}`} x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="0%" stopColor="#296A52" stopOpacity="0.18" />
-                          <stop offset="100%" stopColor="#296A52" stopOpacity="0" />
-                        </linearGradient>
-                      </defs>
-                      <path
-                        d={`${getSparklinePath(
-                          getScaledReturns(story.trend, story.returnPct),
-                          320,
-                          56,
-                          12,
-                          maxReturnPct,
-                          minReturnPct,
-                        )} L 320 72 L 0 72 Z`}
-                        fill={`url(#vysledky-fill-mobile-${i})`}
-                      />
-                      <path
-                        d={getSparklinePath(
-                          getScaledReturns(story.trend, story.returnPct),
-                          320,
-                          56,
-                          12,
-                          maxReturnPct,
-                          minReturnPct,
-                        )}
-                        fill="none"
-                        stroke="#296A52"
-                        strokeWidth="2.25"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
+                  <div className="mt-6">
+                    <img
+                      src={story.chartImage}
+                      alt={`Graf výsledku klienta ${story.name}`}
+                      className="block w-full h-[148px] rounded-[10px] object-cover"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
                 </article>
               </div>
@@ -323,11 +253,7 @@ const VysledkySection = () => {
                   className="h-10 w-10 shrink-0 rounded-[10px] flex items-center justify-center shadow-sm bg-center bg-cover"
                   style={{ backgroundImage: `url(${brandPattern})` }}
                 >
-                  <LineChart
-                    className="w-[18px] h-[18px] text-white -translate-x-0.5"
-                    strokeWidth={2.25}
-                    aria-hidden
-                  />
+                  <span className="font-sans text-sm font-bold text-white">%</span>
                 </div>
                 <div className="min-w-0 pt-0.5">
                   <p className="[font-family:var(--font-serif)] text-[1.625rem] sm:text-[1.75rem] md:text-[1.875rem] font-extrabold leading-none text-[#296A52]">
@@ -359,47 +285,14 @@ const VysledkySection = () => {
                 </p>
               </div>
 
-              <div className="mt-6 overflow-hidden rounded-[10px] border border-[#e8e3db] bg-[#f3efe8] pt-1.5">
-                <svg
-                  viewBox="0 0 320 72"
-                  className="block w-full h-[4.25rem] md:h-[4.75rem]"
-                  role="img"
-                  aria-label={`Trend výnosu klienta ${story.name}`}
-                  preserveAspectRatio="none"
-                >
-                  <defs>
-                    <linearGradient id={`vysledky-fill-${i}`} x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#296A52" stopOpacity="0.18" />
-                      <stop offset="100%" stopColor="#296A52" stopOpacity="0" />
-                    </linearGradient>
-                  </defs>
-                  <path
-                    d={`${getSparklinePath(
-                      getScaledReturns(story.trend, story.returnPct),
-                      320,
-                      56,
-                      12,
-                      maxReturnPct,
-                      minReturnPct,
-                    )} L 320 72 L 0 72 Z`}
-                    fill={`url(#vysledky-fill-${i})`}
-                  />
-                  <path
-                    d={getSparklinePath(
-                      getScaledReturns(story.trend, story.returnPct),
-                      320,
-                      56,
-                      12,
-                      maxReturnPct,
-                      minReturnPct,
-                    )}
-                    fill="none"
-                    stroke="#296A52"
-                    strokeWidth="2.25"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+              <div className="mt-6">
+                <img
+                  src={story.chartImage}
+                  alt={`Graf výsledku klienta ${story.name}`}
+                  className="block w-full h-[148px] rounded-[10px] object-cover"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
             </article>
           </AnimatedSection>
@@ -417,7 +310,7 @@ const VysledkySection = () => {
           </p>
           <div className="mt-7 md:mt-8 text-center">
             <button type="button" onClick={scrollToBooking} className="btn-primary text-lg">
-              Rezervovať úvodný hovor
+              {ctaLabel}
             </button>
           </div>
         </div>

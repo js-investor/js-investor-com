@@ -22,7 +22,11 @@ const steps = [
   },
 ];
 
-const UvodnyHovorSection = () => (
+type UvodnyHovorSectionProps = {
+  ctaLabel?: string;
+};
+
+const UvodnyHovorSection = ({ ctaLabel = "Rezervovať úvodný hovor" }: UvodnyHovorSectionProps) => (
   <section id="prvy-krok" className="section-cream section-padding relative overflow-hidden scroll-mt-24">
     <div className="absolute inset-0 bg-dot-grid opacity-20" />
     <div className="section-container relative z-10">
@@ -81,7 +85,7 @@ const UvodnyHovorSection = () => (
       <AnimatedSection>
         <div className="text-center">
           <button onClick={scrollToBooking} className="btn-primary text-lg mb-4">
-            Rezervovať úvodný hovor
+            {ctaLabel}
           </button>
         </div>
       </AnimatedSection>

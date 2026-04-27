@@ -29,7 +29,11 @@ const cards: { icon: ReactNode; stat: string; title: string; body: string }[] = 
   },
 ];
 
-const DobryPoradcaSection = () => (
+type DobryPoradcaSectionProps = {
+  ctaLabel?: string;
+};
+
+const DobryPoradcaSection = ({ ctaLabel = "Rezervovať úvodný hovor" }: DobryPoradcaSectionProps) => (
   <section className="section-white section-padding relative overflow-hidden">
     <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-primary/3 blur-[120px] pointer-events-none" />
     <div className="section-container relative z-10">
@@ -90,7 +94,7 @@ const DobryPoradcaSection = () => (
       <AnimatedSection>
         <div className="text-center mt-8 md:mt-10">
           <button onClick={scrollToBooking} className="btn-primary text-lg">
-            Rezervovať úvodný hovor
+            {ctaLabel}
           </button>
           <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-sm font-sans text-muted-foreground mt-4">
             {["Bezplatný úvodný hovor", "Online 30 minút", "Bez záväzku a predaja"].map(

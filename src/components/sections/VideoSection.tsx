@@ -4,7 +4,11 @@ const scrollToBooking = () => {
   document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" });
 };
 
-const VideoSection = () => (
+type VideoSectionProps = {
+  ctaLabel?: string;
+};
+
+const VideoSection = ({ ctaLabel = "Rezervovať úvodný hovor" }: VideoSectionProps) => (
   <section id="co-dostanes" className="section-cream section-padding relative overflow-hidden scroll-mt-24">
     <div className="absolute inset-0 bg-dot-grid opacity-20" />
     <div className="section-container relative z-10">
@@ -40,7 +44,7 @@ const VideoSection = () => (
             Chceš vedieť, ako <span className="text-primary font-bold">vyzeral tvoj plán</span>
           </p>
           <button type="button" onClick={scrollToBooking} className="btn-primary text-lg">
-            Rezervovať úvodný hovor
+            {ctaLabel}
           </button>
         </div>
       </AnimatedSection>

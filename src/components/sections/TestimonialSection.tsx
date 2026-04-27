@@ -26,7 +26,11 @@ const testimonials = [
   },
 ];
 
-const TestimonialSection = () => (
+type TestimonialSectionProps = {
+  ctaLabel?: string;
+};
+
+const TestimonialSection = ({ ctaLabel = "Rezervovať úvodný hovor" }: TestimonialSectionProps) => (
   <section id="recenzie" className="bg-footer-bg section-padding relative overflow-hidden scroll-mt-24">
     <div className="absolute inset-0 bg-dot-grid opacity-20" />
     <div className="section-container relative z-10">
@@ -84,7 +88,7 @@ const TestimonialSection = () => (
             onClick={scrollToBooking}
             className="btn-primary !bg-[#d4dfdb] !text-primary hover:!bg-[#c5d4cf] text-lg"
           >
-            Rezervovať úvodný hovor
+            {ctaLabel}
           </button>
         </div>
       </AnimatedSection>
