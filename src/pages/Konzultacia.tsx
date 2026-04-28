@@ -12,10 +12,10 @@ import VideoSection from "@/components/sections/VideoSection";
 import FaqSection from "@/components/sections/FaqSection";
 import DeferredBookingSection from "@/components/DeferredBookingSection";
 import MoreReviewsSection from "@/components/sections/MoreReviewsSection";
-import FooterSection from "@/components/sections/FooterSection";
+import PageWrapper from "@/components/layout/PageWrapper";
 
 const Konzultacia = () => (
-  <main>
+  <PageWrapper>
     <KonzultaciaHeroSection />
     <StatsBarSection />
     <KonzultaciaZlozenyUrokSection />
@@ -30,8 +30,7 @@ const Konzultacia = () => (
     <FaqSection />
     <DeferredBookingSection />
     <MoreReviewsSection ctaLabel="Chcem začať teraz" />
-    <FooterSection />
-  </main>
+  </PageWrapper>
 );
 
 export default Konzultacia;

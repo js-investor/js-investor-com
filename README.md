@@ -64,7 +64,7 @@ Build výstup je v priečinku `dist/` a je pripravený na statický hosting.
 - **Fallback pri chybe deployu:** rollback na posledný funkčný commit/tag a redeploy.
 - **Fallback pri nefunkčnom builde:** skontrolovať najprv `lint`, potom TypeScript check a až potom bundling.
 - **Fallback pri poškodených assetoch:** overiť cesty v `src/assets` a referencie v komponentoch/`index.html`.
-- **Routing fallback:** hosting musí smerovať neznáme route na `index.html` (SPA fallback), inak nebudú fungovať priame URL ako `/herohero`.
+- **Routing fallback:** hosting musí smerovať neznáme route na `index.html` (SPA fallback), inak nebudú fungovať priame URL.
 
 ## Čo robiť pri výpadku (runbook)
 
