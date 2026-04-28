@@ -22,7 +22,20 @@ const Konzultacia = () => (
     <KonzultaciaPostStatsExtremySection />
     <DobryPoradcaSection ctaLabel="Chcem začať teraz" />
     <UvodnyHovorSection ctaLabel="Chcem začať teraz" />
-    <VysledkySection ctaLabel="Chcem začať teraz" />
+    <VysledkySection
+      title={
+        <>
+          Toto sú <span className="text-[#296A52] font-bold">výsledky ľudí,</span> ktorým som postavil plán.
+        </>
+      }
+      subtitle={
+        <>
+          <strong className="text-[#1a1a1a]">Nikto z nich nemal všetko vyriešené.</strong> Každý prišiel s vlastnou
+          situáciou. Chaos, banka, žiadny plán. Spolu sme to rozmotali.
+        </>
+      }
+      ctaLabel="Chcem začať teraz"
+    />
     <TestimonialSection ctaLabel="Chcem začať teraz" />
     <FazySection />
     <MobileOnlyImageSection />
