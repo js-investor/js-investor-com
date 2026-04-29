@@ -42,7 +42,7 @@ const GaranciaSection = () => (
       <AnimatedSection>
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="headline-serif">
-            Čo od nás <span className="text-primary font-bold">môžete očakávať</span>
+            Čo všetko od nás <span className="text-primary font-bold">môžete očakávať</span>
           </h2>
           <p className="mt-4 font-sans text-sm leading-relaxed text-muted-foreground md:text-base">
             Žiadne marketingové reči a prázdne sľuby. Nie ste môj ďalší klient v zozname.{" "}
