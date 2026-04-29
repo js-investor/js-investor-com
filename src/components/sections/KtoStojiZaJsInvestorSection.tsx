@@ -63,7 +63,7 @@ const KtoStojiZaJsInvestorSection = () => (
             </p>
 
             <a
-              href="#booking"
+              href="#formular"
               className="btn-primary mt-7 inline-flex self-start !w-auto !bg-[#d4dfdb] !text-primary text-lg hover:!bg-[#c5d4cf]"
             >
               Chcem spolupracovať s Ivanom

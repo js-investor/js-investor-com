@@ -5,7 +5,7 @@ import { TrendingUp, Wallet, Clock, Check } from "lucide-react";
 import { ReactNode } from "react";
 
 const scrollToBooking = () => {
-  document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" });
+  document.getElementById("formular")?.scrollIntoView({ behavior: "smooth" });
 };
 
 const cards: { icon: ReactNode; stat: string; title: string; body: string }[] = [

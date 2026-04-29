@@ -35,7 +35,7 @@ const RecenzieKlientovSection = ({
   heading = <>Lorem ipsum dolor sit amet</>,
   subheading,
   ctaLabel = "Lorem ipsum",
-  ctaHref = "#booking",
+  ctaHref = "#formular",
 }: RecenzieKlientovSectionProps) => (
   <section id="recenzie" className="bg-footer-bg section-padding relative overflow-hidden scroll-mt-24">
     <div className="absolute inset-0 bg-dot-grid opacity-20" />

@@ -12,7 +12,7 @@ const MapaVpraxiSection = () => (
               Pozrite si reálny príklad vo videu, kde presne uvidíte, čo získate.
             </p>
             <div className="mt-7">
-              <a href="#booking" className="btn-primary text-lg">
+              <a href="#formular" className="btn-primary text-lg">
                 Získajte svoju JS Wealth Map
               </a>
             </div>

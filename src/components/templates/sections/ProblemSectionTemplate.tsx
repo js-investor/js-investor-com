@@ -54,7 +54,7 @@ const ProblemSectionTemplate = ({
     </>
   ),
   ctaLabel = "Lorem ipsum",
-  ctaHref = "#booking",
+  ctaHref = "#formular",
   onCtaClick,
 }: ProblemSectionTemplateProps) => (
   <section id="problem" className="section-cream section-padding relative overflow-hidden scroll-mt-24">

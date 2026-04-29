@@ -253,7 +253,7 @@ const BookingSection = ({
 
   return (
     <section
-      id="booking"
+      id="formular"
       className={`${isCardOnLight ? "section-white" : "bg-footer-bg"} section-padding relative overflow-hidden scroll-mt-24`}
     >
       <div className={`absolute inset-0 bg-dot-grid ${isCardOnLight ? "opacity-15" : "opacity-20"}`} />

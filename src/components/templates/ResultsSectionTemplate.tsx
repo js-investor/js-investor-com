@@ -57,7 +57,7 @@ const ResultsSectionTemplate = ({
   title,
   subtitle,
   ctaLabel,
-  ctaHref = "#booking",
+  ctaHref = "#formular",
   onCtaClick,
   sectionClassName = "relative overflow-hidden py-12 md:py-24 lg:py-28 scroll-mt-24",
 }: ResultsSectionTemplateProps) => {

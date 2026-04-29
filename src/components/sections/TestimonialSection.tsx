@@ -2,7 +2,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 import SectionHeader from "@/components/SectionHeader";
 
 const scrollToBooking = () => {
-  document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" });
+  document.getElementById("formular")?.scrollIntoView({ behavior: "smooth" });
 };
 
 const testimonials = [

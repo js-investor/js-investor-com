@@ -1,7 +1,7 @@
 import AnimatedSection from "@/components/AnimatedSection";
 
 const scrollToBooking = () => {
-  document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" });
+  document.getElementById("formular")?.scrollIntoView({ behavior: "smooth" });
 };
 
 const UrgenciaSection = () => (

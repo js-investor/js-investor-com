@@ -87,7 +87,7 @@ const RozdielPoplatkovSection = () => (
           <p className="font-sans text-base text-foreground/90">
             Neplaťte zbytočné poplatky a <span className="font-semibold text-primary">chráňte svoj čistý výnos.</span>
           </p>
-          <a href="#booking" className="btn-primary mt-5 inline-flex">
+          <a href="#formular" className="btn-primary mt-5 inline-flex">
             Získajte svoju JS Wealth Map
           </a>
         </div>

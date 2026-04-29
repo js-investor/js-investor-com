@@ -84,7 +84,7 @@ const PredPoSection = () => (
 
       <AnimatedSection>
         <div className="mt-10 text-center">
-          <a href="#booking" className="btn-primary text-lg">
+          <a href="#formular" className="btn-primary text-lg">
             Získajte svoju JS Wealth Map
           </a>
         </div>

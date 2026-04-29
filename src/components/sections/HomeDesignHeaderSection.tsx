@@ -11,10 +11,10 @@ const HomeDesignHeaderSection = () => {
         { label: "FAQ", href: "#faq" },
       ]}
       headerCtaLabel="Získať JS Wealth Map™"
-      headerCtaHref="#booking"
+      headerCtaHref="#formular"
       title={
         <>
-          Finančný plán, pri ktorom viete, že vaše <span className="text-primary font-bold">peniaze sú v bezpečí.</span>
+          Finančný plán, pri ktorom <span className="text-primary font-bold">sú vaše peniaze v bezpečí.</span>
         </>
       }
       subtitle={
@@ -24,7 +24,7 @@ const HomeDesignHeaderSection = () => {
         </>
       }
       heroCtaLabel="Získajte svoju JS Wealth Map"
-      heroCtaHref="#booking"
+      heroCtaHref="#formular"
       heroSecondaryLinkLabel="Ako to funguje →"
       heroSecondaryLinkHref="#riesenie"
       badges={["Bez záväzkov", "Odpoviem do 48 hodín", "Pod dohľadom NBS"]}

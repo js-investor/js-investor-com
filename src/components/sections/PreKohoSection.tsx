@@ -76,7 +76,7 @@ const PreKohoSection = () => (
             zavolať."
           </p>
           <div className="mt-8">
-            <a href="#booking" className="btn-primary text-lg">
+            <a href="#formular" className="btn-primary text-lg">
               Získajte svoju JS Wealth Map
             </a>
           </div>

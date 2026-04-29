@@ -1,7 +1,7 @@
 import HeroSectionTemplate from "@/components/templates/HeroSectionTemplate";
 
 const scrollToBooking = () => {
-  document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" });
+  document.getElementById("formular")?.scrollIntoView({ behavior: "smooth" });
 };
 
 const scrollToSection = (id: string) => {

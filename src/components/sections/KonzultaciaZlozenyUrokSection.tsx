@@ -1,7 +1,7 @@
 import zlozenyUrokTable from "@/assets/images/js-tabulka-porovnanie-zlozeny-urok.png";
 
 const scrollToBooking = () => {
-  document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" });
+  document.getElementById("formular")?.scrollIntoView({ behavior: "smooth" });
 };
 
 const KonzultaciaZlozenyUrokSection = () => (

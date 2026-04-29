@@ -346,6 +346,24 @@
     @apply inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground font-sans font-semibold text-base rounded-full transition-all duration-300 cursor-pointer relative overflow-hidden;
   }
 
+  .btn-primary::after {
+    content: "";
+    position: absolute;
+    top: -140%;
+    left: -30%;
+    width: 38%;
+    height: 280%;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.28) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: translateX(-220%) rotate(18deg);
+    pointer-events: none;
+    animation: btn-shimmer-loop 2.8s ease-in-out infinite;
+  }
+
   .btn-primary:hover {
     @apply bg-forest-hover;
     transform: translateY(-1px);
@@ -357,6 +375,29 @@
 
   .btn-pill:hover {
     @apply bg-forest-hover;
+  }
+
+  @keyframes btn-shimmer-loop {
+    0% {
+      transform: translateX(-220%) rotate(18deg);
+    }
+    55% {
+      transform: translateX(-220%) rotate(18deg);
+    }
+    100% {
+      transform: translateX(420%) rotate(18deg);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .btn-primary:hover,
+    .btn-primary {
+      transform: none;
+    }
+
+    .btn-primary::after {
+      animation: none;
+    }
   }
 
   /* Hero header CTA — menší text na mobile */

@@ -26,7 +26,7 @@ const VysledkySection = ({
       title={title}
       subtitle={subtitle}
       ctaLabel={ctaLabel}
-      ctaHref="#booking"
+      ctaHref="#formular"
     />
   );
 };
