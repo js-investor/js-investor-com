@@ -26,7 +26,7 @@ type UvodnyHovorSectionProps = {
   ctaLabel?: string;
 };
 
-const UvodnyHovorSection = ({ ctaLabel = "Rezervovať úvodný hovor" }: UvodnyHovorSectionProps) => (
+const UvodnyHovorSection = ({ ctaLabel = "Získajte svoju JS Wealth Map" }: UvodnyHovorSectionProps) => (
   <section id="prvy-krok" className="section-cream section-padding relative overflow-hidden scroll-mt-24">
     <div className="absolute inset-0 bg-dot-grid opacity-20" />
     <div className="section-container relative z-10">

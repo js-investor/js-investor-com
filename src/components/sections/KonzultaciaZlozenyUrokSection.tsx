@@ -24,7 +24,7 @@ const KonzultaciaZlozenyUrokSection = () => (
         </p>
         <div className="mt-8">
           <button type="button" onClick={scrollToBooking} className="btn-primary text-lg">
-            Chcem začať teraz
+            Získajte svoju JS Wealth Map
           </button>
         </div>
       </div>

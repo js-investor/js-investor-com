@@ -12,10 +12,12 @@ import PoplatkyPorovnanieSection from "@/components/sections/PoplatkyPorovnanieS
 import PodmienkyPorovnanieSection from "@/components/sections/PodmienkyPorovnanieSection";
 import RozdielPoplatkovSection from "@/components/sections/RozdielPoplatkovSection";
 import KtoStojiZaJsInvestorSection from "@/components/sections/KtoStojiZaJsInvestorSection";
+import GaranciaSection from "@/components/sections/GaranciaSection";
+import UrgenciaSection from "@/components/sections/UrgenciaSection";
 import FaqLoremSection from "@/components/sections/FaqLoremSection";
 import BookingSection from "@/components/sections/BookingSection";
 import PageWrapper from "@/components/layout/PageWrapper";
-import { Clock3, Percent, PiggyBank, Wallet } from "lucide-react";
+import { Clock3, Compass, Percent, PiggyBank, Wallet } from "lucide-react";
 
 const Index = () => (
   <PageWrapper>
@@ -28,50 +30,61 @@ const Index = () => (
         </>
       }
       subtitle={<>Ukážka dlhodobého zhodnotenia majetku v rámci našich riadených ETF portfólií.</>}
-      ctaLabel="Chcem budovať podobné portfólio"
+      ctaLabel="Získajte svoju JS Wealth Map"
     />
     <ProblemSectionTemplate
       heading={<>Poznáte to?</>}
+      subheading={null}
       items={[
         {
-          icon: <PiggyBank className="h-5 w-5 -translate-x-0.5 text-accent" />,
-          title: <>Na účte vám leží 30 000 €. Každý rok z nich zmizne 1 200 €.</>,
-          body: <>Nie preto, že ste urobili niečo zle. Ale preto, že ste s nimi neurobili nič.</>,
-        },
-        {
-          icon: <Percent className="h-5 w-5 -translate-x-0.5 text-accent" />,
-          title: <>Bankár vám povedal, že sa o vás postará.</>,
+          icon: <PiggyBank className="h-6 w-6 -translate-x-0.5 text-accent" />,
+          title: <>Na účte vám leží 30 000 € a ročne z nich zmizne 1 200 €.</>,
           body: (
             <>
-              Zabudol dodať, že vám za to účtuje 2% ročne. Za 30 rokov je to často viac ako 30 % majetku. Vo
-              výsledku až desiatky tisíc eur.
+              Nie preto, že ste urobili niečo zle. Ale preto, že ste s nimi neurobili nič.{" "}
+              <strong>Za 10 rokov to nie je len 12 000 €. Je to aj všetko navyše, čo tieto peniaze mohli medzitým zarobiť.</strong>
             </>
           ),
         },
         {
-          icon: <Clock3 className="h-5 w-5 -translate-x-0.5 text-accent" />,
-          title: <>Po večeroch Googlite ETF a dividendové akcie. Ráno máte meeting.</>,
-          body: <>Nemáte čas byť investorom na plný úväzok. Cez víkend chcete byť s rodinou.</>,
-        },
-        {
-          icon: <Wallet className="h-5 w-5 -translate-x-0.5 text-accent" />,
-          title: <>Máte ETF, hypotéku, možno aj investičný byt.</>,
+          icon: <Percent className="h-6 w-6 -translate-x-0.5 text-accent" />,
+          title: <>Bankár vám povedal, že sa o vás postará, ale nepovedal vám skutočnú cenu.</>,
           body: (
             <>
-              Ale neviete, či má zmysel dokúpiť druhý byt, navýšiť ETF, alebo čakať. Rozhodujete sa podľa pocitu, nie
-              podľa dát.
+              1 % ročný poplatok vyzerá zanedbateľne.{" "}
+              <strong>Pri 30-ročnom horizonte vám zhltnú 30+ % z toho, čo ste celý život budovali.</strong> Bez toho,
+              aby ste si to všimli tak stratíte prídete o 10 rokov života.
+            </>
+          ),
+        },
+        {
+          icon: <Compass className="h-6 w-6 -translate-x-0.5 text-accent" />,
+          title: <>Investujete ale ste na to sami.</>,
+          body: (
+            <>
+              Nikto vám nepovie, či to robíte správne. ETF, nehnuteľnosti, krypto. Zo všetkých strán počujete niečo
+              iné. A <strong>keď príde dôležité rozhodnutie, ste na to sami.</strong> Bez niekoho, kto pozná vaše
+              čísla.
+            </>
+          ),
+        },
+        {
+          icon: <Wallet className="h-6 w-6 -translate-x-0.5 text-accent" />,
+          title: <>Máte plán, ale neviete, či vás dovedie k rente, ktorú chcete.</>,
+          body: (
+            <>
+              Investujete, čo je správne. No bez stratégie sa môže stať, že{" "}
+              <strong>o 15 rokov zistíte, že ste mali obrovský potenciál, ktorý ste nevyužili.</strong>
             </>
           ),
         },
       ]}
       closingText={
         <>
-          Presne pre toto existuje JS Wealth Map™. Jeden plán. Jasný smer.
-          <br />
-          <strong>Všetko na jednom mieste.</strong>
+          Presne pre toto existuje JS Wealth Map™. Jeden plán, jasný smer. <strong>Všetko na jednom mieste.</strong>
         </>
       }
-      ctaLabel="Získať JS Wealth Map™"
+      ctaLabel="Získajte svoju JS Wealth Map"
     />
     <WealthMapPilieresSection />
     <MapaVpraxiSection />
@@ -85,13 +98,15 @@ const Index = () => (
           bezpečia v každej trhovej situácii.
         </>
       }
-      ctaLabel="Získať JS Wealth Map™"
+      ctaLabel="Získajte svoju JS Wealth Map"
     />
     <PreKohoSection />
     <PoplatkyPorovnanieSection />
     <PodmienkyPorovnanieSection />
     <RozdielPoplatkovSection />
     <KtoStojiZaJsInvestorSection />
+    <GaranciaSection />
+    <UrgenciaSection />
     <FaqLoremSection
       heading={<>Najčastejšie otázky</>}
       subheading={<>Odpovede na to, čo nás klienti pýtajú najčastejšie.</>}

@@ -88,7 +88,7 @@ const RozdielPoplatkovSection = () => (
             Neplaťte zbytočné poplatky a <span className="font-semibold text-primary">chráňte svoj čistý výnos.</span>
           </p>
           <a href="#booking" className="btn-primary mt-5 inline-flex">
-            Získať JS Wealth Map™
+            Získajte svoju JS Wealth Map
           </a>
         </div>
       </AnimatedSection>

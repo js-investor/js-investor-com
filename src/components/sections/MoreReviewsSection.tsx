@@ -141,7 +141,7 @@ type MoreReviewsSectionProps = {
   ctaLabel?: string;
 };
 
-const MoreReviewsSection = ({ ctaLabel = "Rezervovať úvodný hovor" }: MoreReviewsSectionProps) => {
+const MoreReviewsSection = ({ ctaLabel = "Získajte svoju JS Wealth Map" }: MoreReviewsSectionProps) => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
 

@@ -14,20 +14,20 @@ const HomeDesignHeaderSection = () => {
       headerCtaHref="#booking"
       title={
         <>
-          Investovanie potrebuje plán, aby váš majetok <span className="text-primary font-bold">zodpovedal vášmu príjmu.</span>
+          Finančný plán, pri ktorom viete, že vaše <span className="text-primary font-bold">peniaze sú v bezpečí.</span>
         </>
       }
       subtitle={
         <>
-          Získajte JS Wealth Map™. Jasný plán, ktorý vám ukáže, kde ste dnes, kam smerujete a čo má zmysel urobiť
-          ďalej.
+          JS Wealth Map™ je váš osobný finančný plán na mieru. Ukáže vám presne, kde vaše peniaze sú, kam smerujú a
+          čo s nimi urobiť, aby <strong>váš majetok konečne zodpovedal vášmu príjmu.</strong>
         </>
       }
-      heroCtaLabel="Získať JS Wealth Map™"
+      heroCtaLabel="Získajte svoju JS Wealth Map"
       heroCtaHref="#booking"
       heroSecondaryLinkLabel="Ako to funguje →"
       heroSecondaryLinkHref="#riesenie"
-      badges={["Strategické investovanie", "Minimálne poplatky", "Skutočný odborník po pravej ruke"]}
+      badges={["Bez záväzkov", "Odpoviem do 48 hodín", "Pod dohľadom NBS"]}
       videoSrc="https://player.vimeo.com/video/1145809910"
       videoTitle="JS Wealth Map video"
     />

@@ -37,7 +37,7 @@ const KonzultaciaHeroSection = () => {
           je pod dohľadom Národnej banky Slovenska.
         </>
       }
-      heroCtaLabel="Chcem začať teraz"
+      heroCtaLabel="Získajte svoju JS Wealth Map"
       heroCtaOnClick={scrollToBooking}
       badges={["Bezplatný úvodný hovor", "Online 30 minút", "Bez záväzku a predaja"]}
       videoSrc="https://player.vimeo.com/video/1175801732?autoplay=0&title=0&portrait=0&byline=0"

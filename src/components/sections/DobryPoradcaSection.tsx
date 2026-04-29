@@ -33,7 +33,7 @@ type DobryPoradcaSectionProps = {
   ctaLabel?: string;
 };
 
-const DobryPoradcaSection = ({ ctaLabel = "Rezervovať úvodný hovor" }: DobryPoradcaSectionProps) => (
+const DobryPoradcaSection = ({ ctaLabel = "Získajte svoju JS Wealth Map" }: DobryPoradcaSectionProps) => (
   <section className="section-white section-padding relative overflow-hidden">
     <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-primary/3 blur-[120px] pointer-events-none" />
     <div className="section-container relative z-10">

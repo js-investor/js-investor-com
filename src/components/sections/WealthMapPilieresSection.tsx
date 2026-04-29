@@ -6,23 +6,46 @@ const pillars = [
   {
     icon: <Landmark className="h-6 w-6 -translate-x-0.5 text-primary" strokeWidth={1.8} />,
     title: "Inteligentné ETF stratégie",
-    body: "Výhodné globálne fondy bez zbytočných ročných poplatkov. Nastavíme vám portfólio presne podľa vášho horizontu. Žiadny \"jeden fond pre všetkých\", ale stratégia na mieru pre vašu situáciu. Bezpečne, jasne a bez predražených sprostredkovateľov.",
+    body: (
+      <>
+        Nastavíme vám portfólio <strong>presne podľa vašej situácie a horizontu.</strong> Žiadny „jeden fond pre
+        všetkých", žiadni predražení sprostredkovatelia. Získate <strong>jasnú stratégiu, ktorá váš majetok rozhýbe.</strong>
+      </>
+    ),
   },
   {
     icon: <Building2 className="h-6 w-6 -translate-x-0.5 text-primary" strokeWidth={1.8} />,
     title: "Investičné nehnuteľnosti",
     subtitle: "(ktoré dávajú zmysel pre vás)",
-    body: "Nie každý potrebuje investičný byt. Ale ak ho kúpite, musí vám dávať matematický zmysel. Odo mňa dostanete ROI kalkulačku, stresové scenáre a model financovania. Žiadne \"kúpim, lebo ceny rastú.\" Prísne čísla, ktoré logicky zapadnú do vášho majetku.",
+    body: (
+      <>
+        <strong>Nie každý potrebuje investičný byt.</strong> Ak ho kúpite, musí dávať matematický zmysel. ROI
+        kalkulačka, stresové scenáre, model financovania.{" "}
+        <strong>Žiadne pocity ale čísla, ktoré zapadnú do vášho majetku.</strong>
+      </>
+    ),
   },
   {
     icon: <Gem className="h-6 w-6 -translate-x-0.5 text-primary" strokeWidth={1.8} />,
     title: "Prémiové investície",
-    body: "Fondy kvalifikovaných investorov, ku ktorým bežný človek nemá prístup. Od 50 000 € majetku vám odomknem dvere k neverejným investíciám. Ide o projekty s cielenými fixnými výnosmi 4 - 7 % ročne, ktoré dopĺňajú dynamickú časť portfólia.",
+    body: (
+      <>
+        <strong>Bežný človek sa k nim jednoducho nedostane.</strong> Od 50 000 € majetku vám odomknem{" "}
+        <strong>dvere k neverejným fondom s fixnými výnosmi</strong> 4–7 % ročne. Ako ďalší motor rastu popri vašom
+        portfóliu.
+      </>
+    ),
   },
   {
     icon: <WalletCards className="h-6 w-6 -translate-x-0.5 text-primary" strokeWidth={1.8} />,
     title: "Renta a skutočná sloboda",
-    body: "Neinvestujete len pre pekné čísla v aplikácii, ale pre svoju nezávislosť. V správny moment vaše aktíva prestavíme do rentového módu a vytvoríme vám bezpečný systém výberov, ktorý vám zabezpečí stabilný pasívny príjem.",
+    body: (
+      <>
+        Toto je cieľ celého plánu. <strong>V správny moment vaše aktíva prestavíme do rentového módu</strong> a
+        vytvoríme systém výberov. Ten vám zabezpečí stabilný pasívny príjem{" "}
+        <strong>bez toho, aby ste sa museli o čokoľvek starať.</strong>
+      </>
+    ),
   },
 ];
 
@@ -36,19 +59,12 @@ const WealthMapPilieresSection = () => (
             Dajte svojim peniazom <span className="text-[#d4dfdb] font-bold">jasnú stratégiu.</span>
           </h2>
           <p className="sub-headline !text-cream/85">
-            Spolu s JS Wealth Map™ sa konečne zbavíte finančného chaosu a získate presný plán, ktorý bude pracovať pre
-            vás.
+            JS Wealth Map™ stojí na štyroch pilieroch. Každý rieši inú časť vášho finančného života.
           </p>
         </div>
       </AnimatedSection>
 
-      <AnimatedSection>
-        <p className="mt-10 text-center font-serif text-xl md:text-2xl font-extrabold tracking-[0.06em] text-[#d4dfdb]">
-          4 piliere JS Wealth Map™
-        </p>
-      </AnimatedSection>
-
-      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
         {pillars.map((pillar, index) => (
           <AnimatedSection key={pillar.title} delay={index * 0.06}>
             <article className="h-full rounded-2xl border border-white/20 bg-white/95 p-6 md:p-7">

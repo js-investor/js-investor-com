@@ -105,7 +105,7 @@ const StrataSection = () => (
       <AnimatedSection>
         <div className="text-center mt-8 md:mt-10">
           <button onClick={scrollToBooking} className="btn-primary text-lg">
-            Rezervovať úvodný hovor
+            Získajte svoju JS Wealth Map
           </button>
         </div>
       </AnimatedSection>

@@ -69,14 +69,13 @@ const ProblemSectionTemplate = ({
         </div>
       </AnimatedSection>
 
-      <div className="mx-auto grid max-w-5xl grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
+      <div className="mx-auto grid w-full max-w-4xl grid-cols-1 gap-7 md:gap-8">
         {items.map((item, index) => (
           <AnimatedSection key={index} delay={index * 0.05}>
-            <article className="h-full rounded-2xl border border-primary/10 bg-white p-5 md:p-6 transition-all duration-300 hover:border-accent/55 hover:shadow-[0_8px_20px_-14px_rgba(174,55,55,0.35)]">
+            <article className="w-full rounded-2xl border border-primary/12 bg-[#faf8f4] p-5 md:p-6 transition-colors duration-300 hover:bg-[#fcfbf8]">
               <div
                 className="mb-3 inline-flex h-9 w-9 items-center justify-center"
                 style={{
-                  backgroundColor: "#FBECEF",
                   WebkitMaskImage: `url(${brandPattern})`,
                   WebkitMaskRepeat: "no-repeat",
                   WebkitMaskPosition: "center",
@@ -89,7 +88,7 @@ const ProblemSectionTemplate = ({
               >
                 {item.icon}
               </div>
-              <h3 className="font-serif text-xl font-extrabold text-foreground leading-snug">{item.title}</h3>
+              <h3 className="font-serif text-xl font-black text-foreground leading-snug">{item.title}</h3>
               <p className="mt-2 font-sans text-sm md:text-base text-muted-foreground leading-relaxed">{item.body}</p>
             </article>
           </AnimatedSection>

@@ -30,7 +30,7 @@ type TestimonialSectionProps = {
   ctaLabel?: string;
 };
 
-const TestimonialSection = ({ ctaLabel = "Rezervovať úvodný hovor" }: TestimonialSectionProps) => (
+const TestimonialSection = ({ ctaLabel = "Získajte svoju JS Wealth Map" }: TestimonialSectionProps) => (
   <section id="recenzie" className="bg-footer-bg section-padding relative overflow-hidden scroll-mt-24">
     <div className="absolute inset-0 bg-dot-grid opacity-20" />
     <div className="section-container relative z-10">
