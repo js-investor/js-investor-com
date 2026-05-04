@@ -61,10 +61,10 @@ const FazyLoremSection = () => (
             <AnimatedSection key={item.title} delay={i * 0.05}>
               <div className="text-left">
                 <Icon className="mb-5 h-9 w-9 md:h-10 md:w-10 text-primary" strokeWidth={1.5} aria-hidden />
-                <p className="font-sans font-semibold text-base md:text-lg text-foreground mb-2 leading-snug">
+                <p className="font-sans h6 text-foreground mb-2">
                   {item.title}
                 </p>
-                <p className="font-sans text-sm md:text-[0.95rem] text-muted-foreground leading-relaxed">{item.body}</p>
+                <p className="font-sans text-small text-muted-foreground">{item.body}</p>
               </div>
             </AnimatedSection>
           );

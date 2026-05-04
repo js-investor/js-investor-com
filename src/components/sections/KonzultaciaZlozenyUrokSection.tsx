@@ -9,7 +9,7 @@ const KonzultaciaZlozenyUrokSection = () => (
     <div className="section-container">
       <div className="mx-auto w-full max-w-[1080px] text-center">
         <h2 className="headline-serif mb-6 md:mb-8">
-          Koľko ťa môže <span className="text-primary italic">stáť čakanie?</span>
+          Koľko ťa môže <span className="text-primary font-bold">stáť čakanie?</span>
         </h2>
         <img
           src={zlozenyUrokTable}
@@ -18,13 +18,13 @@ const KonzultaciaZlozenyUrokSection = () => (
           loading="lazy"
           decoding="async"
         />
-        <p className="mt-8 md:mt-10 font-sans text-base md:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+        <p className="mt-8 md:mt-10 font-sans text-lead text-muted-foreground max-w-3xl mx-auto">
           Tabuľka je modelový príklad, ktorý ukazuje, <strong className="text-foreground">prečo sa pri investovaní neoplatí čakať.</strong>
           Príklad je rátaný na 10% ročnom výnose.
         </p>
         <div className="mt-8">
-          <button type="button" onClick={scrollToBooking} className="btn-primary text-lg">
-            Získajte svoju JS Wealth Map
+          <button type="button" onClick={scrollToBooking} className="btn-primary text-body">
+            Získať Wealth Map
           </button>
         </div>
       </div>

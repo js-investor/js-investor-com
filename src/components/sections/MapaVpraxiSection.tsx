@@ -1,4 +1,5 @@
 import AnimatedSection from "@/components/AnimatedSection";
+import CtaResponseNote from "@/components/CtaResponseNote";
 
 const MapaVpraxiSection = () => (
   <section id="mapa-v-praxi" className="section-white section-padding relative overflow-hidden scroll-mt-24">
@@ -12,9 +13,12 @@ const MapaVpraxiSection = () => (
               Pozrite si reálny príklad vo videu, kde presne uvidíte, čo získate.
             </p>
             <div className="mt-7">
-              <a href="#formular" className="btn-primary text-lg">
-                Získajte svoju JS Wealth Map
+              <a href="#formular" className="btn-primary text-body">
+                Získať Wealth Map
               </a>
+              <div>
+                <CtaResponseNote />
+              </div>
             </div>
           </div>
         </AnimatedSection>

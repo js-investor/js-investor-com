@@ -15,7 +15,7 @@ const KonzultaciaPostStatsExtremySection = () => (
           Stretávam sa s{" "}
           <span className="text-primary font-bold">dvoma extrémami.</span>
         </h2>
-        <p className="text-lg md:text-xl font-sans text-muted-foreground leading-relaxed mb-8 md:mb-10">
+        <p className="text-lead font-sans text-muted-foreground mb-8 md:mb-10">
           Ľudia buď{" "}
           <strong className="font-semibold text-foreground">neinvestujú vôbec</strong> a prichádzajú o
           peniaze cez infláciu, alebo{" "}

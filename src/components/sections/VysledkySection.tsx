@@ -5,6 +5,7 @@ type VysledkySectionProps = {
   title?: ReactNode;
   subtitle?: ReactNode;
   ctaLabel?: string;
+  showCtaResponseNote?: boolean;
 };
 
 const VysledkySection = ({
@@ -20,12 +21,14 @@ const VysledkySection = ({
     </>
   ),
   ctaLabel = "Lorem ipsum",
+  showCtaResponseNote = false,
 }: VysledkySectionProps) => {
   return (
     <ResultsSectionTemplate
       title={title}
       subtitle={subtitle}
       ctaLabel={ctaLabel}
+      showCtaResponseNote={showCtaResponseNote}
       ctaHref="#formular"
     />
   );

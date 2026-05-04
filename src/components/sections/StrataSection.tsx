@@ -1,4 +1,5 @@
 import AnimatedSection from "@/components/AnimatedSection";
+import CtaResponseNote from "@/components/CtaResponseNote";
 import SectionHeader from "@/components/SectionHeader";
 import brandPattern from "@/assets/logo/js-brand-pattern.svg";
 import { TrendingDown, Percent, Compass } from "lucide-react";
@@ -39,7 +40,7 @@ const StrataSection = () => (
           headline={
             <>
               Každý mesiac bez plánu{" "}
-              <span className="italic text-primary">ťa stojí reálne peniaze.</span>
+              <span className="text-primary font-bold">ťa stojí reálne peniaze.</span>
             </>
           }
           subHeadline={
@@ -61,13 +62,13 @@ const StrataSection = () => (
               >
                 {c.icon}
               </div>
-              <p className="[font-family:var(--font-serif)] text-3xl md:text-4xl font-extrabold stat-gradient mb-2">
+              <p className="[font-family:var(--font-serif)] h3 stat-gradient mb-2">
                 {c.stat}
               </p>
-              <p className="font-sans font-semibold text-lg text-foreground mb-3">
+              <p className="font-sans h6 text-foreground mb-3">
                 {c.title}
               </p>
-              <p className="font-sans text-muted-foreground leading-relaxed text-sm md:text-base">
+              <p className="font-sans text-body text-muted-foreground">
                 {c.title === "Inflácia" && (
                   <>
                     Ak ti na účte leží 30 000 €, inflácia ti z nich tichu zožerie viac
@@ -104,9 +105,12 @@ const StrataSection = () => (
 
       <AnimatedSection>
         <div className="text-center mt-8 md:mt-10">
-          <button onClick={scrollToBooking} className="btn-primary text-lg">
-            Získajte svoju JS Wealth Map
+          <button onClick={scrollToBooking} className="btn-primary text-body">
+            Získať Wealth Map
           </button>
+          <div>
+            <CtaResponseNote />
+          </div>
         </div>
       </AnimatedSection>
     </div>

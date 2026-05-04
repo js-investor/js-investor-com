@@ -26,7 +26,7 @@ type UvodnyHovorSectionProps = {
   ctaLabel?: string;
 };
 
-const UvodnyHovorSection = ({ ctaLabel = "Získajte svoju JS Wealth Map" }: UvodnyHovorSectionProps) => (
+const UvodnyHovorSection = ({ ctaLabel = "Získať Wealth Map" }: UvodnyHovorSectionProps) => (
   <section id="prvy-krok" className="section-cream section-padding relative overflow-hidden scroll-mt-24">
     <div className="absolute inset-0 bg-dot-grid opacity-20" />
     <div className="section-container relative z-10">
@@ -49,13 +49,13 @@ const UvodnyHovorSection = ({ ctaLabel = "Získajte svoju JS Wealth Map" }: Uvod
         {steps.map((s, i) => (
           <AnimatedSection key={s.num} delay={i * 0.1}>
             <div className="text-center md:text-left card-glass-cream !bg-transparent !border-0 !shadow-none !p-0">
-              <p className="[font-family:var(--font-serif)] text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 bg-gradient-to-b from-primary/95 to-primary/45 bg-clip-text text-transparent">
+              <p className="[font-family:var(--font-serif)] h1 mb-4 bg-gradient-to-b from-primary/95 to-primary/45 bg-clip-text text-transparent">
                 {s.num}
               </p>
-              <p className="font-sans font-semibold text-xl md:text-2xl text-foreground mb-3">
+              <p className="font-sans h5 text-foreground mb-3">
                 {s.title}
               </p>
-              <p className="font-sans text-muted-foreground leading-relaxed text-sm md:text-base">
+              <p className="font-sans text-body text-muted-foreground">
                 {s.num === "01" && (
                   <>
                     Prvých 15 minút sa pýtam ja. <strong>Aká je tvoja aktuálna situácia,</strong>{" "}
@@ -84,7 +84,7 @@ const UvodnyHovorSection = ({ ctaLabel = "Získajte svoju JS Wealth Map" }: Uvod
 
       <AnimatedSection>
         <div className="text-center">
-          <button onClick={scrollToBooking} className="btn-primary text-lg mb-4">
+          <button onClick={scrollToBooking} className="btn-primary text-body mb-4">
             {ctaLabel}
           </button>
         </div>

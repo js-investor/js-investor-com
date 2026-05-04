@@ -1,4 +1,5 @@
 import AnimatedSection from "@/components/AnimatedSection";
+import CtaResponseNote from "@/components/CtaResponseNote";
 import { CheckCircle2 } from "lucide-react";
 
 const scrollToBooking = () => {
@@ -8,7 +9,7 @@ const scrollToBooking = () => {
 const garancie = [
   {
     title: "Férová hra od prvého hovoru",
-    body: "Po bezplatnom úvodnom hovore vám poviem narovinu: buď vám viem pomôcť, alebo nie. Žiadny nátlak na predaj produktov, ktoré vám nedávajú zmysel. Ak JS Wealth Map™ nie je pre vás, poviem vám to ako prvý.",
+    body: "Po bezplatnom úvodnom hovore vám poviem narovinu: buď vám viem pomôcť, alebo nie. Žiadny nátlak na predaj produktov, ktoré vám nedávajú zmysel. Ak Wealth Map nie je pre vás, poviem vám to ako prvý.",
   },
   {
     title: "Nikdy na to nebudete sám",
@@ -16,7 +17,7 @@ const garancie = [
   },
   {
     title: "Hotový plán do 7-14 dní",
-    body: "Od úvodnej analýzy máte kompletnú JS Wealth Map™ do 7-14 dní. Presné kroky, jasný smer a žiadne zdĺhavé čakanie.",
+    body: "Od úvodnej analýzy máte kompletnú Wealth Map do 7-14 dní. Presné kroky, jasný smer a žiadne zdĺhavé čakanie.",
   },
   {
     title: "100 % jasnosť",
@@ -37,14 +38,18 @@ const garancie = [
 ];
 
 const GaranciaSection = () => (
-  <section id="garancia" className="section-cream section-padding relative overflow-hidden scroll-mt-24">
+  <section
+    id="garancia"
+    className="section-padding relative overflow-hidden scroll-mt-24"
+    style={{ backgroundColor: "#f7f1e8" }}
+  >
     <div className="section-container">
       <AnimatedSection>
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="headline-serif">
             Čo všetko od nás <span className="text-primary font-bold">môžete očakávať</span>
           </h2>
-          <p className="mt-4 font-sans text-sm leading-relaxed text-muted-foreground md:text-base">
+          <p className="mt-4 font-sans text-lead text-muted-foreground">
             Žiadne marketingové reči a prázdne sľuby. Nie ste môj ďalší klient v zozname.{" "}
             <strong>Ste partner, ktorému garantujem férovú hru</strong>, matematickú <strong>presnosť a podporu</strong>{" "}
             v každej krízovej situácii.
@@ -56,19 +61,22 @@ const GaranciaSection = () => (
         <div className="mx-auto mt-10 max-w-4xl space-y-8">
           {garancie.map((item, index) => (
             <div key={item.title}>
-              <h3 className="flex items-start gap-2.5 font-sans text-base font-bold text-foreground md:text-lg">
+              <h3 className="flex items-start gap-2.5 font-sans h6 text-foreground">
                 <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                 <span>{item.title}</span>
               </h3>
-              <p className="mt-2 font-sans text-sm leading-relaxed text-foreground/85 md:text-base">{item.body}</p>
+              <p className="mt-2 font-sans text-lead text-foreground/85">{item.body}</p>
               {index < garancie.length - 1 ? <div className="mt-8 h-px w-full bg-primary/20" /> : null}
             </div>
           ))}
 
           <div className="pt-4 text-center">
-            <button type="button" onClick={scrollToBooking} className="btn-primary text-lg">
-              Získajte svoju JS Wealth Map
+            <button type="button" onClick={scrollToBooking} className="btn-primary text-body">
+              Získať Wealth Map
             </button>
+            <div>
+              <CtaResponseNote />
+            </div>
           </div>
         </div>
       </AnimatedSection>

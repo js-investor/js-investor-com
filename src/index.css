@@ -203,6 +203,46 @@
 }
 
 @layer components {
+  .h1 {
+    @apply text-[3rem] md:text-[3.75rem] leading-[1.1] font-bold tracking-tight;
+  }
+
+  .h2 {
+    @apply text-[2.25rem] md:text-[3rem] leading-[1.15] font-bold tracking-tight;
+  }
+
+  .h3 {
+    @apply text-[1.875rem] md:text-[2.25rem] leading-[1.2] font-bold;
+  }
+
+  .h4 {
+    @apply text-[1.5rem] md:text-[1.875rem] leading-[1.2] font-bold;
+  }
+
+  .h5 {
+    @apply text-[1.25rem] md:text-[1.5rem] leading-[1.3] font-bold;
+  }
+
+  .h6 {
+    @apply text-[1rem] md:text-[1.25rem] leading-[1.4] font-bold;
+  }
+
+  .text-body {
+    @apply text-[1rem] md:text-[1.25rem] leading-[1.6] font-normal;
+  }
+
+  .text-lead {
+    @apply text-[1.1rem] md:text-[1.25rem] leading-[1.6] font-normal;
+  }
+
+  .text-small {
+    @apply text-[1rem] leading-[1.5] font-normal;
+  }
+
+  .text-caption {
+    @apply text-[0.75rem] leading-[1.4] font-normal uppercase tracking-wider;
+  }
+
   .section-cream {
     @apply bg-cream;
   }
@@ -240,7 +280,7 @@
   }
 
   .eyebrow {
-    @apply text-xs md:text-sm font-sans font-semibold uppercase tracking-[0.2em] text-primary mb-4 md:mb-6;
+    @apply text-xs md:text-base font-sans font-semibold uppercase tracking-[0.2em] text-primary mb-4 md:mb-6;
   }
 
   .headline-serif {
@@ -264,12 +304,20 @@
 
   .headline-hero {
     font-family: var(--font-serif);
-    font-weight: 800;
-    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] text-foreground leading-[1.2];
+    @apply h1 text-foreground;
   }
 
   .sub-headline {
-    @apply text-base md:text-lg lg:text-xl font-sans text-muted-foreground leading-relaxed mt-4 md:mt-6;
+    @apply text-lead font-sans text-muted-foreground mt-4 md:mt-6;
+  }
+
+  .sub-headline-cream {
+    @apply text-lead font-sans text-cream/85 mt-4 md:mt-6;
+  }
+
+  .btn-primary-light {
+    @apply btn-primary bg-[#d4dfdb] text-primary hover:bg-[#c5d4cf];
+    width: auto;
   }
 
   .quote-serif {
@@ -402,7 +450,7 @@
 
   /* Hero header CTA — menší text na mobile */
   .menu-cta-pill {
-    @apply text-xs md:text-sm;
+    @apply text-xs md:text-base;
   }
 
   @media (max-width: 767px) {

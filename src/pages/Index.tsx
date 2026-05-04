@@ -26,18 +26,19 @@ const Index = () => (
     <VysledkySection
       title={
         <>
-          <span className="text-primary italic">Skutočné výsledky</span> našich klientov
+          <span className="text-primary font-bold">Skutočné výsledky</span> našich klientov
         </>
       }
       subtitle={<>Ukážka dlhodobého zhodnotenia majetku v rámci našich riadených ETF portfólií.</>}
-      ctaLabel="Získajte svoju JS Wealth Map"
+      ctaLabel="Získať Wealth Map"
+      showCtaResponseNote
     />
     <ProblemSectionTemplate
       heading={<>Poznáte to?</>}
       subheading={null}
       items={[
         {
-          icon: <PiggyBank className="h-6 w-6 -translate-x-0.5 text-accent" />,
+          icon: <PiggyBank className="h-7 w-7 -translate-x-0.5 text-accent" />,
           title: <>Na účte vám leží 30 000 € a ročne z nich zmizne 1 200 €.</>,
           body: (
             <>
@@ -47,7 +48,7 @@ const Index = () => (
           ),
         },
         {
-          icon: <Percent className="h-6 w-6 -translate-x-0.5 text-accent" />,
+          icon: <Percent className="h-7 w-7 -translate-x-0.5 text-accent" />,
           title: <>Bankár vám povedal, že sa o vás postará, ale nepovedal vám skutočnú cenu.</>,
           body: (
             <>
@@ -58,7 +59,7 @@ const Index = () => (
           ),
         },
         {
-          icon: <Compass className="h-6 w-6 -translate-x-0.5 text-accent" />,
+          icon: <Compass className="h-7 w-7 -translate-x-0.5 text-accent" />,
           title: <>Investujete ale ste na to sami.</>,
           body: (
             <>
@@ -69,7 +70,7 @@ const Index = () => (
           ),
         },
         {
-          icon: <Wallet className="h-6 w-6 -translate-x-0.5 text-accent" />,
+          icon: <Wallet className="h-7 w-7 -translate-x-0.5 text-accent" />,
           title: <>Máte plán, ale neviete, či vás dovedie k rente, ktorú chcete.</>,
           body: (
             <>
@@ -81,10 +82,10 @@ const Index = () => (
       ]}
       closingText={
         <>
-          Presne pre toto existuje JS Wealth Map™. Jeden plán, jasný smer. <strong>Všetko na jednom mieste.</strong>
+          Presne pre toto existuje Wealth Map. Jeden plán, jasný smer. <strong>Všetko na jednom mieste.</strong>
         </>
       }
-      ctaLabel="Získajte svoju JS Wealth Map"
+      ctaLabel="Získať Wealth Map"
     />
     <WealthMapPilieresSection />
     <MapaVpraxiSection />
@@ -98,7 +99,7 @@ const Index = () => (
           bezpečia v každej trhovej situácii.
         </>
       }
-      ctaLabel="Získajte svoju JS Wealth Map"
+      ctaLabel="Získať Wealth Map"
     />
     <PreKohoSection />
     <PoplatkyPorovnanieSection />
@@ -118,7 +119,7 @@ const Index = () => (
           Zbavte sa chaosu z peňazí. Začnite konať už dnes.
         </span>
       }
-      subheading={<>Získajte JS Wealth Map™. Presný plán, ktorý vám ukáže, kde ste, kam idete a čo urobiť ďalej.</>}
+      subheading={<>Získajte Wealth Map. Presný plán, ktorý vám ukáže, kde ste, kam idete a čo urobiť ďalej.</>}
       bullets={[]}
       variant="cardOnLight"
     />

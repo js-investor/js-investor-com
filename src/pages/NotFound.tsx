@@ -40,7 +40,7 @@ const NotFound = () => (
         </p>
         <h1 className="headline-serif mb-4">
           Táto stránka{" "}
-          <span className="italic text-primary">neexistuje</span>
+          <span className="text-primary font-bold">neexistuje</span>
         </h1>
         <p className="sub-headline mx-auto mb-10 max-w-md">
           Skontroluj adresu v prehliadači alebo sa{" "}

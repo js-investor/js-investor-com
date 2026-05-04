@@ -1,4 +1,5 @@
 import AnimatedSection from "@/components/AnimatedSection";
+import CtaResponseNote from "@/components/CtaResponseNote";
 import brandPattern from "@/assets/logo/js-brand-pattern.svg";
 import { Clock3, Percent, PiggyBank, Wallet } from "lucide-react";
 import type { ReactNode } from "react";
@@ -88,8 +89,8 @@ const ProblemSectionTemplate = ({
               >
                 {item.icon}
               </div>
-              <h3 className="font-serif text-xl font-black text-foreground leading-snug">{item.title}</h3>
-              <p className="mt-2 font-sans text-sm md:text-base text-muted-foreground leading-relaxed">{item.body}</p>
+              <h3 className="font-serif h5 text-foreground leading-snug">{item.title}</h3>
+              <p className="mt-2 font-sans text-body text-muted-foreground leading-relaxed">{item.body}</p>
             </article>
           </AnimatedSection>
         ))}
@@ -97,17 +98,20 @@ const ProblemSectionTemplate = ({
 
       <AnimatedSection>
         <div className="mx-auto mt-10 max-w-3xl text-center">
-          <p className="font-sans text-base md:text-lg text-muted-foreground leading-relaxed">{closingText}</p>
+          <p className="font-sans text-lead text-muted-foreground leading-relaxed">{closingText}</p>
           <div className="mt-7">
             {ctaHref ? (
-              <a href={ctaHref} className="btn-primary text-lg">
+              <a href={ctaHref} className="btn-primary text-body">
                 {ctaLabel}
               </a>
             ) : (
-              <button type="button" onClick={onCtaClick} className="btn-primary text-lg">
+              <button type="button" onClick={onCtaClick} className="btn-primary text-body">
                 {ctaLabel}
               </button>
             )}
+            <div>
+              <CtaResponseNote />
+            </div>
           </div>
         </div>
       </AnimatedSection>

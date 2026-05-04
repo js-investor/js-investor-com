@@ -9,13 +9,13 @@ const steps = [
     points: [
       "Zhodnotíme vašu aktuálnu finančnú situáciu",
       "Ujasníme si vaše ciele",
-      "Overíme, či je JS Wealth Map™ pre vás vhodná",
+      "Overíme, či je Wealth Map pre vás vhodná",
       "Žiadny predajný nátlak",
       "Šetríme váš aj môj čas",
     ],
   },
   {
-    title: "Získate JS Wealth Map™",
+    title: "Získate Wealth Map",
     subtitle: "(do 7–14 dní)",
     points: [
       "Kde sa nachádzate (váš majetok dnes)",
@@ -54,22 +54,22 @@ const NaslednyPostupSection = () => (
             <article className="w-full max-w-[980px] rounded-2xl border border-primary/12 bg-[#f7f4ef] px-5 py-6 md:px-7 md:py-7 shadow-[0_8px_22px_-16px_rgba(0,0,0,0.2)]">
               <div className="flex items-start gap-4 md:gap-5">
                 <span
-                  className="inline-flex h-11 w-11 shrink-0 -translate-x-1 items-center justify-center text-white [font-family:var(--font-serif)] text-2xl font-extrabold leading-none bg-center bg-contain bg-no-repeat"
+                  className="inline-flex h-11 w-11 shrink-0 -translate-x-1 items-center justify-center text-white [font-family:var(--font-serif)] h5 bg-center bg-contain bg-no-repeat"
                   style={{ backgroundImage: `url(${brandPattern})` }}
                 >
                   {index + 1}
                 </span>
                 <div className="min-w-0">
-                  <h3 className="font-serif text-2xl font-extrabold text-foreground">{step.title}</h3>
-                  <p className="mt-1 font-sans text-base md:text-lg text-muted-foreground">{step.subtitle}</p>
+                  <h3 className="font-serif h4 text-foreground">{step.title}</h3>
+                  <p className="mt-1 font-sans text-lead text-muted-foreground">{step.subtitle}</p>
 
-                  {step.intro ? <p className="mt-4 font-sans text-base text-muted-foreground">{step.intro}</p> : null}
+                  {step.intro ? <p className="mt-4 font-sans text-body text-muted-foreground">{step.intro}</p> : null}
 
                   <div className="mt-4 space-y-2.5">
                     {step.points.map((point) => (
                       <p
                         key={point}
-                        className="flex items-start gap-2.5 font-sans text-sm md:text-base text-foreground/90 leading-relaxed"
+                        className="flex items-start gap-2.5 font-sans text-body text-foreground/90 leading-relaxed"
                       >
                         <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                         {point}

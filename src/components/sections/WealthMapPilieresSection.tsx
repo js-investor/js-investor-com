@@ -58,8 +58,8 @@ const WealthMapPilieresSection = () => (
           <h2 className="headline-serif text-cream">
             Dajte svojim peniazom <span className="text-[#d4dfdb] font-bold">jasnú stratégiu.</span>
           </h2>
-          <p className="sub-headline !text-cream/85">
-            JS Wealth Map™ stojí na štyroch pilieroch. Každý rieši inú časť vášho finančného života.
+          <p className="sub-headline-cream">
+            Wealth Map stojí na štyroch pilieroch. Každý rieši inú časť vášho finančného života.
           </p>
         </div>
       </AnimatedSection>
@@ -84,11 +84,11 @@ const WealthMapPilieresSection = () => (
               >
                 {pillar.icon}
               </div>
-              <h3 className="font-serif text-2xl font-extrabold text-foreground leading-tight">{pillar.title}</h3>
+              <h3 className="font-serif h4 text-foreground leading-tight">{pillar.title}</h3>
               {pillar.subtitle ? (
-                <p className="mt-1 font-sans text-sm md:text-base text-muted-foreground italic">{pillar.subtitle}</p>
+                <p className="mt-1 font-sans text-base text-muted-foreground">{pillar.subtitle}</p>
               ) : null}
-              <p className="mt-4 font-sans text-sm md:text-base text-muted-foreground leading-relaxed">{pillar.body}</p>
+              <p className="mt-4 font-sans text-base text-muted-foreground leading-relaxed">{pillar.body}</p>
             </article>
           </AnimatedSection>
         ))}

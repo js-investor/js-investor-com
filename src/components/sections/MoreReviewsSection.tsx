@@ -141,7 +141,7 @@ type MoreReviewsSectionProps = {
   ctaLabel?: string;
 };
 
-const MoreReviewsSection = ({ ctaLabel = "Získajte svoju JS Wealth Map" }: MoreReviewsSectionProps) => {
+const MoreReviewsSection = ({ ctaLabel = "Získať Wealth Map" }: MoreReviewsSectionProps) => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
@@ -190,7 +190,7 @@ const MoreReviewsSection = ({ ctaLabel = "Získajte svoju JS Wealth Map" }: More
         </div>
 
         <div className="mt-10 text-center md:mt-12">
-          <button type="button" onClick={scrollToBooking} className="btn-primary text-lg">
+          <button type="button" onClick={scrollToBooking} className="btn-primary text-body">
             {ctaLabel}
           </button>
         </div>

@@ -33,7 +33,7 @@ type DobryPoradcaSectionProps = {
   ctaLabel?: string;
 };
 
-const DobryPoradcaSection = ({ ctaLabel = "Získajte svoju JS Wealth Map" }: DobryPoradcaSectionProps) => (
+const DobryPoradcaSection = ({ ctaLabel = "Získať Wealth Map" }: DobryPoradcaSectionProps) => (
   <section className="section-white section-padding relative overflow-hidden">
     <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-primary/3 blur-[120px] pointer-events-none" />
     <div className="section-container relative z-10">
@@ -68,13 +68,13 @@ const DobryPoradcaSection = ({ ctaLabel = "Získajte svoju JS Wealth Map" }: Dob
               >
                 {c.icon}
               </div>
-              <p className="[font-family:var(--font-serif)] text-3xl md:text-4xl font-extrabold stat-gradient mb-2">
+              <p className="[font-family:var(--font-serif)] h3 stat-gradient mb-2">
                 {c.stat}
               </p>
-              <p className="font-sans font-semibold text-lg text-foreground mb-3">
+              <p className="font-sans h6 text-foreground mb-3">
                 {c.title}
               </p>
-              <p className="font-sans text-muted-foreground leading-relaxed text-sm md:text-base">
+              <p className="font-sans text-body text-muted-foreground">
                 {c.body}
               </p>
             </div>
@@ -83,7 +83,7 @@ const DobryPoradcaSection = ({ ctaLabel = "Získajte svoju JS Wealth Map" }: Dob
       </div>
 
       <AnimatedSection>
-        <p className="text-xs md:text-sm text-muted-foreground text-center max-w-4xl mx-auto mt-10 tracking-[0px]">
+        <p className="text-small text-muted-foreground text-center max-w-4xl mx-auto mt-10 tracking-[0px]">
           ¹ Vanguard Advisor's Alpha Study | ² Northwestern Mutual Planning &
           Progress Study | ³ Odhad na základe priemerného času samostatnej správy
           financií. Uvedené štatistiky pochádzajú z priemyselných štúdií a
@@ -93,10 +93,10 @@ const DobryPoradcaSection = ({ ctaLabel = "Získajte svoju JS Wealth Map" }: Dob
 
       <AnimatedSection>
         <div className="text-center mt-8 md:mt-10">
-          <button onClick={scrollToBooking} className="btn-primary text-lg">
+          <button onClick={scrollToBooking} className="btn-primary text-body">
             {ctaLabel}
           </button>
-          <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-sm font-sans text-muted-foreground mt-4">
+          <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-small font-sans text-muted-foreground mt-4">
             {["Bezplatný úvodný hovor", "Online 30 minút", "Bez záväzku a predaja"].map(
               (item) => (
                 <span key={item} className="flex items-center gap-1.5">

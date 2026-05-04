@@ -24,7 +24,7 @@ const PoplatkyPorovnanieSection = () => (
       <AnimatedSection>
         <div className="mx-auto max-w-5xl text-center mb-10 md:mb-12">
           <h2 className="headline-serif">
-            <span className="text-primary italic font-bold">Váš majetok dlhodobo rastie,</span> poplatky klesajú
+            <span className="text-primary font-bold">Váš majetok dlhodobo rastie,</span> poplatky klesajú
           </h2>
         </div>
       </AnimatedSection>
@@ -32,11 +32,11 @@ const PoplatkyPorovnanieSection = () => (
       <div className="mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-6">
         <AnimatedSection>
           <article className="h-full rounded-2xl border border-white/10 bg-[#11131b] text-white p-6 md:p-7">
-            <div className="inline-flex rounded-full bg-[#e63737] px-3 py-1 text-xs font-semibold uppercase tracking-wide">
+            <div className="inline-flex rounded-full bg-[#e63737] px-3 py-1 text-caption font-semibold tracking-wide">
               Starý spôsob
             </div>
-            <h3 className="mt-4 font-serif text-3xl md:text-[2.1rem] font-extrabold leading-tight">Banka & bežný poradca</h3>
-            <p className="mt-4 [font-family:var(--font-serif)] text-5xl md:text-[3.5rem] font-extrabold leading-none">1 - 2 %</p>
+            <h3 className="mt-4 font-serif h3 leading-tight">Banka & bežný poradca</h3>
+            <p className="mt-4 [font-family:var(--font-serif)] h2 leading-none">1 - 2 %</p>
             <p className="mt-2 font-sans text-white/85">ročný poplatok za správu</p>
             <div className="mt-6 h-px bg-white/20" />
 
@@ -49,7 +49,7 @@ const PoplatkyPorovnanieSection = () => (
               ))}
             </div>
 
-            <div className="mt-6 rounded-xl border border-[#e63737]/50 bg-[#381116] px-4 py-3 font-sans text-xl font-semibold leading-snug text-white">
+            <div className="mt-6 rounded-xl border border-[#e63737]/50 bg-[#381116] px-4 py-3 font-sans h6 text-white">
               Za 20 rokov investovania prídete o 30 až 40 % majetku kvôli poplatkom.
             </div>
           </article>
@@ -57,18 +57,18 @@ const PoplatkyPorovnanieSection = () => (
 
         <AnimatedSection delay={0.08}>
           <article className="h-full rounded-2xl border border-white/15 bg-[#2f7c63] text-white p-6 md:p-7">
-            <div className="inline-flex rounded-full bg-white px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#1f4538]">
+            <div className="inline-flex rounded-full bg-white px-3 py-1 text-caption font-semibold tracking-wide text-[#1f4538]">
               Nový spôsob
             </div>
-            <h3 className="mt-4 font-serif text-3xl md:text-[2.1rem] font-extrabold leading-tight">Komplexná správa majetku</h3>
-            <p className="mt-4 [font-family:var(--font-serif)] text-5xl md:text-[3.5rem] font-extrabold leading-none">0,35 - 0,49 %</p>
+            <h3 className="mt-4 font-serif h3 leading-tight">Komplexná správa majetku</h3>
+            <p className="mt-4 [font-family:var(--font-serif)] h2 leading-none">0,35 - 0,49 %</p>
             <p className="mt-2 font-sans text-white/90">ročný poplatok za správu</p>
 
             <div className="mt-4 flex flex-wrap gap-2">
-              <span className="rounded-full border border-white/45 bg-white/10 px-3 py-1 text-xs font-semibold">
+              <span className="rounded-full border border-white/45 bg-white/10 px-3 py-1 text-caption font-semibold">
                 0,49 % do 100 000 € a 0,35 % nad 100 000 €
               </span>
-              <span className="rounded-full border border-white/45 bg-white/10 px-3 py-1 text-xs font-semibold">
+              <span className="rounded-full border border-white/45 bg-white/10 px-3 py-1 text-caption font-semibold">
                 1% poplatok z vkladov
               </span>
             </div>
@@ -83,7 +83,7 @@ const PoplatkyPorovnanieSection = () => (
               ))}
             </div>
 
-            <div className="mt-6 rounded-xl border border-white/35 bg-white/10 px-4 py-3 font-sans text-xl font-semibold leading-snug text-white">
+            <div className="mt-6 rounded-xl border border-white/35 bg-white/10 px-4 py-3 font-sans h6 text-white">
               Úspora na poplatkoch až 100 000 €.
             </div>
           </article>
@@ -91,7 +91,7 @@ const PoplatkyPorovnanieSection = () => (
       </div>
 
       <AnimatedSection>
-        <p className="mx-auto mt-10 max-w-4xl text-center font-sans text-lg md:text-2xl text-foreground/90 leading-snug">
+        <p className="mx-auto mt-10 max-w-4xl text-center font-sans text-lead text-foreground/90">
           Začíname na <strong>férovej sadzbe 0,49 % ročne</strong> za správu portfólia.
           <br />
           Nad 100 000 € platíte už len exkluzívnych 0,35 % p.a.

@@ -1,4 +1,5 @@
 import AnimatedSection from "@/components/AnimatedSection";
+import CtaResponseNote from "@/components/CtaResponseNote";
 import type { ReactNode } from "react";
 
 const testimonials = [
@@ -42,9 +43,9 @@ const RecenzieKlientovSection = ({
     <div className="section-container relative z-10">
       <AnimatedSection>
         <div className="mx-auto max-w-3xl text-center mb-10 md:mb-12">
-          <h2 className="[font-family:var(--font-serif)] text-3xl md:text-5xl font-extrabold leading-tight text-cream">{heading}</h2>
+          <h2 className="[font-family:var(--font-serif)] h3 leading-tight text-white">{heading}</h2>
           {subheading ? (
-            <p className="mt-5 font-sans text-base md:text-lg leading-relaxed text-cream/85">{subheading}</p>
+            <p className="mt-5 font-sans text-lead text-white/90">{subheading}</p>
           ) : null}
         </div>
       </AnimatedSection>
@@ -54,16 +55,16 @@ const RecenzieKlientovSection = ({
           <AnimatedSection key={t.name} delay={i * 0.1}>
             <div className="card-glass h-full flex flex-col">
               <div className="mb-1 leading-none">
-                <span aria-hidden="true" className="[font-family:var(--font-serif)] block text-primary text-[5.25rem] leading-[0.58]">
+                <span aria-hidden="true" className="[font-family:var(--font-serif)] block text-primary h1 leading-[0.58]">
                   “
                 </span>
               </div>
-              <p className="font-sans text-lg md:text-xl text-foreground leading-relaxed mb-8 flex-1">{t.quote}</p>
+              <p className="font-sans text-lead text-foreground mb-8 flex-1">{t.quote}</p>
               <div className="flex items-center gap-3">
                 <img src={t.image} alt={t.name} className="w-12 h-12 rounded-full object-cover border border-primary/20" loading="lazy" />
                 <div>
-                  <p className="font-sans font-semibold text-base md:text-lg text-foreground">{t.name}</p>
-                  <p className="font-sans text-sm text-muted-foreground">{t.role}</p>
+                  <p className="font-sans h6 text-foreground">{t.name}</p>
+                  <p className="font-sans text-base text-muted-foreground">{t.role}</p>
                 </div>
               </div>
             </div>
@@ -73,9 +74,12 @@ const RecenzieKlientovSection = ({
 
       <AnimatedSection>
         <div className="text-center mt-10">
-          <a href={ctaHref} className="btn-primary !bg-[#d4dfdb] !text-primary hover:!bg-[#c5d4cf] text-lg">
+          <a href={ctaHref} className="btn-primary-light text-body">
             {ctaLabel}
           </a>
+          <div className="[&_p]:text-white/90 [&_svg]:text-white">
+            <CtaResponseNote />
+          </div>
         </div>
       </AnimatedSection>
     </div>

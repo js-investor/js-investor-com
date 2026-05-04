@@ -6,7 +6,7 @@ const PodmienkyPorovnanieSection = () => (
     <div className="section-container relative z-10">
       <AnimatedSection>
         <div className="mx-auto max-w-4xl text-center mb-8 md:mb-10">
-          <p className="font-sans text-xl md:text-3xl text-foreground/80 leading-snug">
+          <p className="font-sans text-lead text-foreground/80">
             Namiesto umelých sľubov vám <strong className="text-foreground">garantujem najlepšie podmienky na trhu.</strong>
             <br />
             <span className="text-foreground/80">Porovnajte si to sami:</span>
@@ -20,15 +20,15 @@ const PodmienkyPorovnanieSection = () => (
             <thead>
               <tr className="border-b border-black/10">
                 <th className="w-[22%] px-4 py-5" />
-                <th className="w-[26%] px-4 py-5 bg-[#dfe7e2] rounded-t-2xl [font-family:var(--font-serif)] text-3xl font-extrabold text-foreground">
-                  JS Wealth Map™
+                <th className="w-[26%] px-4 py-5 bg-[#dfe7e2] rounded-t-2xl [font-family:var(--font-serif)] h3 text-foreground">
+                  Wealth Map
                 </th>
-                <th className="w-[17%] px-4 py-5 font-sans text-2xl font-semibold text-foreground">Investičné platformy</th>
-                <th className="w-[17%] px-4 py-5 font-sans text-2xl font-semibold text-foreground">Banky</th>
-                <th className="w-[18%] px-4 py-5 font-sans text-2xl font-semibold text-foreground">Poradcovia</th>
+                <th className="w-[17%] px-4 py-5 font-sans h5 text-foreground">Investičné platformy</th>
+                <th className="w-[17%] px-4 py-5 font-sans h5 text-foreground">Banky</th>
+                <th className="w-[18%] px-4 py-5 font-sans h5 text-foreground">Poradcovia</th>
               </tr>
             </thead>
-            <tbody className="font-sans text-xl text-foreground/85">
+            <tbody className="font-sans text-body text-foreground/85">
               <tr className="border-b border-black/10">
                 <td className="px-4 py-5 text-left font-semibold">
                   Manažérsky poplatok

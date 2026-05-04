@@ -1,4 +1,5 @@
 import AnimatedSection from "@/components/AnimatedSection";
+import CtaResponseNote from "@/components/CtaResponseNote";
 
 const scrollToBooking = () => {
   document.getElementById("formular")?.scrollIntoView({ behavior: "smooth" });
@@ -8,7 +9,7 @@ type VideoSectionProps = {
   ctaLabel?: string;
 };
 
-const VideoSection = ({ ctaLabel = "Získajte svoju JS Wealth Map" }: VideoSectionProps) => (
+const VideoSection = ({ ctaLabel = "Získať Wealth Map" }: VideoSectionProps) => (
   <section id="co-dostanes" className="section-cream section-padding relative overflow-hidden scroll-mt-24">
     <div className="absolute inset-0 bg-dot-grid opacity-20" />
     <div className="section-container relative z-10">
@@ -40,12 +41,15 @@ const VideoSection = ({ ctaLabel = "Získajte svoju JS Wealth Map" }: VideoSecti
 
       <AnimatedSection>
         <div className="text-center max-w-2xl mx-auto">
-          <p className="[font-family:var(--font-serif)] text-2xl md:text-3xl lg:text-4xl font-extrabold leading-tight text-foreground mb-6 md:mb-8">
+          <p className="[font-family:var(--font-serif)] h3 leading-tight text-foreground mb-6 md:mb-8">
             Chceš vedieť, ako <span className="text-primary font-bold">vyzeral tvoj plán</span>
           </p>
-          <button type="button" onClick={scrollToBooking} className="btn-primary text-lg">
+          <button type="button" onClick={scrollToBooking} className="btn-primary text-body">
             {ctaLabel}
           </button>
+          <div>
+            <CtaResponseNote />
+          </div>
         </div>
       </AnimatedSection>
     </div>

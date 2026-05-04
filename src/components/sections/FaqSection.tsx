@@ -125,7 +125,7 @@ const FaqSection = () => {
                   <button
                     type="button"
                     onClick={() => setOpenIndex((prev) => (prev === index ? null : index))}
-                    className={`group w-full text-left rounded-xl border border-primary/15 px-5 py-3.5 md:px-6 md:py-4 pr-12 font-sans text-base md:text-lg font-semibold leading-snug relative transition-colors duration-200 ${
+                    className={`group w-full text-left rounded-xl border border-primary/15 px-5 py-3.5 md:px-6 md:py-4 pr-12 font-sans text-lead font-semibold relative transition-colors duration-200 ${
                       isOpen
                         ? "bg-primary text-white"
                         : "bg-white text-foreground hover:bg-primary hover:text-white"
@@ -134,7 +134,7 @@ const FaqSection = () => {
                   >
                     {faq.question}
                     <span
-                      className={`absolute right-5 top-1/2 -translate-y-1/2 text-xl leading-none ${
+                      className={`absolute right-5 top-1/2 -translate-y-1/2 h6 ${
                         isOpen ? "text-white" : "text-primary group-hover:text-white"
                       }`}
                     >
@@ -142,7 +142,7 @@ const FaqSection = () => {
                     </span>
                   </button>
                   {isOpen ? (
-                    <p className="mt-3 px-1 md:px-2 font-sans text-sm md:text-base leading-relaxed text-muted-foreground">
+                    <p className="mt-3 px-1 md:px-2 font-sans text-body text-muted-foreground">
                       {faq.answer}
                     </p>
                   ) : null}

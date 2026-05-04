@@ -16,8 +16,8 @@ const StatsStripTemplate = ({
   items,
   sectionClassName = "bg-[#29614A] text-cream min-h-[230px]",
   containerClassName = "max-w-[1400px] mx-auto h-full px-5 md:px-10 lg:px-16 py-14 md:py-16",
-  valueClassName = "[font-family:var(--font-serif)] text-4xl md:text-5xl lg:text-6xl font-extrabold text-cream leading-none",
-  labelClassName = "font-sans text-sm md:text-lg text-cream/70 mt-2 leading-snug",
+  valueClassName = "[font-family:var(--font-serif)] h1 text-cream leading-none",
+  labelClassName = "font-sans text-lead text-cream/70 mt-2 leading-snug",
   dividerClassName = "md:border-l md:border-cream/30",
 }: StatsStripTemplateProps) => (
   <section className={sectionClassName}>

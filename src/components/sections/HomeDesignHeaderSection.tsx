@@ -10,20 +10,20 @@ const HomeDesignHeaderSection = () => {
         { label: "Recenzie", href: "#recenzie" },
         { label: "FAQ", href: "#faq" },
       ]}
-      headerCtaLabel="Získať JS Wealth Map™"
+      headerCtaLabel="Získať Wealth Map"
       headerCtaHref="#formular"
       title={
         <>
-          Finančný plán, pri ktorom <span className="text-primary font-bold">sú vaše peniaze v bezpečí.</span>
+          Finančný plán, pri ktorom váš <span className="text-primary font-bold">majetok rastie v bezpečí.</span>
         </>
       }
       subtitle={
         <>
-          JS Wealth Map™ je váš osobný finančný plán na mieru. Ukáže vám presne, kde vaše peniaze sú, kam smerujú a
+          Wealth Map je váš osobný finančný plán na mieru. Ukáže vám presne, kde vaše peniaze sú, kam smerujú a
           čo s nimi urobiť, aby <strong>váš majetok konečne zodpovedal vášmu príjmu.</strong>
         </>
       }
-      heroCtaLabel="Získajte svoju JS Wealth Map"
+      heroCtaLabel="Získať Wealth Map"
       heroCtaHref="#formular"
       heroSecondaryLinkLabel="Ako to funguje →"
       heroSecondaryLinkHref="#riesenie"

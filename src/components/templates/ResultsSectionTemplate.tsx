@@ -1,4 +1,5 @@
 import AnimatedSection from "@/components/AnimatedSection";
+import CtaResponseNote from "@/components/CtaResponseNote";
 import brandPattern from "@/assets/logo/js-brand-pattern.svg";
 import vysledokGrafAndrej from "@/assets/images/vysledok-graf-andrej.png";
 import vysledokGrafBrano from "@/assets/images/vysledok-graf-brano.png";
@@ -48,6 +49,7 @@ type ResultsSectionTemplateProps = {
   title: ReactNode;
   subtitle: ReactNode;
   ctaLabel: string;
+  showCtaResponseNote?: boolean;
   ctaHref?: string;
   onCtaClick?: () => void;
   sectionClassName?: string;
@@ -57,6 +59,7 @@ const ResultsSectionTemplate = ({
   title,
   subtitle,
   ctaLabel,
+  showCtaResponseNote = false,
   ctaHref = "#formular",
   onCtaClick,
   sectionClassName = "relative overflow-hidden py-12 md:py-24 lg:py-28 scroll-mt-24",
@@ -99,10 +102,10 @@ const ResultsSectionTemplate = ({
       <div className="mx-auto w-full max-w-[1140px] px-5 md:px-8 lg:px-10">
         <AnimatedSection>
           <div className="mx-auto max-w-3xl text-center mb-14 md:mb-16 lg:mb-[4.5rem]">
-            <h2 className="[font-family:var(--font-serif)] text-[1.875rem] sm:text-[2.125rem] md:text-[2.5rem] font-extrabold leading-[1.15] tracking-tight text-[#1a1a1a]">
+            <h2 className="[font-family:var(--font-serif)] h3 tracking-tight text-[#1a1a1a]">
               {title}
             </h2>
-            <p className="mt-5 md:mt-6 font-sans text-base md:text-[1.125rem] leading-relaxed text-[#666]">{subtitle}</p>
+            <p className="mt-5 md:mt-6 font-sans text-lead leading-relaxed text-[#666]">{subtitle}</p>
           </div>
         </AnimatedSection>
 
@@ -133,22 +136,22 @@ const ResultsSectionTemplate = ({
                   <article className="flex flex-col h-full rounded-[14px] border border-[#e7e2da] bg-white px-4 py-4 shadow-[0_2px_14px_rgba(0,0,0,0.06)]">
                     <div className="flex items-start gap-3.5">
                       <div className="h-10 w-10 shrink-0 rounded-[10px] flex items-center justify-center shadow-sm bg-center bg-cover" style={{ backgroundImage: `url(${brandPattern})` }}>
-                        <span className="font-sans text-sm font-bold text-white">%</span>
+                        <span className="font-sans text-base font-bold text-white">%</span>
                       </div>
                       <div className="min-w-0 pt-0.5">
-                        <p className="[font-family:var(--font-serif)] text-[1.625rem] font-extrabold leading-none text-[#296A52]">{story.name}</p>
-                        <p className="mt-2 font-sans text-[0.8125rem] leading-snug text-[#666]">{story.role}</p>
+                        <p className="[font-family:var(--font-serif)] h5 leading-none text-[#296A52]">{story.name}</p>
+                        <p className="mt-2 font-sans text-body leading-snug text-[#666]">{story.role}</p>
                       </div>
                     </div>
                     <p className="mt-6 text-center font-sans text-base leading-relaxed text-[#1a1a1a]/75">{renderMeta(story.meta)}</p>
                     <div className="mt-5 text-center">
                       <p className="leading-tight inline-flex flex-wrap items-baseline justify-center [font-family:var(--font-serif)]">
                         <span className="inline-flex items-baseline gap-x-0.5">
-                          <span className="text-2xl font-extrabold text-[#296A52]">Zisk:</span>
-                          <span className="text-2xl font-extrabold text-[#1a1a1a] tracking-tight tabular-nums">{story.amount}</span>
+                          <span className="h5 text-[#296A52]">Zisk:</span>
+                          <span className="h5 text-[#1a1a1a] tracking-tight tabular-nums">{story.amount}</span>
                         </span>
                       </p>
-                      <p className="mt-1.5 font-sans text-[0.9375rem] sm:text-base font-medium text-[#4a4a4a] tabular-nums leading-snug">{story.percent}</p>
+                      <p className="mt-1.5 font-sans text-body font-medium text-[#4a4a4a] tabular-nums leading-snug">{story.percent}</p>
                     </div>
                     <div className="mt-6">
                       <img src={story.chartImage} alt={`Graf výsledku klienta ${story.name}`} className="block w-full h-[148px] rounded-[10px] object-cover" loading="lazy" decoding="async" />
@@ -177,21 +180,21 @@ const ResultsSectionTemplate = ({
               <article className="flex flex-col h-full rounded-[14px] border border-[#e7e2da] bg-white px-4 py-4 shadow-[0_2px_14px_rgba(0,0,0,0.06)]">
                 <div className="flex items-start gap-3.5">
                   <div className="h-10 w-10 shrink-0 rounded-[10px] flex items-center justify-center shadow-sm bg-center bg-cover" style={{ backgroundImage: `url(${brandPattern})` }}>
-                    <span className="font-sans text-sm font-bold text-white">%</span>
+                    <span className="font-sans text-base font-bold text-white">%</span>
                   </div>
                   <div className="min-w-0 pt-0.5">
-                    <p className="[font-family:var(--font-serif)] text-[1.625rem] sm:text-[1.75rem] md:text-[1.875rem] font-extrabold leading-none text-[#296A52]">{story.name}</p>
-                    <p className="mt-2 font-sans text-[0.8125rem] md:text-sm leading-snug text-[#666]">{story.role}</p>
+                    <p className="[font-family:var(--font-serif)] h5 leading-none text-[#296A52]">{story.name}</p>
+                    <p className="mt-2 font-sans text-base leading-snug text-[#666]">{story.role}</p>
                   </div>
                 </div>
-                <p className="mt-6 text-center font-sans text-base md:text-[1.0625rem] leading-relaxed text-[#1a1a1a]/75">{renderMeta(story.meta)}</p>
+                <p className="mt-6 text-center font-sans text-body leading-relaxed text-[#1a1a1a]/75">{renderMeta(story.meta)}</p>
                 <div className="mt-5 text-center">
                   <p className="leading-tight inline-flex flex-wrap items-baseline justify-center md:flex-nowrap">
                     <span className="inline-flex items-baseline gap-x-0.5 md:gap-x-1">
-                      <span className="[font-family:var(--font-serif)] text-2xl font-extrabold text-[#296A52] shrink-0">Zisk:</span>
-                      <span className="[font-family:var(--font-serif)] text-2xl font-extrabold text-[#1a1a1a] tracking-tight tabular-nums">{story.amount}</span>
+                      <span className="[font-family:var(--font-serif)] h5 text-[#296A52] shrink-0">Zisk:</span>
+                      <span className="[font-family:var(--font-serif)] h5 text-[#1a1a1a] tracking-tight tabular-nums">{story.amount}</span>
                     </span>
-                    <span className="ml-2 md:ml-2.5 font-sans text-[0.9375rem] md:text-base font-medium text-[#4a4a4a] tabular-nums leading-snug shrink-0">{story.percent}</span>
+                    <span className="ml-2 md:ml-2.5 font-sans text-body font-medium text-[#4a4a4a] tabular-nums leading-snug shrink-0">{story.percent}</span>
                   </p>
                 </div>
                 <div className="mt-6">
@@ -204,17 +207,22 @@ const ResultsSectionTemplate = ({
 
         <AnimatedSection>
           <div className="mx-auto mt-10 md:mt-12 max-w-5xl">
-            <p className="text-center font-sans text-xs md:text-sm leading-relaxed text-[#666]">{disclaimerText}</p>
+            <p className="text-center font-sans text-caption leading-relaxed text-[#666]">{disclaimerText}</p>
             <div className="mt-7 md:mt-8 text-center">
               {ctaHref ? (
-                <a href={ctaHref} className="btn-primary text-lg">
+                <a href={ctaHref} className="btn-primary text-body">
                   {ctaLabel}
                 </a>
               ) : (
-                <button type="button" onClick={onCtaClick} className="btn-primary text-lg">
+                <button type="button" onClick={onCtaClick} className="btn-primary text-body">
                   {ctaLabel}
                 </button>
               )}
+              {showCtaResponseNote ? (
+                <div>
+                  <CtaResponseNote />
+                </div>
+              ) : null}
             </div>
           </div>
         </AnimatedSection>

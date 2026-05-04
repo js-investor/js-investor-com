@@ -1,5 +1,5 @@
 import MoreReviewsSection from "@/components/sections/MoreReviewsSection";
 
-const DalsieSkusenostiSection = () => <MoreReviewsSection ctaLabel="Získajte svoju JS Wealth Map" />;
+const DalsieSkusenostiSection = () => <MoreReviewsSection ctaLabel="Získať Wealth Map" />;
 
 export default DalsieSkusenostiSection;

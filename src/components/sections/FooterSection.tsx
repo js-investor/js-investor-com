@@ -25,7 +25,7 @@ const FooterSection = () => (
               />
             </a>
           </div>
-          <p className="font-sans text-sm text-cream/60">
+          <p className="font-sans text-base text-cream/60">
             Sprievodca budovaním majetku pre ambicióznych ľudí.
           </p>
           <div className="mt-4 flex items-center gap-4">
@@ -72,7 +72,7 @@ const FooterSection = () => (
           {/* Center */}
           <div>
             <p className="font-sans font-semibold text-cream mb-3">Kontakt</p>
-            <div className="space-y-1 font-sans text-sm text-cream/70">
+            <div className="space-y-1 font-sans text-base text-cream/70">
               <p>+421 902 519 328</p>
               <p>info@ivanjasik.sk</p>
               <p>Veľká okružná 17, 010 01 Žilina</p>
@@ -82,7 +82,7 @@ const FooterSection = () => (
           {/* Right */}
           <div>
             <p className="font-sans font-semibold text-cream mb-3">Firemné údaje</p>
-            <div className="space-y-1 font-sans text-sm text-cream/70">
+            <div className="space-y-1 font-sans text-base text-cream/70">
               <p>Jashik s.r.o.</p>
               <p>Registrácia NBS: 282999</p>
               <p>IČO: 54253969</p>
@@ -92,7 +92,7 @@ const FooterSection = () => (
       </div>
 
       <div className="border-t border-cream/10 pt-6">
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 font-sans text-xs text-cream/40 text-center">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 font-sans text-caption text-cream/40 text-center">
           <p>© 2026 Jashik s.r.o. Všetky práva vyhradené.</p>
           <span className="hidden sm:inline text-cream/30">|</span>
           <a href="/gdpr" className="text-cream/60 hover:text-cream transition-colors">

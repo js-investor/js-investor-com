@@ -30,7 +30,7 @@ type TestimonialSectionProps = {
   ctaLabel?: string;
 };
 
-const TestimonialSection = ({ ctaLabel = "Získajte svoju JS Wealth Map" }: TestimonialSectionProps) => (
+const TestimonialSection = ({ ctaLabel = "Získať Wealth Map" }: TestimonialSectionProps) => (
   <section id="recenzie" className="bg-footer-bg section-padding relative overflow-hidden scroll-mt-24">
     <div className="absolute inset-0 bg-dot-grid opacity-20" />
     <div className="section-container relative z-10">
@@ -53,12 +53,12 @@ const TestimonialSection = ({ ctaLabel = "Získajte svoju JS Wealth Map" }: Test
               <div className="mb-1 leading-none">
                 <span
                   aria-hidden="true"
-                  className="[font-family:var(--font-serif)] block text-primary text-[5.25rem] leading-[0.58]"
+                  className="[font-family:var(--font-serif)] block text-primary h1 leading-[0.58]"
                 >
                   “
                 </span>
               </div>
-              <p className="font-sans text-lg md:text-xl text-foreground leading-relaxed mb-8 flex-1">
+              <p className="font-sans text-lead text-foreground mb-8 flex-1">
                 {t.quote}
               </p>
               <div className="flex items-center gap-3">
@@ -69,10 +69,10 @@ const TestimonialSection = ({ ctaLabel = "Získajte svoju JS Wealth Map" }: Test
                   loading="lazy"
                 />
                 <div>
-                  <p className="font-sans font-semibold text-base md:text-lg text-foreground">
+                  <p className="font-sans h6 text-foreground">
                     {t.name}
                   </p>
-                  <p className="font-sans text-sm text-muted-foreground">
+                  <p className="font-sans text-base text-muted-foreground">
                     {t.role}
                   </p>
                 </div>
@@ -86,7 +86,7 @@ const TestimonialSection = ({ ctaLabel = "Získajte svoju JS Wealth Map" }: Test
         <div className="text-center mt-10">
           <button
             onClick={scrollToBooking}
-            className="btn-primary !bg-[#d4dfdb] !text-primary hover:!bg-[#c5d4cf] text-lg"
+            className="btn-primary-light text-body"
           >
             {ctaLabel}
           </button>

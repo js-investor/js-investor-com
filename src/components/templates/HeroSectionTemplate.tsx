@@ -60,21 +60,21 @@ const HeroSectionTemplate = ({
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         className="max-w-[980px] mx-auto text-center"
       >
-        <h1 className="headline-hero !text-[2.5rem] sm:!text-[3.25rem] md:!text-[3.8rem] lg:!text-6xl xl:!text-6xl mb-6 md:mb-8">
+        <h1 className="headline-hero mb-6 md:mb-8">
           {title}
         </h1>
-        <p className="text-lg md:text-xl font-sans text-muted-foreground leading-relaxed mb-6">{subtitle}</p>
+        <p className="text-lead font-sans text-muted-foreground mb-6">{subtitle}</p>
         {description ? (
-          <p className="font-sans text-base md:text-lg text-foreground/70 mb-8 leading-relaxed">{description}</p>
+          <p className="text-body font-sans text-foreground/70 mb-8">{description}</p>
         ) : null}
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
           {heroCtaHref ? (
-            <a href={heroCtaHref} className="btn-primary text-lg">
+            <a href={heroCtaHref} className="btn-primary text-body">
               {heroCtaLabel}
             </a>
           ) : (
-            <button type="button" onClick={heroCtaOnClick} className="btn-primary text-lg">
+            <button type="button" onClick={heroCtaOnClick} className="btn-primary text-body">
               {heroCtaLabel}
             </button>
           )}
@@ -82,7 +82,7 @@ const HeroSectionTemplate = ({
             heroSecondaryLinkHref ? (
               <a
                 href={heroSecondaryLinkHref}
-                className="font-sans text-base md:text-lg font-semibold text-primary hover:text-primary/80 transition-colors"
+                className="font-sans text-body md:h6 font-semibold text-primary hover:text-primary/80 transition-colors"
               >
                 {heroSecondaryLinkLabel}
               </a>
@@ -90,7 +90,7 @@ const HeroSectionTemplate = ({
               <button
                 type="button"
                 onClick={heroSecondaryLinkOnClick}
-                className="font-sans text-base md:text-lg font-semibold text-primary hover:text-primary/80 transition-colors"
+                className="font-sans text-body md:h6 font-semibold text-primary hover:text-primary/80 transition-colors"
               >
                 {heroSecondaryLinkLabel}
               </button>
@@ -99,7 +99,7 @@ const HeroSectionTemplate = ({
         </div>
 
         {badges.length > 0 ? (
-          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-sans text-muted-foreground mb-10">
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-small font-sans text-muted-foreground mb-10">
             {badges.map((badge) => (
               <span key={badge} className="flex items-center gap-1.5">
                 <Check className="w-4 h-4 text-primary" />

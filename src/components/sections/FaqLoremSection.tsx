@@ -1,4 +1,5 @@
 import AnimatedSection from "@/components/AnimatedSection";
+import CtaResponseNote from "@/components/CtaResponseNote";
 import { useState } from "react";
 import type { ReactNode } from "react";
 
@@ -9,29 +10,49 @@ const faqs = [
       "Appka je nástroj, nie stratégia. Nevie vám povedať, kedy zmeniť portfólio, kedy kúpiť investičný byt, ako daňovo optimalizovať zisky alebo kedy začať čerpať rentu. A keď trh padne o 30 % a vstanete s panikou, appka vám nezdvihne telefón. Ja áno. To je rozdiel medzi nástrojom a partnerom.",
   },
   {
-    question: "Koľko ma to celé bude stáť? Aké sú presné poplatky?",
+    question: "Koľko ma to bude stáť?",
     answer:
-      "Začíname na férovej sadzbe 0,49 % ročne za správu portfólia do 100 000 €. Nad 100 000 € platíte už len exkluzívnych 0,35 % p.a. Plus maximálne 1 % vstupný poplatok z vkladov. Žiadne skryté náklady, všetko je vopred jasné a férovo dohodnuté.\n\nBežná banka si bere 1,5 - 2 % ročne. Za 30 rokov vás to pripraví až o tretinu majetku. Pri mesačnej investícii 300 € to znamená rozdiel až 117 000 € vo váš prospech.",
+      "0,49 % ročne do 100 000 €, 0,35 % nad 100 000 €. Plus maximálne 1 % vstupný poplatok z vkladov. Žiadne ďalšie skryté poplatky, všetko si jasne dohodneme vopred. Bežná banka si berie 1,5–2 % ročne. Pri mesačnej investícii 300 € je rozdiel za 30 rokov až 117 000 € vo váš prospech.",
   },
   {
     question: "Sú moje peniaze v bezpečí?",
     answer:
-      "Áno. Som licencovaný správca majetku pod prísnym dohľadom Národnej banky Slovenska (NBS). Vaše peniaze sú uložené na investičných účtoch na vaše meno, nie na mojom účte. Mám nad nimi nulový prístup. Ja len riadim stratégiu.",
+      "Áno. Som licencovaný správca majetku pod dohľadom NBS s číslom 282999. Vaše peniaze sú na investičných účtoch na vaše meno- Nikdy nie na mojom. Mám nad nimi nulový prístup. Riadim len vašu stratégiu.",
   },
   {
     question: "Stratím kontrolu nad svojimi peniazmi?",
     answer:
-      "Práve naopak, získate dokonalý prehľad. V aplikácii UFO vidíte v reálnom čase celý svoj majetok: ako klesá hypotéka, rastú fondy, koľko vám zostáva v nehnuteľnostiach. Na jeden klik viete, o koľko eur ste celkovo bohatší. Vaše peniaze zostávajú flexibilné a stratégiu vieme kedykoľvek prispôsobiť.",
+      "Práve naopak. V aplikácii UFO vidíte v reálnom čase celý svoj majetok. Fondy, hypotéku, nehnuteľnosti, poistenia. Na jeden klik viete, o koľko ste bohatší. Stratégiu vieme kedykoľvek prispôsobiť.",
+  },
+  {
+    question: "Môžem kedykoľvek vystúpiť zo spolupráce?",
+    answer:
+      "Áno, bez sankcií a bez otázok. Nemám záujem držať klientov nasilu. Chcem pracovať len s tými, ktorí vo mne vidia skutočného dlhodobého partnera.",
+  },
+  {
+    question: "Môžem vám dôverovať? Nie je to pyramída?",
+    answer:
+      "Som regulovaný NBS, nie predajca produktov na provízii. Vaše peniaze idú na účty v renomovaných inštitúciách. Nie ku mne. Každú investíciu vám vopred vysvetlím vrátane rizík. Ak vám niečo nedáva zmysel, nerobíme to.",
+  },
+  {
+    question: "Viete garantovať výnos?",
+    answer:
+      "Výnosy zo zákona garantovať nemôžem. Čo garantujem je matematicky postavená stratégia, stresové scenáre a rozhodnutia na základe dát, nie pocitov alebo trendov.",
+  },
+  {
+    question: "Musím vám hneď povedať všetko o svojich financiách?",
+    answer:
+      "Nie. Úvodný hovor slúži na to, aby sme sa spoznali a zistili, či má spolupráca zmysel. Žiadny výsluch ani nátlak. Ak sa rozhodneme pokračovať, prejdeme spolu analýzou krok za krokom.",
   },
   {
     question: "Čo sa stane s mojím majetkom, ak sa mi niečo stane?",
     answer:
-      "V rámci JS Wealth Map™ vám nastavíme presný postup, ako bezpečne previesť majetok na vašich blízkych. Od základného právneho procesu až po zverenecké fondy, ktoré využívajú najbohatší. Váš majetok bude chránený a vaša rodina zabezpečená.",
+      "Súčasťou Wealth Map je aj nastavenie dedičského plánu. Od základného právneho procesu až po zverenecké fondy. Váš majetok bude chránený a rodina zabezpečená aj bez vás.",
   },
   {
     question: "Prečo sú vaše poplatky tak nízke? Nie je v tom háčik?",
     answer:
-      "Nie je. Banky si berú 1,5 - 2 % ročne, pretože predávajú vlastné drahé produkty a platia pobočky, reklamy a tisícky zamestnancov. Ja fungujem v režime otvorenej architektúry. Vyberám najlepšie fondy z celého sveta a nemám zbytočné náklady. Zarábam až vtedy, keď váš majetok rastie. To je férovosť, nie háčik.",
+      "Nie je. Banky platia pobočky, reklamy a tisícky zamestnancov. Preto si berú až 2 %. Ja pracujem v režime otvorenej architektúry, vyberám najlepšie fondy z celého sveta bez zbytočných nákladov. Zarábam vtedy, keď rastie váš majetok. To je férovosť, nie háčik.",
   },
 ];
 
@@ -73,14 +94,14 @@ const FaqLoremSection = ({
                   <button
                     type="button"
                     onClick={() => setOpenIndex((prev) => (prev === index ? null : index))}
-                    className={`group w-full text-left rounded-xl border border-primary/15 px-5 py-3.5 md:px-6 md:py-4 pr-12 font-sans text-base md:text-lg font-semibold leading-snug relative transition-colors duration-200 ${
+                    className={`group w-full text-left rounded-xl border border-primary/15 px-5 py-3.5 md:px-6 md:py-4 pr-12 font-sans text-lead font-semibold relative transition-colors duration-200 ${
                       isOpen ? "bg-primary text-white" : "bg-white text-foreground hover:bg-primary hover:text-white"
                     }`}
                     aria-expanded={isOpen}
                   >
                     {faq.question}
                     <span
-                      className={`absolute right-5 top-1/2 -translate-y-1/2 text-xl leading-none ${
+                      className={`absolute right-5 top-1/2 -translate-y-1/2 h6 ${
                         isOpen ? "text-white" : "text-primary group-hover:text-white"
                       }`}
                     >
@@ -88,7 +109,7 @@ const FaqLoremSection = ({
                     </span>
                   </button>
                   {isOpen ? (
-                    <p className="mt-3 px-1 md:px-2 font-sans text-sm md:text-base leading-relaxed text-muted-foreground">
+                    <p className="mt-3 px-1 md:px-2 font-sans text-body text-muted-foreground">
                       {faq.answer}
                     </p>
                   ) : null}
@@ -101,9 +122,12 @@ const FaqLoremSection = ({
         {showCta ? (
           <AnimatedSection>
             <div className="mt-10 text-center">
-              <button type="button" className="btn-primary text-lg">
+              <button type="button" className="btn-primary text-body">
                 Lorem ipsum
               </button>
+              <div>
+                <CtaResponseNote />
+              </div>
             </div>
           </AnimatedSection>
         ) : null}

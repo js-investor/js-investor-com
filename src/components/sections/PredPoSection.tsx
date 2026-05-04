@@ -1,4 +1,5 @@
 import AnimatedSection from "@/components/AnimatedSection";
+import CtaResponseNote from "@/components/CtaResponseNote";
 import { CheckCircle2, XCircle } from "lucide-react";
 
 const beforeItems = [
@@ -42,7 +43,7 @@ const PredPoSection = () => (
       <AnimatedSection>
         <div className="mx-auto max-w-4xl text-center mb-10 md:mb-12">
           <h2 className="headline-serif">
-            Vaše peniaze si zaslúžia <span className="text-primary italic font-bold">niekoho, kto je pri každom
+            Vaše peniaze si zaslúžia <span className="text-primary font-bold">niekoho, kto je pri každom
             rozhodnutí pri vás.</span>
           </h2>
         </div>
@@ -51,12 +52,12 @@ const PredPoSection = () => (
       <div className="mx-auto max-w-5xl grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-6">
         <AnimatedSection>
           <article className="h-full rounded-2xl border border-primary/12 bg-[#f7f4ef] p-6 md:p-7">
-            <h3 className="font-serif text-3xl font-extrabold text-[#B64A4A] mb-5">
-              PRED <span className="text-foreground/70 text-[1.7rem]">(Chaos)</span>
+            <h3 className="font-serif h3 text-[#B64A4A] mb-5">
+              PRED <span className="h5 text-foreground/70">(Chaos)</span>
             </h3>
             <div className="space-y-4">
               {beforeItems.map((item, index) => (
-                <p key={index} className="flex items-start gap-2.5 font-sans text-sm md:text-base leading-relaxed text-foreground/85">
+                <p key={index} className="flex items-start gap-2.5 font-sans text-body text-foreground/85">
                   <XCircle className="mt-0.5 h-4 w-4 shrink-0 text-[#B64A4A]" />
                   <span>→ {item}</span>
                 </p>
@@ -67,12 +68,12 @@ const PredPoSection = () => (
 
         <AnimatedSection delay={0.08}>
           <article className="h-full rounded-2xl border border-primary/12 bg-[#f7f4ef] p-6 md:p-7">
-            <h3 className="font-serif text-3xl font-extrabold text-primary mb-5">
-              PO <span className="text-foreground/70 text-[1.7rem]">(JS Wealth Map™)</span>
+            <h3 className="font-serif h3 text-primary mb-5">
+              PO <span className="h5 text-foreground/70">(Wealth Map)</span>
             </h3>
             <div className="space-y-4">
               {afterItems.map((item, index) => (
-                <p key={index} className="flex items-start gap-2.5 font-sans text-sm md:text-base leading-relaxed text-foreground/85">
+                <p key={index} className="flex items-start gap-2.5 font-sans text-body text-foreground/85">
                   <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                   <span>{item}</span>
                 </p>
@@ -84,9 +85,12 @@ const PredPoSection = () => (
 
       <AnimatedSection>
         <div className="mt-10 text-center">
-          <a href="#formular" className="btn-primary text-lg">
-            Získajte svoju JS Wealth Map
+          <a href="#formular" className="btn-primary text-body">
+            Získať Wealth Map
           </a>
+          <div>
+            <CtaResponseNote />
+          </div>
         </div>
       </AnimatedSection>
     </div>

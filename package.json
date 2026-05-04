@@ -8,6 +8,7 @@
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
+    "lint:typography": "node -e \"const fs=require('fs');const path=require('path');const dirs=['src/components/sections','src/components/templates'];const bad=/(text-\\[(?:0?\\.?\\d+rem|\\d+px|\\d+\\.\\d+rem|\\d+\\.\\d+px)\\]|\\btext-(?:xs|sm|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl|8xl|9xl)\\b|\\b(?:md|lg|xl):text-(?:xs|sm|base|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl|8xl|9xl)\\b|!text-)/g;let has=false;const walk=(d)=>{for(const n of fs.readdirSync(d,{withFileTypes:true})){const p=path.join(d,n.name);if(n.isDirectory())walk(p);else if(p.endsWith('.tsx')){const c=fs.readFileSync(p,'utf8');if(bad.test(c)){console.error(p);has=true;} bad.lastIndex=0;}}};dirs.forEach(walk);if(has)process.exit(1);\"",
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest"
