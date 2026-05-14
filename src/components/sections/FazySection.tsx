@@ -45,7 +45,7 @@ const items: { title: string; body: string; icon: LucideIcon }[] = [
 const FazySection = () => (
   <section
     className="section-padding relative overflow-hidden"
-    style={{ backgroundColor: "#F2EEE7" }}
+    style={{ backgroundColor: "#FFF9F5" }}
   >
     <div className="absolute inset-0 bg-dot-grid opacity-30 pointer-events-none" />
     <div className="section-container relative z-10">
@@ -57,21 +57,23 @@ const FazySection = () => (
         </div>
       </AnimatedSection>
 
-      <div className="mx-auto max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16 md:gap-x-10 md:gap-y-20 lg:gap-x-12 lg:gap-y-24">
+      <div className="mx-auto max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
         {items.map((item, i) => {
           const Icon = item.icon;
           return (
             <AnimatedSection key={item.title} delay={i * 0.05}>
-              <div className="text-left">
+              <div
+                className="h-full text-left rounded-2xl border border-primary/12 bg-[#F0ECE6] p-5 md:p-6 transition-[border-color,box-shadow,transform] duration-300 ease-out hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-md active:translate-y-0 active:shadow-sm"
+              >
                 <Icon
-                  className="mb-5 h-9 w-9 md:h-10 md:w-10 text-primary"
+                  className="mb-4 h-8 w-8 shrink-0 text-primary md:h-9 md:w-9"
                   strokeWidth={1.5}
                   aria-hidden
                 />
-                <p className="font-sans h6 text-foreground mb-2">
+                <p className="font-sans text-base md:text-lg font-semibold text-foreground mb-2 leading-snug">
                   {item.title}
                 </p>
-                <p className="font-sans text-small text-muted-foreground">
+                <p className="font-sans text-small text-muted-foreground leading-relaxed">
                   {item.body}
                 </p>
               </div>

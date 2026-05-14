@@ -20,8 +20,8 @@ const Konzultacia = () => (
     <StatsBarSection />
     <KonzultaciaZlozenyUrokSection />
     <KonzultaciaPostStatsExtremySection />
-    <DobryPoradcaSection ctaLabel="Získať Wealth Map" />
-    <UvodnyHovorSection ctaLabel="Získať Wealth Map" />
+    <DobryPoradcaSection ctaLabel="Chcem začať teraz" />
+    <UvodnyHovorSection ctaLabel="Chcem začať teraz" />
     <VysledkySection
       title={
         <>
@@ -34,15 +34,15 @@ const Konzultacia = () => (
           situáciou. Chaos, banka, žiadny plán. Spolu sme to rozmotali.
         </>
       }
-      ctaLabel="Získať Wealth Map"
+      ctaLabel="Chcem začať teraz"
     />
-    <TestimonialSection ctaLabel="Získať Wealth Map" />
+    <TestimonialSection ctaLabel="Chcem začať teraz" />
     <FazySection />
     <MobileOnlyImageSection />
-    {false && <VideoSection ctaLabel="Získať Wealth Map" />}
+    {false && <VideoSection ctaLabel="Chcem začať teraz" />}
     <FaqSection />
     <DeferredBookingSection />
-    <MoreReviewsSection ctaLabel="Získať Wealth Map" />
+    <MoreReviewsSection ctaLabel="Chcem začať teraz" />
   </PageWrapper>
 );
 

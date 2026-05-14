@@ -1,6 +1,6 @@
 import brandLogo from "@/assets/images/js-investor-logo.png";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 
 type HeaderItem = {
   label: string;
@@ -12,7 +12,14 @@ type SiteHeaderProps = {
   items?: HeaderItem[];
   ctaLabel?: string;
   ctaHref?: string;
+  /** Voliteľná ikona vľavo od textu CTA (napr. WhatsApp). */
+  ctaIcon?: ReactNode;
   ctaOnClick?: () => void;
+  secondaryCtaLabel?: string;
+  secondaryCtaHref?: string;
+  secondaryCtaOnClick?: () => void;
+  /** Len logo (domovský odkaz), bez navigácie, CTA a mobilného menu. */
+  logoOnly?: boolean;
 };
 
 const defaultItems: HeaderItem[] = [
@@ -23,16 +30,50 @@ const defaultItems: HeaderItem[] = [
   { label: "Amet" },
 ];
 
-const SiteHeader = ({ items = defaultItems, ctaLabel = "Lorem ipsum", ctaHref, ctaOnClick }: SiteHeaderProps) => {
+const SiteHeader = ({
+  items = defaultItems,
+  ctaLabel = "Lorem ipsum",
+  ctaHref,
+  ctaIcon,
+  ctaOnClick,
+  secondaryCtaLabel,
+  secondaryCtaHref,
+  secondaryCtaOnClick,
+  logoOnly = false,
+}: SiteHeaderProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  if (logoOnly) {
+    return (
+      <header
+        className="fixed top-0 left-0 right-0 z-50 flex items-center px-5 md:px-10 lg:px-12 xl:px-16 py-4 md:py-[0.8rem] backdrop-blur-md border-b border-primary/10"
+        style={{ backgroundColor: "rgba(255, 249, 245, 0.9)" }}
+      >
+        <a href="/" className="flex items-center shrink-0">
+          <img
+            src={brandLogo}
+            alt="JS Investor logo"
+            className="h-8 md:h-12 w-auto max-w-none min-w-[102px] md:min-w-[153px] shrink-0 object-contain"
+          />
+        </a>
+      </header>
+    );
+  }
 
   const handleItemClick = (item: HeaderItem) => {
     item.onClick?.();
     setMobileMenuOpen(false);
   };
 
+  const ctaOpensNewTab = Boolean(ctaHref && /^https?:\/\//i.test(ctaHref));
+
   const ctaButton = ctaHref ? (
-    <a href={ctaHref} className="btn-pill menu-cta-pill whitespace-nowrap justify-self-center xl:justify-self-auto">
+    <a
+      href={ctaHref}
+      {...(ctaOpensNewTab ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+      className={`btn-pill menu-cta-pill whitespace-nowrap justify-self-center xl:justify-self-auto${ctaIcon ? " gap-2" : ""}`}
+    >
+      {ctaIcon}
       {ctaLabel}
     </a>
   ) : (
@@ -44,6 +85,25 @@ const SiteHeader = ({ items = defaultItems, ctaLabel = "Lorem ipsum", ctaHref, c
       {ctaLabel}
     </button>
   );
+
+  const secondaryCtaButton = secondaryCtaLabel ? (
+    secondaryCtaHref ? (
+      <a
+        href={secondaryCtaHref}
+        className="hidden md:inline-flex h-11 px-5 rounded-full border border-primary/30 bg-transparent font-sans text-sm font-semibold text-primary hover:bg-primary/5 transition-colors whitespace-nowrap"
+      >
+        {secondaryCtaLabel}
+      </a>
+    ) : (
+      <button
+        type="button"
+        onClick={secondaryCtaOnClick}
+        className="hidden md:inline-flex h-11 px-5 rounded-full border border-primary/30 bg-transparent font-sans text-sm font-semibold text-primary hover:bg-primary/5 transition-colors whitespace-nowrap"
+      >
+        {secondaryCtaLabel}
+      </button>
+    )
+  ) : null;
 
   return (
     <header
@@ -58,7 +118,7 @@ const SiteHeader = ({ items = defaultItems, ctaLabel = "Lorem ipsum", ctaHref, c
         />
       </a>
 
-      <nav className="hidden xl:flex items-center justify-center gap-6 2xl:gap-8">
+      <nav className="hidden xl:flex items-center justify-center gap-8 2xl:gap-10">
         {items.map((item) =>
           item.href ? (
             <a
@@ -81,7 +141,12 @@ const SiteHeader = ({ items = defaultItems, ctaLabel = "Lorem ipsum", ctaHref, c
         )}
       </nav>
 
-      {ctaButton}
+      <div className="xl:hidden justify-self-center">{ctaButton}</div>
+
+      <div className="hidden xl:flex items-center gap-3 justify-self-end">
+        {secondaryCtaButton}
+        {ctaButton}
+      </div>
 
       <button
         type="button"
@@ -125,6 +190,28 @@ const SiteHeader = ({ items = defaultItems, ctaLabel = "Lorem ipsum", ctaHref, c
               )
             )}
           </div>
+          {secondaryCtaLabel ? (
+            secondaryCtaHref ? (
+              <a
+                href={secondaryCtaHref}
+                onClick={() => setMobileMenuOpen(false)}
+                className="mt-3 block w-full text-center rounded-xl border border-primary/25 px-4 py-3 font-sans text-base font-semibold text-primary"
+              >
+                {secondaryCtaLabel}
+              </a>
+            ) : (
+              <button
+                type="button"
+                onClick={() => {
+                  secondaryCtaOnClick?.();
+                  setMobileMenuOpen(false);
+                }}
+                className="mt-3 block w-full rounded-xl border border-primary/25 px-4 py-3 font-sans text-base font-semibold text-primary"
+              >
+                {secondaryCtaLabel}
+              </button>
+            )
+          ) : null}
         </div>
       ) : null}
     </header>

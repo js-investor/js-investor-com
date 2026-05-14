@@ -18,17 +18,17 @@ const KonzultaciaHeroSection = () => {
         { label: "Skúsenosti klientov", onClick: () => scrollToSection("recenzie") },
         { label: "Časté otázky", onClick: () => scrollToSection("faq") },
       ]}
-      headerCtaLabel="Získať Wealth Map"
+      headerCtaLabel="Chcem začať teraz"
       headerCtaOnClick={scrollToBooking}
       title={
         <>
-          Investuješ <span className="text-primary font-bold">chaoticky</span>
-          <br className="hidden lg:block" /> alebo <span className="text-primary font-bold">neinvestuješ vôbec?</span>
+          Nenechávaj svoju budúcnosť na náhodu.{" "}
+          Vybuduj si majetok, ktorý ti <span className="text-primary font-bold">prinesie skutočnú slobodu</span>.
         </>
       }
       subtitle={
         <>
-          Do 14 dní ti postavím <strong>plán, ktorý dáva zmysel.</strong> Začneme úvodným bezplatným hovorom.
+          Do 14 dní ti postavím <strong>plán, ktorý dáva zmysel.</strong>
         </>
       }
       description={
@@ -37,7 +37,7 @@ const KonzultaciaHeroSection = () => {
           je pod dohľadom Národnej banky Slovenska.
         </>
       }
-      heroCtaLabel="Získať Wealth Map"
+      heroCtaLabel="Chcem začať teraz"
       heroCtaOnClick={scrollToBooking}
       badges={["Bezplatný úvodný hovor", "Online 30 minút", "Bez záväzku a predaja"]}
       videoSrc="https://player.vimeo.com/video/1175801732?autoplay=0&title=0&portrait=0&byline=0"

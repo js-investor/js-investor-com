@@ -564,3 +564,79 @@
   color: hsl(var(--primary)) !important;
 }
 
+/* Plávajúci widget v rohu: bez bieleho rámu / vonkajšieho „halo“ tieňa */
+#CookiebotWidget,
+#CookiebotWidget .CookiebotWidget-inner,
+#CookiebotWidget .CookiebotWidget-main,
+#CookiebotWidget .CookiebotWidget-body,
+#CookiebotWidget .CookiebotWidget-logo,
+#CookiebotWidget .CookiebotWidget-main-logo {
+  border: none !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+/*
+ * Cookiebot hlavný dialóg (Usercentrics / Cybot): predvolená modrá značky ~#1032CF
+ * → firemná zelená #29614A (iba prepisy, žiadna zmena v Cookiebot konzole).
+ */
+#CybotCookiebotDialog .CybotCookiebotDialogNavItemLink:hover:not(.CybotCookiebotDialogActive),
+#CybotCookiebotDialog .CybotCookiebotDialogNavItemLink:focus-visible {
+  color: #29614a !important;
+  border-color: #29614a !important;
+}
+
+#CybotCookiebotDialog .CybotCookiebotDialogNavItemLink.CybotCookiebotDialogActive {
+  background-color: #29614a !important;
+  color: #ffffff !important;
+  border-color: #29614a !important;
+  box-shadow: none !important;
+}
+
+#CybotCookiebotDialog #CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll,
+#CybotCookiebotDialog #CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelection {
+  background-color: #29614a !important;
+  border-color: #29614a !important;
+  color: #ffffff !important;
+}
+
+#CybotCookiebotDialog #CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll:hover,
+#CybotCookiebotDialog #CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelection:hover {
+  background-color: #24523f !important;
+  border-color: #24523f !important;
+  color: #ffffff !important;
+}
+
+#CybotCookiebotDialog #CybotCookiebotDialogBodyLevelButtonCustomize {
+  color: #29614a !important;
+  border-color: #29614a !important;
+}
+
+#CybotCookiebotDialog #CybotCookiebotDialogBodyEdgeMoreDetailsLink,
+#CybotCookiebotDialog a.CybotExpandLink,
+#CybotCookiebotDialog #CybotCookiebotDialogDetailFooter a,
+#CybotCookiebotDialog a.CybotCookiebotDialogDetailBodyContentCookieLink {
+  color: #29614a !important;
+}
+
+/* Prepínače súhlasu (zapnuté) */
+#CybotCookiebotDialog
+  .CybotCookiebotDialogBodyLevelButtonSliderWrapper:not(.CybotCookiebotDialogBodyLevelButtonSliderWrapperDisabled)
+  input.CybotCookiebotDialogBodyLevelConsentCheckbox:checked
+  + .CybotCookiebotDialogBodyLevelButtonSlider,
+#CybotCookiebotDialog
+  .CybotCookiebotDialogBodyLevelButtonSliderWrapper:not(.CybotCookiebotDialogBodyLevelButtonSliderWrapperDisabled)
+  input.CybotCookiebotDialogBodyLevelConsentCheckbox:checked
+  + span.CybotCookiebotDialogBodyLevelButtonSlider {
+  background-color: #29614a !important;
+}
+
+#CybotCookiebotDialog .CybotCookiebotDialogBodyLevelConsentCheckbox:focus-visible {
+  outline: 2px solid #29614a !important;
+  outline-offset: 2px;
+}
+
+/* Logo „Powered by“ v hlavičke dialógu (monochrómne cesty) */
+#CybotCookiebotDialog #CybotCookiebotDialogPoweredbyCybot svg path {
+  fill: #29614a !important;
+}

@@ -1,6 +1,5 @@
 import AnimatedSection from "@/components/AnimatedSection";
 import SectionHeader from "@/components/SectionHeader";
-import brandPattern from "@/assets/logo/js-brand-pattern.svg";
 import { TrendingUp, Wallet, Clock, Check } from "lucide-react";
 import { ReactNode } from "react";
 
@@ -25,7 +24,7 @@ const cards: { icon: ReactNode; stat: string; title: string; body: string }[] = 
     icon: <Clock className="w-8 h-8 text-white -translate-x-0.5" strokeWidth={1.7} />,
     stat: "350+ hodín",
     title: "Čas pre rodinu ročne",
-    body: "Samostatná správa financií zaberie v priemere viac ako 350 hodín ročne. To je 7 hodín týždenne, ktoré môžeš stráviť s rodinou, v práci alebo na dovolenke. Toto je hodnota, ktorú si nikto necení dostatočne,kým ju nemá.³",
+    body: "Samostatná správa financií zaberie v priemere viac ako 350 hodín ročne. To je 7 hodín týždenne, ktoré môžeš stráviť s rodinou, v práci alebo na dovolenke. Toto je hodnota, ktorú si nikto necení dostatočne, kým ju nemá.³",
   },
 ];
 
@@ -42,8 +41,7 @@ const DobryPoradcaSection = ({ ctaLabel = "Získať Wealth Map" }: DobryPoradcaS
           eyebrow="Aký je rozdiel"
           headline={
             <>
-              <span className="text-primary font-bold">Čo dokáže priniesť</span> dobrý
-              poradca
+              Čo dokáže priniesť <span className="text-primary font-bold">odborník po pravej ruke</span>
             </>
           }
           subHeadline={
@@ -61,20 +59,17 @@ const DobryPoradcaSection = ({ ctaLabel = "Získať Wealth Map" }: DobryPoradcaS
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
         {cards.map((c, i) => (
           <AnimatedSection key={c.title} delay={i * 0.1}>
-            <div className="card-glass-cream h-full">
-              <div
-                className="mb-5 w-14 h-14 rounded-2xl flex items-center justify-center bg-center bg-no-repeat bg-contain"
-                style={{ backgroundImage: `url(${brandPattern})` }}
-              >
+            <div className="h-full flex flex-col rounded-2xl border border-primary/12 bg-[#F0ECE6] p-7 md:p-8 transition-[border-color,box-shadow,transform] duration-300 ease-out hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-md active:translate-y-0 active:shadow-sm">
+              <div className="mb-5 flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-sm">
                 {c.icon}
               </div>
               <p className="[font-family:var(--font-serif)] h3 stat-gradient mb-2">
                 {c.stat}
               </p>
-              <p className="font-sans h6 text-foreground mb-3">
+              <p className="font-sans h6 font-semibold text-foreground mb-3">
                 {c.title}
               </p>
-              <p className="font-sans text-body text-muted-foreground">
+              <p className="font-sans text-body text-muted-foreground leading-relaxed">
                 {c.body}
               </p>
             </div>
