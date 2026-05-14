@@ -94,7 +94,11 @@ const BookingSection = ({
   };
 
   const formContent = (
-    <form className="space-y-3.5 text-left" onSubmit={handleSubmit}>
+    <form
+      className="scroll-mt-28 space-y-3.5 text-left"
+      data-formular-scroll-target
+      onSubmit={handleSubmit}
+    >
       <div>
         <label htmlFor="goal" className={labelClassName}>
           Aký je tvoj cieľ?

@@ -46,6 +46,7 @@ const SiteHeader = ({
   if (logoOnly) {
     return (
       <header
+        data-js-site-header
         className="fixed top-0 left-0 right-0 z-50 flex items-center px-5 md:px-10 lg:px-12 xl:px-16 py-4 md:py-[0.8rem] backdrop-blur-md border-b border-primary/10"
         style={{ backgroundColor: "rgba(255, 249, 245, 0.9)" }}
       >
@@ -107,6 +108,7 @@ const SiteHeader = ({
 
   return (
     <header
+      data-js-site-header
       className="fixed top-0 left-0 right-0 z-50 grid grid-cols-[auto_1fr_auto] items-center gap-3 px-5 md:px-10 lg:px-12 xl:px-16 py-4 md:py-[0.8rem] backdrop-blur-md border-b border-primary/10"
       style={{ backgroundColor: "rgba(255, 249, 245, 0.9)" }}
     >

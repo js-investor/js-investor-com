@@ -32,6 +32,8 @@ type HeroSectionTemplateProps = {
   videoTitle?: string;
   /** Zarovnanie hero textu a CTA (predvolene ako na homepage). */
   heroLayout?: "center" | "left";
+  /** Voliteľná trieda pre H1 (predvolene `headline-hero`). */
+  heroHeadlineClassName?: string;
 };
 
 const HeroSectionTemplate = ({
@@ -55,6 +57,7 @@ const HeroSectionTemplate = ({
   videoSrc,
   videoTitle = "Hero video",
   heroLayout = "center",
+  heroHeadlineClassName = "headline-hero",
 }: HeroSectionTemplateProps) => {
   const heroAlignLeft = heroLayout === "left";
 
@@ -81,7 +84,7 @@ const HeroSectionTemplate = ({
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         className={cn("max-w-[980px]", heroAlignLeft ? "mx-0 text-left" : "mx-auto text-center")}
       >
-        <h1 className="headline-hero mb-6 md:mb-8">
+        <h1 className={cn(heroHeadlineClassName, "mb-6 md:mb-8")}>
           {title}
         </h1>
         <p className="text-lead font-sans text-muted-foreground mb-6">{subtitle}</p>

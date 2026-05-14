@@ -1,8 +1,9 @@
 import AnimatedSection from "@/components/AnimatedSection";
 import CtaResponseNote from "@/components/CtaResponseNote";
+import { scrollToFormular } from "@/lib/scrollToFormular";
 
 const scrollToBooking = () => {
-  document.getElementById("formular")?.scrollIntoView({ behavior: "smooth" });
+  scrollToFormular();
 };
 
 type VideoSectionProps = {
@@ -10,7 +11,7 @@ type VideoSectionProps = {
 };
 
 const VideoSection = ({ ctaLabel = "Získať Wealth Map" }: VideoSectionProps) => (
-  <section id="co-dostanes" className="section-cream section-padding relative overflow-hidden scroll-mt-24">
+  <section className="section-cream section-padding relative overflow-hidden scroll-mt-24">
     <div className="absolute inset-0 bg-dot-grid opacity-20" />
     <div className="section-container relative z-10">
       <AnimatedSection>

@@ -1,10 +1,11 @@
 import AnimatedSection from "@/components/AnimatedSection";
 import SectionHeader from "@/components/SectionHeader";
+import { scrollToFormular } from "@/lib/scrollToFormular";
 import { TrendingUp, Wallet, Clock, Check } from "lucide-react";
 import { ReactNode } from "react";
 
 const scrollToBooking = () => {
-  document.getElementById("formular")?.scrollIntoView({ behavior: "smooth" });
+  scrollToFormular();
 };
 
 const cards: { icon: ReactNode; stat: string; title: string; body: string }[] = [

@@ -1,16 +1,18 @@
 import HeroSectionTemplate from "@/components/templates/HeroSectionTemplate";
+import { scrollToAnchorId, scrollToFormular } from "@/lib/scrollToFormular";
 
 const scrollToBooking = () => {
-  document.getElementById("formular")?.scrollIntoView({ behavior: "smooth" });
+  scrollToFormular();
 };
 
 const scrollToSection = (id: string) => {
-  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  scrollToAnchorId(id);
 };
 
 const KonzultaciaHeroSection = () => {
   return (
     <HeroSectionTemplate
+      heroHeadlineClassName="headline-hero-konzultacia"
       headerItems={[
         { label: "Prvý krok", onClick: () => scrollToSection("prvy-krok") },
         { label: "Výsledky klientov", onClick: () => scrollToSection("vysledky") },

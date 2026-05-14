@@ -1,4 +1,5 @@
 import ResultsSectionTemplate from "@/components/templates/ResultsSectionTemplate";
+import { scrollToFormular } from "@/lib/scrollToFormular";
 import type { ReactNode } from "react";
 
 type VysledkySectionProps = {
@@ -29,7 +30,8 @@ const VysledkySection = ({
       subtitle={subtitle}
       ctaLabel={ctaLabel}
       showCtaResponseNote={showCtaResponseNote}
-      ctaHref="#formular"
+      ctaHref=""
+      onCtaClick={scrollToFormular}
     />
   );
 };

@@ -44,7 +44,8 @@ const items: { title: string; body: string; icon: LucideIcon }[] = [
 
 const FazySection = () => (
   <section
-    className="section-padding relative overflow-hidden"
+    id="co-dostanes"
+    className="section-padding relative overflow-hidden scroll-mt-24"
     style={{ backgroundColor: "#FFF9F5" }}
   >
     <div className="absolute inset-0 bg-dot-grid opacity-30 pointer-events-none" />

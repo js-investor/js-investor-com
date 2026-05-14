@@ -1,9 +1,10 @@
 import AnimatedSection from "@/components/AnimatedSection";
 import CtaResponseNote from "@/components/CtaResponseNote";
 import { CheckCircle2 } from "lucide-react";
+import { scrollToFormular } from "@/lib/scrollToFormular";
 
 const scrollToBooking = () => {
-  document.getElementById("formular")?.scrollIntoView({ behavior: "smooth" });
+  scrollToFormular();
 };
 
 const garancie = [

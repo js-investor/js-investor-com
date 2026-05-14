@@ -189,6 +189,8 @@
 
   html {
     scroll-behavior: smooth;
+    /* Fixed SiteHeader: keeps #hash links and scroll-into-view aligned below the bar */
+    scroll-padding-top: 6rem;
   }
 
   body {
@@ -305,6 +307,34 @@
   .headline-hero {
     font-family: var(--font-serif);
     @apply h1 text-foreground;
+  }
+
+  /** Konzultácia: dlhý nadpis — menšie písmo na úzkych displejoch než globálne .h1 */
+  .headline-hero-konzultacia {
+    font-family: var(--font-serif);
+    @apply font-extrabold text-foreground tracking-tight;
+    font-size: 1.625rem;
+    line-height: 1.12;
+  }
+
+  @media (min-width: 480px) {
+    .headline-hero-konzultacia {
+      font-size: 1.875rem;
+      line-height: 1.13;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .headline-hero-konzultacia {
+      font-size: 3rem;
+      line-height: 1.1;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .headline-hero-konzultacia {
+      font-size: 3.75rem;
+    }
   }
 
   .sub-headline {
@@ -627,6 +657,14 @@
 #CybotCookiebotDialog
   .CybotCookiebotDialogBodyLevelButtonSliderWrapper:not(.CybotCookiebotDialogBodyLevelButtonSliderWrapperDisabled)
   input.CybotCookiebotDialogBodyLevelConsentCheckbox:checked
+  + span.CybotCookiebotDialogBodyLevelButtonSlider,
+#CybotCookiebotDialog
+  .CybotCookiebotDialogBodyLevelButtonSliderWrapper:not(.CybotCookiebotDialogBodyLevelButtonSliderWrapperDisabled)
+  input.CybotCookiebotDialogBodyLevelButton:checked
+  + .CybotCookiebotDialogBodyLevelButtonSlider,
+#CybotCookiebotDialog
+  .CybotCookiebotDialogBodyLevelButtonSliderWrapper:not(.CybotCookiebotDialogBodyLevelButtonSliderWrapperDisabled)
+  input.CybotCookiebotDialogBodyLevelButton:checked
   + span.CybotCookiebotDialogBodyLevelButtonSlider {
   background-color: #29614a !important;
 }
@@ -639,4 +677,149 @@
 /* Logo „Powered by“ v hlavičke dialógu (monochrómne cesty) */
 #CybotCookiebotDialog #CybotCookiebotDialogPoweredbyCybot svg path {
   fill: #29614a !important;
+}
+
+/* Spodný rad tlačidiel (Cookiebot default modrá #1032CF) → zelená */
+#CybotCookiebotDialog button.CybotCookiebotDialogBodyButton:not(#CybotCookiebotDialogBodyButtonDecline) {
+  background-color: #29614a !important;
+  border: 2px solid #29614a !important;
+  color: #ffffff !important;
+}
+
+#CybotCookiebotDialog
+  button.CybotCookiebotDialogBodyButton:not(#CybotCookiebotDialogBodyButtonDecline):hover {
+  background-color: #24523f !important;
+  border-color: #24523f !important;
+  color: #ffffff !important;
+}
+
+/* „Odmietnuť“ – sekundárny štýl, stále zelená značka (nie modrá) */
+#CybotCookiebotDialog #CybotCookiebotDialogBodyButtonDecline {
+  background-color: transparent !important;
+  border: 2px solid #29614a !important;
+  color: #29614a !important;
+}
+
+#CybotCookiebotDialog #CybotCookiebotDialogBodyButtonDecline:hover {
+  background-color: rgba(41, 97, 74, 0.1) !important;
+  border-color: #24523f !important;
+  color: #24523f !important;
+}
+
+/* Ďalšie varianty ID tlačidiel (CMP / jazykové mutácie) */
+#CybotCookiebotDialog #CybotCookiebotDialogBodyButtonAccept,
+#CybotCookiebotDialog #CybotCookiebotDialogBodyLevelButtonAccept,
+#CybotCookiebotDialog #CybotCookiebotDialogBodyContentButtonAccept {
+  background-color: #29614a !important;
+  border: 2px solid #29614a !important;
+  color: #ffffff !important;
+}
+
+#CybotCookiebotDialog #CybotCookiebotDialogBodyButtonAccept:hover,
+#CybotCookiebotDialog #CybotCookiebotDialogBodyLevelButtonAccept:hover,
+#CybotCookiebotDialog #CybotCookiebotDialogBodyContentButtonAccept:hover {
+  background-color: #24523f !important;
+  border-color: #24523f !important;
+  color: #ffffff !important;
+}
+
+/* Záložky / accordion v detaile cookies (napr. „Potrebné (5)“) */
+#CybotCookiebotDialog .CybotCookiebotDialogDetailBodyContentCookieContainerButton {
+  color: #29614a !important;
+  border-color: #29614a !important;
+  background-color: transparent !important;
+}
+
+#CybotCookiebotDialog .CybotCookiebotDialogDetailBodyContentCookieContainerButton:hover,
+#CybotCookiebotDialog
+  .CybotCookiebotDialogDetailBodyContentCookieContainerButton[aria-expanded="true"] {
+  background-color: #29614a !important;
+  color: #ffffff !important;
+  border-color: #29614a !important;
+}
+
+#CybotCookiebotDialog
+  .CybotCookiebotDialogDetailBodyContentCookieContainerButton[aria-expanded="true"]
+  span {
+  color: inherit !important;
+}
+
+/* Prepínače: zapnuté aj v disabled stave (potrebné cookies) – žiadna modrá */
+#CybotCookiebotDialog .CybotCookiebotDialogBodyLevelButtonSliderWrapperDisabled input:checked + span,
+#CybotCookiebotDialog
+  .CybotCookiebotDialogBodyLevelButtonSliderWrapperDisabled
+  input:checked
+  + .CybotCookiebotDialogBodyLevelButtonSlider,
+#CybotCookiebotDialog
+  .CybotCookiebotDialogBodyLevelButtonSliderWrapperDisabled
+  input.CybotCookiebotDialogBodyLevelButton:checked
+  + span,
+#CybotCookiebotDialog
+  .CybotCookiebotDialogBodyLevelButtonSliderWrapperDisabled
+  input.CybotCookiebotDialogBodyLevelButton:checked
+  + .CybotCookiebotDialogBodyLevelButtonSlider {
+  background-color: #5a8570 !important;
+  border-color: transparent !important;
+}
+
+#CybotCookiebotDialog
+  .CybotCookiebotDialogBodyLevelButtonSliderWrapperFullWidth
+  input:checked
+  + span,
+#CybotCookiebotDialog
+  .CybotCookiebotDialogBodyLevelButtonSliderWrapperFullWidth
+  input:checked
+  + .CybotCookiebotDialogBodyLevelButtonSlider {
+  background-color: #29614a !important;
+}
+
+/* Pätička dialógu: tlačidlá zelená (bg + border) */
+#CybotCookiebotDialogFooter
+  .CybotCookiebotDialogBodyButton:not(#CybotCookiebotDialogBodyButtonDecline) {
+  background-color: #29614a !important;
+  border: 2px solid #29614a !important;
+  color: #ffffff !important;
+}
+
+#CybotCookiebotDialogFooter #CybotCookiebotDialogBodyButtonDecline {
+  background-color: transparent !important;
+  border: 2px solid #29614a !important;
+  color: #29614a !important;
+}
+
+#CybotCookiebotDialogFooter
+  .CybotCookiebotDialogBodyButton:not(#CybotCookiebotDialogBodyButtonDecline):hover {
+  background-color: #24523f !important;
+  border-color: #24523f !important;
+  color: #ffffff !important;
+}
+
+#CybotCookiebotDialogFooter #CybotCookiebotDialogBodyButtonDecline:hover {
+  background-color: rgba(41, 97, 74, 0.12) !important;
+  border-color: #24523f !important;
+  color: #24523f !important;
+}
+
+/* Zapnutý slider (všetky varianty + bez medzier v selektore) */
+#CybotCookiebotDialog input:checked + .CybotCookiebotDialogBodyLevelButtonSlider,
+#CybotCookiebotDialog input:checked + span.CybotCookiebotDialogBodyLevelButtonSlider {
+  background-color: #29614a !important;
+  border-color: transparent !important;
+}
+
+/* Názvy kategórií + „Nezaradené“: zelený text, hover zelený */
+#CybotCookiebotDialog span#CybotCookiebotDialogBodyLevelButtonNecessaryInlineLabel,
+#CybotCookiebotDialog span#CybotCookiebotDialogBodyLevelButtonPreferencesInlineLabel,
+#CybotCookiebotDialog span#CybotCookiebotDialogBodyLevelButtonStatisticsInlineLabel,
+#CybotCookiebotDialog span#CybotCookiebotDialogBodyLevelButtonMarketingInlineLabel,
+#CybotCookiebotDialog button#CybotCookiebotDialogDetailBodyContentCookieContainerUnclassified {
+  color: #29614a !important;
+}
+
+#CybotCookiebotDialog span#CybotCookiebotDialogBodyLevelButtonNecessaryInlineLabel:hover,
+#CybotCookiebotDialog span#CybotCookiebotDialogBodyLevelButtonPreferencesInlineLabel:hover,
+#CybotCookiebotDialog span#CybotCookiebotDialogBodyLevelButtonStatisticsInlineLabel:hover,
+#CybotCookiebotDialog span#CybotCookiebotDialogBodyLevelButtonMarketingInlineLabel:hover,
+#CybotCookiebotDialog button#CybotCookiebotDialogDetailBodyContentCookieContainerUnclassified:hover {
+  color: #24523f !important;
 }

@@ -8,6 +8,7 @@ import recenzia5 from "@/assets/images/recenzia-5.png";
 import recenzia6 from "@/assets/images/recenzia-6.png";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { scrollToFormular } from "@/lib/scrollToFormular";
 
 /** Poradie v lightboxe: 6 prvá, potom 1–5 */
 const LIGHTBOX_IMAGES = [
@@ -20,7 +21,7 @@ const LIGHTBOX_IMAGES = [
 ] as const;
 
 const scrollToBooking = () => {
-  document.getElementById("formular")?.scrollIntoView({ behavior: "smooth" });
+  scrollToFormular();
 };
 
 function ReviewsLightbox({
