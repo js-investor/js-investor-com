@@ -42,7 +42,7 @@ const Konzultacia = () => (
     {false && <VideoSection ctaLabel="Chcem začať teraz" />}
     <FaqSection />
     <DeferredBookingSection />
-    <MoreReviewsSection ctaLabel="Chcem začať teraz" />
+    <MoreReviewsSection ctaLabel="Chcem začať teraz" includeKonzultaciaReviews />
   </PageWrapper>
 );
 
