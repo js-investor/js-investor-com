@@ -24,13 +24,19 @@ function scrollWindowToElement(el: HTMLElement, behavior: ScrollBehavior): void 
  * Scroll to an in-page anchor, accounting for the fixed site header (use `[data-js-site-header]`, not `header` — third-party scripts may inject other `<header>` elements).
  */
 export function scrollToAnchorId(elementId: string): void {
-  const el = document.getElementById(elementId);
+  const el =
+    elementId === "formular"
+      ? resolveFormularScrollTarget()
+      : document.getElementById(elementId);
   if (!(el instanceof HTMLElement)) return;
 
   scrollWindowToElement(el, "smooth");
 
   window.setTimeout(() => {
-    const again = document.getElementById(elementId);
+    const again =
+      elementId === "formular"
+        ? resolveFormularScrollTarget()
+        : document.getElementById(elementId);
     if (!(again instanceof HTMLElement)) return;
     const targetY = Math.max(0, scrollTopForElementUnderHeader(again));
     if (Math.abs(window.scrollY - targetY) > 12) {
@@ -39,20 +45,28 @@ export function scrollToAnchorId(elementId: string): void {
   }, 520);
 }
 
-/** Scroll to the booking form: prefers `[data-formular-scroll-target]` (the `<form>`), not only the top of `#formular` section. */
-export function scrollToFormular(): void {
-  const el =
-    document.querySelector<HTMLElement>(FORMULAR_SCROLL_TARGET) ??
-    document.getElementById("formular");
+function resolveFormularScrollTarget(): HTMLElement | null {
+  const section = document.getElementById("formular");
+  if (!(section instanceof HTMLElement)) return null;
 
+  // Homepage CTA (`cardOnLight`) — začiatok celej sekcie, nie len pravý formulár
+  if (section.dataset.bookingVariant === "cardOnLight") {
+    return section;
+  }
+
+  return (
+    document.querySelector<HTMLElement>(FORMULAR_SCROLL_TARGET) ?? section
+  );
+}
+
+function scrollToFormularElement(behavior: ScrollBehavior): void {
+  const el = resolveFormularScrollTarget();
   if (!(el instanceof HTMLElement)) return;
 
-  scrollWindowToElement(el, "smooth");
+  scrollWindowToElement(el, behavior);
 
   const settle = () => {
-    const target =
-      document.querySelector<HTMLElement>(FORMULAR_SCROLL_TARGET) ??
-      document.getElementById("formular");
+    const target = resolveFormularScrollTarget();
     if (!(target instanceof HTMLElement)) return;
     const y = Math.max(0, scrollTopForElementUnderHeader(target));
     if (Math.abs(window.scrollY - y) > 12) {
@@ -63,4 +77,17 @@ export function scrollToFormular(): void {
   requestAnimationFrame(() => requestAnimationFrame(settle));
   window.setTimeout(settle, 120);
   window.setTimeout(settle, 520);
+}
+
+/** Scroll to booking CTA: homepage → celá `#formular` sekcia; /konzultacia → formulár. */
+export function scrollToFormular(): void {
+  scrollToFormularElement("smooth");
+}
+
+/** Hash `#formular` na homepage — rovnaký offset ako scrollToFormular. */
+export function scrollToFormularFromHash(): void {
+  scrollToFormularElement("smooth");
+  if (window.location.hash !== "#formular") {
+    window.history.replaceState(null, "", "#formular");
+  }
 }

@@ -111,7 +111,7 @@ const HeroSectionTemplate = ({
             heroSecondaryLinkHref ? (
               <a
                 href={heroSecondaryLinkHref}
-                className="font-sans text-body md:h6 font-semibold text-primary hover:text-primary/80 transition-colors"
+                className="font-sans text-body font-normal text-foreground hover:text-foreground/75 transition-colors"
               >
                 {heroSecondaryLinkLabel}
               </a>
@@ -119,7 +119,7 @@ const HeroSectionTemplate = ({
               <button
                 type="button"
                 onClick={heroSecondaryLinkOnClick}
-                className="font-sans text-body md:h6 font-semibold text-primary hover:text-primary/80 transition-colors"
+                className="font-sans text-body font-normal text-foreground hover:text-foreground/75 transition-colors"
               >
                 {heroSecondaryLinkLabel}
               </button>

@@ -50,7 +50,7 @@ const InvesticnaCalculator = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div className="lg:col-span-4 space-y-6">
             <div className="bg-card p-6 md:p-6 rounded-xl inv-card-shadow border border-border">
-              <h2 className="text-2xl inv-heading-serif mb-6 border-b border-cream pb-4 leading-snug text-foreground">
+              <h2 className="headline-serif mb-6 border-b border-cream pb-4">
                 Parametre investície
               </h2>
 

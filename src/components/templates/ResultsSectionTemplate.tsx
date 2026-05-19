@@ -102,7 +102,7 @@ const ResultsSectionTemplate = ({
       <div className="mx-auto w-full max-w-[1140px] px-5 md:px-8 lg:px-10">
         <AnimatedSection>
           <div className="mx-auto max-w-3xl text-center mb-14 md:mb-16 lg:mb-[4.5rem]">
-            <h2 className="[font-family:var(--font-serif)] h3 tracking-tight text-[#1a1a1a]">
+            <h2 className="headline-serif text-[#1a1a1a]">
               {title}
             </h2>
             <p className="mt-5 md:mt-6 font-sans text-lead leading-relaxed text-[#666]">{subtitle}</p>

@@ -38,7 +38,7 @@ const PodlaPrijmuCalculator = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div className="lg:col-span-5 space-y-6">
             <div className="bg-white p-6 md:p-6 rounded-xl border border-border">
-              <h2 className="text-2xl font-serif mb-6 border-b border-cream pb-4">Vaše financie</h2>
+              <h2 className="headline-serif mb-6 border-b border-cream pb-4">Vaše financie</h2>
               <div className="mb-6 space-y-4">
                 <div>
                   <label className="block text-sm font-bold uppercase tracking-wide text-muted-foreground mb-2">Váš čistý mesačný príjem</label>

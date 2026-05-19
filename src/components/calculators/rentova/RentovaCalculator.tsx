@@ -38,7 +38,7 @@ const RentovaCalculator = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div className="lg:col-span-4 space-y-6">
             <div className="bg-white p-6 md:p-6 rounded-xl border border-border">
-              <h2 className="text-2xl font-serif mb-6 border-b border-cream pb-4">Vaše parametre</h2>
+              <h2 className="headline-serif mb-6 border-b border-cream pb-4">Vaše parametre</h2>
               <div className="mb-6 grid grid-cols-2 gap-4">
                 <div>
                   <label className="text-xs text-muted-foreground block mb-1">Súčasný vek</label>

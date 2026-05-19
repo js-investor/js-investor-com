@@ -17,9 +17,26 @@ import UrgenciaSection from "@/components/sections/UrgenciaSection";
 import FaqLoremSection from "@/components/sections/FaqLoremSection";
 import BookingSection from "@/components/sections/BookingSection";
 import PageWrapper from "@/components/layout/PageWrapper";
+import { scrollToFormularFromHash } from "@/lib/scrollToFormular";
 import { Clock3, Compass, Percent, PiggyBank, Wallet } from "lucide-react";
+import { useEffect } from "react";
 
-const Index = () => (
+const Index = () => {
+  useEffect(() => {
+    const handleFormularLink = (event: MouseEvent) => {
+      const anchor = (event.target as Element | null)?.closest('a[href="#formular"]');
+      if (!(anchor instanceof HTMLAnchorElement)) return;
+      if (anchor.target === "_blank") return;
+
+      event.preventDefault();
+      scrollToFormularFromHash();
+    };
+
+    document.addEventListener("click", handleFormularLink);
+    return () => document.removeEventListener("click", handleFormularLink);
+  }, []);
+
+  return (
   <PageWrapper>
     <HomeDesignHeaderSection />
     <StatsBarSection />
@@ -114,6 +131,7 @@ const Index = () => (
       showCta={false}
     />
     <BookingSection
+      addressing="vy"
       heading={
         <span className="text-cream">
           Zbavte sa chaosu z peňazí. Začnite konať už dnes.
@@ -124,6 +142,7 @@ const Index = () => (
       variant="cardOnLight"
     />
   </PageWrapper>
-);
+  );
+};
 
 export default Index;

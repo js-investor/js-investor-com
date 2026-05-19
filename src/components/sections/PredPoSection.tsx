@@ -52,7 +52,7 @@ const PredPoSection = () => (
       <div className="mx-auto max-w-5xl grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-6">
         <AnimatedSection>
           <article className="h-full rounded-2xl border border-primary/12 bg-[#f7f4ef] p-6 md:p-7">
-            <h3 className="font-serif h3 text-[#B64A4A] mb-5">
+            <h3 className="section-subhead text-[#B64A4A] mb-5">
               PRED <span className="h5 text-foreground/70">(Chaos)</span>
             </h3>
             <div className="space-y-4">
@@ -68,7 +68,7 @@ const PredPoSection = () => (
 
         <AnimatedSection delay={0.08}>
           <article className="h-full rounded-2xl border border-primary/12 bg-[#f7f4ef] p-6 md:p-7">
-            <h3 className="font-serif h3 text-primary mb-5">
+            <h3 className="section-subhead text-primary mb-5">
               PO <span className="h5 text-foreground/70">(Wealth Map)</span>
             </h3>
             <div className="space-y-4">

@@ -30,7 +30,7 @@ const HypotekarnaCalculator = () => {
       <div id="hypo-compare-wrapper" className="bg-cream px-4 md:px-6 pt-4 pb-12 md:pb-14 border-x border-b border-border/60 rounded-b-xl sm:rounded-xl sm:border sm:-mt-0">
         <div className="hypo-print-container max-w-full mx-0">
           <div className="mb-10 text-center max-w-[700px] mx-auto">
-            <h2 className="hypo-heading text-[clamp(1.75rem,4vw,2.75rem)] text-foreground leading-tight mb-3">
+            <h2 className="headline-serif mb-3">
               Hypotéka vs. investovanie
             </h2>
             <div className="w-20 h-[3px] bg-primary/40 mx-auto mb-5 rounded-full opacity-80" />

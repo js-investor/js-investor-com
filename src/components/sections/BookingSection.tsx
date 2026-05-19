@@ -12,6 +12,8 @@ type BookingSectionProps = {
   subheading?: ReactNode;
   bullets?: string[];
   variant?: "fullGreen" | "cardOnLight";
+  /** `vy` len na homepage; /konzultacia a ostatné nechávajú predvolené `ty`. */
+  addressing?: "ty" | "vy";
 };
 
 const BookingSection = ({
@@ -31,6 +33,7 @@ const BookingSection = ({
   ),
   bullets: _bullets = ["Bezplatný úvodný hovor", "Online 30 minút", "Bez záväzku a predaja"],
   variant = "fullGreen",
+  addressing = "ty",
 }: BookingSectionProps) => {
   const isCardOnLight = variant === "cardOnLight";
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -101,7 +104,7 @@ const BookingSection = ({
     >
       <div>
         <label htmlFor="goal" className={labelClassName}>
-          Aký je tvoj cieľ?
+          {addressing === "vy" ? "Aký je váš cieľ?" : "Aký je tvoj cieľ?"}
         </label>
         <div className="relative">
           <select id="goal" name="goal" required defaultValue="Chcem pravidelnú rentu" className={selectClassName}>
@@ -120,7 +123,7 @@ const BookingSection = ({
 
       <div>
         <label htmlFor="experience" className={labelClassName}>
-          Aké máš skúsenosti?
+          {addressing === "vy" ? "Aké máte skúsenosti?" : "Aké máš skúsenosti?"}
         </label>
         <div className="relative">
           <select
@@ -144,7 +147,7 @@ const BookingSection = ({
 
       <div>
         <label htmlFor="priority" className={labelClassName}>
-          Čo chceš aktuálne najviac vyriešiť?
+          {addressing === "vy" ? "Čo chcete aktuálne najviac vyriešiť?" : "Čo chceš aktuálne najviac vyriešiť?"}
         </label>
         <div className="relative">
           <select id="priority" name="priority" required defaultValue="Chcem začať investovať" className={selectClassName}>
@@ -200,7 +203,7 @@ const BookingSection = ({
           {isSubmitting ? "Odosielam..." : "Odoslať formulár"}
         </button>
         <div className="mt-2">
-          <CtaResponseNote layout="formFooter" />
+          <CtaResponseNote layout="formFooter" addressing={addressing} />
         </div>
         {submitStatus === "success" ? (
           <p className="mt-3 font-sans text-sm text-primary">Ďakujem, formulár bol úspešne odoslaný. Ozvem sa ti do 48 hodín.</p>
@@ -235,6 +238,7 @@ const BookingSection = ({
   return (
     <section
       id="formular"
+      data-booking-variant={variant}
       className={`${sectionOuter} scroll-mt-24 py-8 md:py-16 lg:py-20 px-5 md:px-8 relative overflow-hidden`}
     >
       <div className={`absolute inset-0 bg-dot-grid ${isCardOnLight ? "opacity-15" : "opacity-20"}`} />
@@ -254,14 +258,16 @@ const BookingSection = ({
                 aria-hidden
               />
               <div className="absolute inset-0 flex flex-col items-start justify-end px-5 pb-7 sm:px-8 sm:pb-9 md:pb-10">
-                <h2 className="w-full max-w-2xl text-left font-serif text-[1.78rem] font-extrabold leading-[1.15] tracking-tight text-white sm:text-[1.8rem] md:text-[1.9rem] lg:text-[1.95rem] xl:text-[2rem] [&_span]:!text-white [&_strong]:!text-white">
+                <h2 className="headline-serif w-full max-w-2xl text-left text-white [&_span]:!text-white [&_strong]:!text-white">
                   {heading}
                 </h2>
                 <div className="mt-4 sm:mt-5 w-full max-w-2xl text-left font-sans text-[0.9rem] leading-relaxed text-white/90 sm:text-base md:text-[1.05rem] [&_strong]:font-semibold [&_strong]:!text-white">
                   {subheading}
                 </div>
                 <div className="mt-4 flex w-full max-w-2xl flex-wrap items-center gap-x-3 gap-y-2 text-white/85">
-                  <span className="font-sans text-sm font-medium">Alebo ma kontaktuj</span>
+                  <span className="font-sans text-sm font-medium">
+                    {addressing === "vy" ? "Alebo ma kontaktujte" : "Alebo ma kontaktuj"}
+                  </span>
                   <a
                     href="https://wa.me/421902519328"
                     target="_blank"

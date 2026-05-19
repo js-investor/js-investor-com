@@ -14,7 +14,7 @@ const HomeDesignHeaderSection = () => {
       headerCtaHref="#formular"
       title={
         <>
-          Finančný plán, pri ktorom váš <span className="text-primary font-bold">majetok rastie v bezpečí.</span>
+          Finančný plán, pri ktorom váš <span className="text-primary font-extrabold">majetok rastie v bezpečí.</span>
         </>
       }
       subtitle={

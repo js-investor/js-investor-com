@@ -28,7 +28,7 @@ const MzdovaCalculator = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mzv3-main-grid">
           <div className="lg:col-span-5 space-y-5 mzv3-left-col">
             <div className="bg-card p-6 md:p-6 rounded-xl border border-border mzv3-card mzv3-card-input">
-              <h2 className="text-2xl font-serif mb-6 border-b border-cream pb-4">Vstupné údaje</h2>
+              <h2 className="headline-serif mb-6 border-b border-cream pb-4">Vstupné údaje</h2>
 
               <div className="mb-6">
                 <label id="mzv3-salary-label" className="block text-sm font-bold uppercase tracking-wide text-muted-foreground mb-2">

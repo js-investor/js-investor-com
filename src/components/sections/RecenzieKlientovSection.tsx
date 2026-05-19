@@ -43,7 +43,7 @@ const RecenzieKlientovSection = ({
     <div className="section-container relative z-10">
       <AnimatedSection>
         <div className="mx-auto max-w-3xl text-center mb-10 md:mb-12">
-          <h2 className="[font-family:var(--font-serif)] h3 leading-tight text-white">{heading}</h2>
+          <h2 className="headline-serif text-white">{heading}</h2>
           {subheading ? (
             <p className="mt-5 font-sans text-lead text-white/90">{subheading}</p>
           ) : null}
